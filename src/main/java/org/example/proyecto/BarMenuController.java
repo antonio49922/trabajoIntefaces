@@ -18,7 +18,7 @@ public class BarMenuController implements Initializable {
         // Cargar la imagen "Burger diseño.jpg" ubicada en:
         // src/Recursos Gráficos/Imagenes/Burger diseño.jpg
         try {
-            Image burgerImage = new Image(getClass().getResourceAsStream("/Recursos Gráficos/Imagenes/Comida rápida alimentos transparente.png"));
+            Image burgerImage = new Image(getClass().getResourceAsStream("/Recursos Gráficos/Imagenes/Alimentos/Comida rápida alimentos transparente.png"));
             burgerImageView.setImage(burgerImage);
             burgerImageView.setFitWidth(400);
             burgerImageView.setFitHeight(550);
