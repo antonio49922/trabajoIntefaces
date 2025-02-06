@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="611.0" prefWidth="537.0" style="-fx-background-color: DD99BB;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Recursos%20Gráficos/Imagenes/EditadasAbsenta.png" />
+               </image>
+            </ImageView>
+            <VBox prefHeight="150.0" prefWidth="318.0">
+               <children>
+                  <Label text="Absenta">
+                     <font>
+                        <Font name="Magneto Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label text="20€">
+                     <font>
+                        <Font name="Magneto Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Recursos%20Gráficos/Imagenes/EditadasBrandy.png" />
+               </image>
+            </ImageView>
+            <VBox prefHeight="150.0" prefWidth="318.0">
+               <children>
+                  <Label text="Brandy">
+                     <font>
+                        <Font name="Magneto Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label text="15€">
+                     <font>
+                        <Font name="Magneto Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="TOP_CENTER" layoutX="10.0" layoutY="160.0" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Recursos%20Gráficos/Imagenes/EditadasCognac.png" />
+               </image>
+            </ImageView>
+            <VBox prefHeight="150.0" prefWidth="318.0">
+               <children>
+                  <Label text="Cognac">
+                     <font>
+                        <Font name="Magneto Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label text="25€">
+                     <font>
+                        <Font name="Magneto Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="TOP_CENTER" layoutX="10.0" layoutY="311.0" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Recursos%20Gráficos/Imagenes/EditadasGin.png" />
+               </image>
+            </ImageView>
+            <VBox prefHeight="150.0" prefWidth="318.0">
+               <children>
+                  <Label text="Ginebra">
+                     <font>
+                        <Font name="Magneto Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label text="20€">
+                     <font>
+                        <Font name="Magneto Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>
