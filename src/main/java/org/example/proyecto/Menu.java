@@ -20,27 +20,33 @@ public class Menu {
     @FXML
     public void tapas_clic(MouseEvent event) throws IOException {
         Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-        CambioPantalla.switchScene(currentStage, "BarMenuPrototype.fxml", "Registrate");
+        CambioPantalla.switchScene(currentStage, "Tapas.fxml", "Registrate");
     }
     @FXML
     public void primero_clic(MouseEvent event) throws IOException {
         Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-        CambioPantalla.switchScene(currentStage, "BarMenuPrototype.fxml", "Registrate");
+        CambioPantalla.switchScene(currentStage, "Primero.fxml", "Registrate");
     }
     @FXML
     public void segundo_clic(MouseEvent event) throws IOException {
         Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-        CambioPantalla.switchScene(currentStage, "BarMenuPrototype.fxml", "Registrate");
+        CambioPantalla.switchScene(currentStage, "Segundo.fxml", "Registrate");
     }
     @FXML
     public void postres_clic(MouseEvent event) throws IOException {
         Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-        CambioPantalla.switchScene(currentStage, "BarMenuPrototype.fxml", "Registrate");
+        CambioPantalla.switchScene(currentStage, "postre.fxml", "Registrate");
     }
     @FXML
     public void especial_clic(MouseEvent event) throws IOException {
         Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-        CambioPantalla.switchScene(currentStage, "BarMenuPrototype.fxml", "Registrate");
+        CambioPantalla.switchScene(currentStage, "especial.fxml", "Registrate");
+    }
+
+    @FXML
+    public void volverMenu(MouseEvent event) throws IOException {
+        Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        CambioPantalla.switchScene(currentStage, "Menu.fxml", "Registrate");
     }
 
 
