@@ -6,107 +6,107 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="600.0" style="-fx-background-color: DD99BB;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <HBox prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Recursos%20Gráficos/Imagenes/EditadasCerveza_Vaso.png" />
-               </image></ImageView>
-            <VBox prefHeight="150.0" prefWidth="396.0">
-               <children>
-                  <Label text="Hamburguesa Clásica">
-                     <font>
-                        <Font name="Segoe Script" size="24.0" />
-                     </font>
-                  </Label>
-                  <Label text="10€">
-                     <font>
-                        <Font name="Segoe Script" size="18.0" />
-                     </font>
-                  </Label>
-               </children>
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.proyecto.SegundoController"
+            style="-fx-background-color: #EAD7D1;">
+
+   <!-- Menú lateral para categorías -->
+   <left>
+      <VBox prefWidth="150.0" spacing="10.0" alignment="CENTER">
+         <Label text="Categorías" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+         <Button text="Primeros" onAction="#cambiarAPrimeros"/>
+         <Button text="Postres" onAction="#cambiarAPostres"/>
+         <Button text="Tapas" onAction="#cambiarATapas"/>
+         <Button text="Bebidas" onAction="#cambiarABebidas"/>
+      </VBox>
+   </left>
+
+   <!-- Contenido del menú -->
+   <center>
+      <ScrollPane fitToWidth="true" prefHeight="600.0">
+         <content>
+            <VBox spacing="10.0">
+               <padding>
+                  <Insets top="10" right="10" bottom="10" left="10"/>
+               </padding>
+
+               <!-- Hamburguesa Clásica -->
+               <HBox spacing="10.0">
+                  <ImageView fitHeight="100.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+
+                  </ImageView>
+                  <VBox>
+                     <Label text="Hamburguesa Clásica" style="-fx-font-size: 20px;"/>
+                     <Label text="10.00€" style="-fx-font-size: 16px;"/>
+                  </VBox>
+                  <HBox spacing="5.0">
+                     <Button fx:id="btnMenosClasica" text="-" onAction="#decrementarCantidad"/>
+                     <TextField fx:id="txtCantidadClasica" text="0" prefWidth="40" alignment="CENTER" editable="false"/>
+                     <Button fx:id="btnMasClasica" text="+" onAction="#incrementarCantidad"/>
+                  </HBox>
+               </HBox>
+
+               <!-- Hamburguesa Doble con Queso -->
+               <HBox spacing="10.0">
+                  <ImageView fitHeight="100.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+
+                  </ImageView>
+                  <VBox>
+                     <Label text="Hamburguesa Doble con Queso" style="-fx-font-size: 20px;"/>
+                     <Label text="12.50€" style="-fx-font-size: 16px;"/>
+                  </VBox>
+                  <HBox spacing="5.0">
+                     <Button fx:id="btnMenosDoble" text="-" onAction="#decrementarCantidad"/>
+                     <TextField fx:id="txtCantidadDoble" text="0" prefWidth="40" alignment="CENTER" editable="false"/>
+                     <Button fx:id="btnMasDoble" text="+" onAction="#incrementarCantidad"/>
+                  </HBox>
+               </HBox>
+
+               <!-- Merluza en Salsa Verde -->
+               <HBox spacing="10.0">
+                  <ImageView fitHeight="100.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+
+                  </ImageView>
+                  <VBox>
+                     <Label text="Merluza en Salsa Verde" style="-fx-font-size: 20px;"/>
+                     <Label text="15.00€" style="-fx-font-size: 16px;"/>
+                  </VBox>
+                  <HBox spacing="5.0">
+                     <Button fx:id="btnMenosMerluza" text="-" onAction="#decrementarCantidad"/>
+                     <TextField fx:id="txtCantidadMerluza" text="0" prefWidth="40" alignment="CENTER" editable="false"/>
+                     <Button fx:id="btnMasMerluza" text="+" onAction="#incrementarCantidad"/>
+                  </HBox>
+               </HBox>
+
+               <!-- Filete de Lomo con Patatas -->
+               <HBox spacing="10.0">
+                  <ImageView fitHeight="100.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+
+                  </ImageView>
+                  <VBox>
+                     <Label text="Filete de Lomo con Patatas" style="-fx-font-size: 20px;"/>
+                     <Label text="14.00€" style="-fx-font-size: 16px;"/>
+                  </VBox>
+                  <HBox spacing="5.0">
+                     <Button fx:id="btnMenosLomo" text="-" onAction="#decrementarCantidad"/>
+                     <TextField fx:id="txtCantidadLomo" text="0" prefWidth="40" alignment="CENTER" editable="false"/>
+                     <Button fx:id="btnMasLomo" text="+" onAction="#incrementarCantidad"/>
+                  </HBox>
+               </HBox>
+
             </VBox>
-         </children>
+         </content>
+      </ScrollPane>
+   </center>
+
+   <!-- Botones de navegación -->
+   <bottom>
+      <HBox alignment="CENTER" spacing="20">
+         <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+         </padding>
+         <Button fx:id="btnVolver" text="Volver al menú" onAction="#volverMenu"/>
+         <Button fx:id="btnPagar" text="Pagar"/>
       </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Recursos%20Gráficos/Imagenes/EditadasSake.png" />
-               </image></ImageView>
-            <VBox prefHeight="150.0" prefWidth="392.0">
-               <children>
-                  <Label text="Cheeseburger Doble">
-                     <font>
-                        <Font name="Segoe Script" size="24.0" />
-                     </font>
-                  </Label>
-                  <Label text="12€">
-                     <font>
-                        <Font name="Segoe Script" size="18.0" />
-                     </font>
-                  </Label>
-               </children>
-            </VBox>
-         </children>
-      </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Recursos%20Gráficos/Imagenes/EditadasGin.png" />
-               </image></ImageView>
-            <VBox prefHeight="150.0" prefWidth="396.0">
-               <children>
-                  <Label text="Merluza en salsa verde">
-                     <font>
-                        <Font name="Segoe Script" size="24.0" />
-                     </font>
-                  </Label>
-                  <Label text="12€">
-                     <font>
-                        <Font name="Segoe Script" size="18.0" />
-                     </font>
-                  </Label>
-               </children>
-            </VBox>
-         </children>
-      </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Recursos%20Gráficos/Imagenes/EditadasTequila.png" />
-               </image></ImageView>
-            <VBox prefHeight="150.0" prefWidth="398.0">
-               <children>
-                  <Label text="Filetes de lomo con patatas">
-                     <font>
-                        <Font name="Segoe Script" size="24.0" />
-                     </font>
-                  </Label>
-                  <Label text="15€">
-                     <font>
-                        <Font name="Segoe Script" size="18.0" />
-                     </font>
-                  </Label>
-               </children>
-            </VBox>
-         </children>
-      </HBox>
-       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-           <children>
-               <Button mnemonicParsing="false" onMouseClicked="#volverMenu" text="Volver al menu">
-                   <HBox.margin>
-                       <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-                   </HBox.margin></Button>
-               <Button mnemonicParsing="false" text="Pagar">
-                   <HBox.margin>
-                       <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-                   </HBox.margin></Button>
-           </children>
-       </HBox>
-   </children>
-</VBox>
+   </bottom>
+</BorderPane>
