@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="624.0" style="-fx-background-color: DD99BB;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.proyecto.Menu">
+   <children>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Recursos%20Gráficos/Imagenes/EditadasCerveza_Copa.png" />
+               </image></ImageView>
+            <VBox prefHeight="150.0" prefWidth="280.0">
+               <children>
+                  <Label prefHeight="44.0" prefWidth="305.0" text="Patatas con alioli ">
+                     <font>
+                        <Font name="Segoe Script" size="24.0" />
+                     </font></Label>
+                  <Label text="5€">
+                     <font>
+                        <Font name="Segoe Script" size="18.0" />
+                     </font></Label>
+               </children></VBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Recursos%20Gráficos/Imagenes/EditadasCerveza_Jarra.png" />
+               </image></ImageView>
+            <VBox prefHeight="150.0" prefWidth="370.0">
+               <children>
+                  <Label prefHeight="44.0" prefWidth="395.0" text="Croquetas de jamón y queso">
+                     <font>
+                        <Font name="Segoe Script" size="24.0" />
+                     </font></Label>
+                  <Label text="5€">
+                     <font>
+                        <Font name="Segoe Script" size="18.0" />
+                     </font></Label>
+               </children></VBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Recursos%20Gráficos/Imagenes/EditadasCerveza_Jarra_Madera.png" />
+               </image></ImageView>
+            <VBox prefHeight="150.0" prefWidth="464.0">
+               <children>
+                  <Label prefHeight="44.0" prefWidth="468.0" text="Montaditos de tortilla con cebolla">
+                     <font>
+                        <Font name="Segoe Script" size="24.0" />
+                     </font></Label>
+                  <Label text="5€">
+                     <font>
+                        <Font name="Segoe Script" size="18.0" />
+                     </font></Label>
+               </children></VBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Recursos%20Gráficos/Imagenes/EditadasCerveza_Jarra2.png" />
+               </image></ImageView>
+            <VBox prefHeight="150.0" prefWidth="421.0">
+               <children>
+                  <Label text="Mini buñuelos de queso">
+                     <font>
+                        <Font name="Segoe Script" size="24.0" />
+                     </font></Label>
+                  <Label text="5€">
+                     <font>
+                        <Font name="Segoe Script" size="18.0" />
+                     </font></Label>
+               </children></VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button mnemonicParsing="false" onMouseClicked="#volverMenu" text="Volver al menu">
+               <HBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </HBox.margin></Button>
+            <Button mnemonicParsing="false" text="Pagar">
+               <HBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </HBox.margin></Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>
