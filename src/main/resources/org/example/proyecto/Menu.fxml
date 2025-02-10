@@ -17,11 +17,11 @@
          <children>
             <ImageView id="bebidas" fitHeight="153.0" fitWidth="135.0" layoutX="55.0" layoutY="40.0" onMouseClicked="#bebidas_clic" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Recursos%20Gráficos/Imagenes/EditadasCerveza_Jarra.png" />
+                  <Image url="@../../../Recursos_Gráficos/Imagenes/Bebidas/EditadasBrandy.png" />
                </image></ImageView>
             <ImageView fitHeight="129.0" fitWidth="98.0" layoutX="221.0" layoutY="68.0" onMouseClicked="#tapas_clic" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Recursos%20Gráficos/Imagenes/EditadasBrandy.png" />
+                  <Image url="@../../../Recursos_Gráficos/Imagenes/Alimentos/Sanwi.png" />
                </image></ImageView>
             <Label layoutX="81.0" layoutY="198.0" text="Bebidas">
                <font>
@@ -33,22 +33,22 @@
                </font></Label>
             <ImageView fitHeight="134.0" fitWidth="99.0" layoutX="371.0" layoutY="61.0" onMouseClicked="#primero_clic" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Recursos%20Gráficos/Imagenes/EditadasRum.png" />
+                  <Image url="@../../../Recursos_Gráficos/Imagenes/Alimentos/Ensalada.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="130.0" fitWidth="94.0" layoutX="58.0" layoutY="267.0" onMouseClicked="#segundo_clic" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Recursos%20Gráficos/Imagenes/EditadasSake.png" />
+                  <Image url="@../../../Recursos_Gráficos/Imagenes/Alimentos/Burger.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="234.0" layoutY="247.0" onMouseClicked="#postres_clic" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="150.0" fitWidth="114.0" layoutX="202.0" layoutY="258.0" onMouseClicked="#postres_clic" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Recursos%20Gráficos/Imagenes/EditadasVodka.png" />
+                  <Image url="@../../../Recursos_Gráficos/Imagenes/Alimentos/Sanwi02.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="142.0" fitWidth="101.0" layoutX="370.0" layoutY="257.0" onMouseClicked="#especial_clic" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="99.0" fitWidth="130.0" layoutX="354.0" layoutY="257.0" onMouseClicked="#especial_clic" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Recursos%20Gráficos/Imagenes/EditadasAbsenta.png" />
+                  <Image url="@../../../Recursos_Gráficos/Imagenes/Alimentos/Ensalada02.png" />
                </image>
             </ImageView>
             <Label layoutX="381.0" layoutY="200.0" text="Primer Plato">
@@ -61,7 +61,7 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="243.0" layoutY="408.0" text="Postres">
+            <Label layoutX="231.0" layoutY="408.0" text="Postres">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>

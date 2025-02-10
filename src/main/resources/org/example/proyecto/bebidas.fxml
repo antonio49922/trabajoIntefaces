@@ -6,103 +6,203 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="537.0" style="-fx-background-color: EAD7D1;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.proyecto.Menu">
-   <children>
-      <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+<BorderPane prefHeight="745.0" prefWidth="544.0" style="-fx-background-color: #EAD7D1;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.proyecto.BebidasController">
 
-            </ImageView>
-            <VBox prefHeight="150.0" prefWidth="318.0">
-               <children>
-                  <Label text="Absenta">
-                     <font>
-                        <Font name="Segoe Script" size="24.0" />
-                     </font>
-                  </Label>
-                  <Label text="20€">
-                     <font>
-                        <Font name="Segoe Script" size="18.0" />
-                     </font>
-                  </Label>
-               </children>
-            </VBox>
-         </children>
-      </HBox>
-      <HBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+    <!-- Menú lateral para categorías -->
+    <left>
+        <VBox alignment="CENTER" prefWidth="150.0" spacing="10.0">
+            <Hyperlink onAction="#cambiarASegundos" text="Segundos">
+                <font>
+                    <Font name="Segoe Script Bold" size="14.0" />
+                </font></Hyperlink>
+            <Hyperlink onAction="#cambiarAPostres" text="Postres">
+                <font>
+                    <Font name="Segoe Script Bold" size="14.0" />
+                </font></Hyperlink>
+            <Hyperlink onAction="#cambiarATapas" text="Tapas">
+                <font>
+                    <Font name="Segoe Script Bold" size="14.0" />
+                </font></Hyperlink>
+            <Hyperlink onAction="#cambiarAPrimeros" style="-fx-font-weight: bold;" text="Primeros">
+                <font>
+                    <Font name="Segoe Script" size="14.0" />
+                </font></Hyperlink>
+         <Hyperlink layoutX="47.0" layoutY="409.0" onAction="#cambiarAEspeciales" style="-fx-font-weight: bold;" text="Especiales">
+            <font>
+               <Font name="Segoe Script" size="14.0" />
+            </font>
+         </Hyperlink>
+        </VBox>
+    </left>
 
-            </ImageView>
-            <VBox prefHeight="150.0" prefWidth="318.0">
-               <children>
-                  <Label text="Brandy">
-                     <font>
-                        <Font name="Segoe Script" size="24.0" />
-                     </font>
-                  </Label>
-                  <Label text="15€">
-                     <font>
-                        <Font name="Segoe Script" size="18.0" />
-                     </font>
-                  </Label>
-               </children>
-            </VBox>
-         </children>
-      </HBox>
-      <HBox alignment="TOP_CENTER" layoutX="10.0" layoutY="160.0" prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+    <!-- Contenido del menú -->
+    <center>
+        <ScrollPane fitToWidth="true" prefHeight="600.0">
+            <content>
+                <VBox alignment="TOP_CENTER" prefHeight="700.0" prefWidth="392.0" spacing="10.0">
+                    <padding>
+                        <Insets bottom="10" left="10" right="10" top="10" />
+                    </padding>
 
-            </ImageView>
-            <VBox prefHeight="150.0" prefWidth="318.0">
-               <children>
-                  <Label text="Cognac">
-                     <font>
-                        <Font name="Segoe Script" size="24.0" />
-                     </font>
-                  </Label>
-                  <Label text="25€">
-                     <font>
-                        <Font name="Segoe Script" size="18.0" />
-                     </font>
-                  </Label>
-               </children>
-            </VBox>
-         </children>
-      </HBox>
-      <HBox alignment="TOP_CENTER" layoutX="10.0" layoutY="311.0" prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                    <!-- Ensalada César -->
+                    <HBox alignment="TOP_CENTER" spacing="10.0">
+                        <VBox alignment="TOP_CENTER">
+                            <Label fx:id="RonLabel" onMouseClicked="#abrirRones" prefHeight="34.0" prefWidth="40.0" text="Ron">
+                        <font>
+                           <Font name="Segoe Script" size="18.0" />
+                        </font></Label>
+                        </VBox>
+                    </HBox>
+               <Pane fx:id="ron" prefHeight="77.0" prefWidth="372.0">
+                  <children>
+                     <Label layoutX="112.0" layoutY="9.0" text="Mojito">
+                        <font>
+                           <Font name="Segoe Script" size="12.0" />
+                        </font></Label>
+                     <Label layoutX="160.0" layoutY="9.0" text="5€">
+                        <font>
+                           <Font name="Segoe Script" size="12.0" />
+                        </font></Label>
+                            <TextField fx:id="txtCantidadCesar" alignment="CENTER" editable="false" layoutX="215.0" layoutY="5.0" prefWidth="40" text="0" />
+                            <Button fx:id="btnMasCesar" layoutX="257.0" layoutY="5.0" onAction="#incrementarCantidad" text="+" />
+                            <Button fx:id="btnMenosCesar" layoutX="194.0" layoutY="5.0" onAction="#decrementarCantidad" text="-" />
+                     <Label layoutX="53.0" layoutY="45.0" text="Daikiri Bosque">
+                        <font>
+                           <Font name="Segoe Script" size="12.0" />
+                        </font></Label>
+                     <Label layoutX="160.0" layoutY="45.0" text="8€">
+                        <font>
+                           <Font name="Segoe Script" size="12.0" />
+                        </font></Label>
+                     <TextField fx:id="txtCantidadCesar1" alignment="CENTER" editable="false" layoutX="215.0" layoutY="41.0" prefWidth="40" text="0" />
+                     <Button fx:id="btnMasCesar1" layoutX="257.0" layoutY="41.0" onAction="#incrementarCantidad" text="+" />
+                     <Button fx:id="btnMenosCesar1" layoutX="194.0" layoutY="41.0" onAction="#decrementarCantidad" text="-" />
+                  </children>
+               </Pane>
 
-            </ImageView>
-            <VBox prefHeight="150.0" prefWidth="318.0">
-               <children>
-                  <Label text="Ginebra">
-                     <font>
-                        <Font name="Magneto Bold" size="24.0" />
-                     </font>
-                  </Label>
-                  <Label text="20€">
-                     <font>
-                        <Font name="Segoe Script" size="18.0" />
-                     </font>
-                  </Label>
-               </children>
-            </VBox>
-         </children>
-      </HBox>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <Button mnemonicParsing="false" onMouseClicked="#volverMenu" text="Volver al menu">
-               <HBox.margin>
-                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-               </HBox.margin></Button>
-            <Button mnemonicParsing="false" text="Pagar">
-               <HBox.margin>
-                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-               </HBox.margin></Button>
-         </children>
-      </HBox>
-   </children>
-</VBox>
+
+                    <HBox alignment="TOP_CENTER" prefHeight="15.0" prefWidth="372.0" spacing="10.0">
+                        <VBox alignment="TOP_CENTER">
+                            <Label fx:id="vodkaLabel" onMouseClicked="#abrirVodkas" text="Vodka">
+                        <font>
+                           <Font name="Segoe Script" size="18.0" />
+                        </font></Label>
+                        </VBox>
+                        <HBox alignment="TOP_CENTER" spacing="5.0" />
+                    </HBox>
+               <Pane fx:id="vodka" prefHeight="78.0" prefWidth="372.0">
+                  <children>
+                            <Button fx:id="btnMenosMixta" layoutX="201.0" layoutY="1.0" onAction="#decrementarCantidad" text="-" />
+                            <TextField fx:id="txtCantidadMixta" alignment="CENTER" editable="false" layoutX="227.0" layoutY="1.0" prefWidth="40" text="0" />
+                            <Button fx:id="btnMasMixta" layoutX="271.0" layoutY="1.0" onAction="#incrementarCantidad" text="+" />
+                     <Label layoutX="73.0" layoutY="5.0" text="Cosmopolitan">
+                        <font>
+                           <Font name="Segoe Script" size="12.0" />
+                        </font></Label>
+                     <Label layoutX="168.0" layoutY="5.0" text="7€">
+                        <font>
+                           <Font name="Segoe Script" size="12.0" />
+                        </font></Label>
+                     <Button fx:id="btnMenosMixta1" layoutX="201.0" layoutY="36.0" onAction="#decrementarCantidad" text="-" />
+                     <TextField fx:id="txtCantidadMixta1" alignment="CENTER" editable="false" layoutX="227.0" layoutY="36.0" prefWidth="40" text="0" />
+                     <Button fx:id="btnMasMixta1" layoutX="271.0" layoutY="36.0" onAction="#incrementarCantidad" text="+" />
+                     <Label layoutX="35.0" layoutY="40.0" text="Long Island Ice Tea">
+                        <font>
+                           <Font name="Segoe Script" size="12.0" />
+                        </font></Label>
+                     <Label layoutX="168.0" layoutY="40.0" text="12€">
+                        <font>
+                           <Font name="Segoe Script" size="12.0" />
+                        </font></Label>
+                  </children>
+               </Pane>
+
+                    <HBox alignment="TOP_CENTER" prefHeight="21.0" prefWidth="372.0" spacing="10.0">
+                        <VBox alignment="TOP_CENTER">
+                            <Label fx:id="ginLabel" onMouseClicked="#abrirGin" text="Ginebra">
+                        <font>
+                           <Font name="Segoe Script" size="18.0" />
+                        </font></Label>
+                        </VBox>
+                        <HBox spacing="5.0" />
+                    </HBox>
+               <Pane fx:id="gin" prefHeight="83.0" prefWidth="372.0">
+                  <children>
+                     <Button fx:id="btnMenosMixta2" layoutX="196.0" layoutY="1.0" onAction="#decrementarCantidad" text="-" />
+                     <TextField fx:id="txtCantidadMixta2" alignment="CENTER" editable="false" layoutX="222.0" layoutY="1.0" prefWidth="40" text="0" />
+                     <Button fx:id="btnMasMixta2" layoutX="266.0" layoutY="1.0" onAction="#incrementarCantidad" text="+" />
+                     <Label layoutX="100.0" layoutY="5.0" text="Gin Fizz">
+                        <font>
+                           <Font name="Segoe Script" size="12.0" />
+                        </font></Label>
+                     <Label layoutX="164.0" layoutY="5.0" text="10€">
+                        <font>
+                           <Font name="Segoe Script" size="12.0" />
+                        </font></Label>
+                     <Button fx:id="btnMenosMixta11" layoutX="196.0" layoutY="36.0" onAction="#decrementarCantidad" text="-" />
+                     <TextField fx:id="txtCantidadMixta11" alignment="CENTER" editable="false" layoutX="222.0" layoutY="36.0" prefWidth="40" text="0" />
+                     <Button fx:id="btnMasMixta11" layoutX="266.0" layoutY="36.0" onAction="#incrementarCantidad" text="+" />
+                     <Label layoutX="47.0" layoutY="40.0" text="Leche de Bantha">
+                        <font>
+                           <Font name="Segoe Script" size="12.0" />
+                        </font></Label>
+                     <Label layoutX="164.0" layoutY="40.0" text="6€">
+                        <font>
+                           <Font name="Segoe Script" size="12.0" />
+                        </font></Label>
+                  </children>
+               </Pane>
+
+                    <HBox alignment="TOP_CENTER" prefWidth="372.0" spacing="10.0">
+                        <VBox alignment="TOP_CENTER">
+                            <Label fx:id="tequilaLabel" onMouseClicked="#abrirTequila" text="Tequila">
+                        <font>
+                           <Font name="Segoe Script" size="18.0" />
+                        </font></Label>
+                        </VBox>
+                        <HBox spacing="5.0" />
+                    </HBox>
+               <Pane fx:id="tequila" layoutX="20.0" layoutY="318.0" prefHeight="71.0" prefWidth="372.0">
+                  <children>
+                     <Button fx:id="btnMenosMixta21" layoutX="196.0" layoutY="5.0" onAction="#decrementarCantidad" text="-" />
+                     <TextField fx:id="txtCantidadMixta21" alignment="CENTER" editable="false" layoutX="222.0" layoutY="5.0" prefWidth="40" text="0" />
+                     <Button fx:id="btnMasMixta21" layoutX="266.0" layoutY="5.0" onAction="#incrementarCantidad" text="+" />
+                     <Label layoutX="55.0" layoutY="9.0" text="Tequila Sunrise">
+                        <font>
+                           <Font name="Segoe Script" size="12.0" />
+                        </font></Label>
+                     <Label layoutX="164.0" layoutY="9.0" text="7€">
+                        <font>
+                           <Font name="Segoe Script" size="12.0" />
+                        </font></Label>
+                     <Button fx:id="btnMenosMixta111" layoutX="196.0" layoutY="40.0" onAction="#decrementarCantidad" text="-" />
+                     <TextField fx:id="txtCantidadMixta111" alignment="CENTER" editable="false" layoutX="222.0" layoutY="40.0" prefWidth="40" text="0" />
+                     <Button fx:id="btnMasMixta111" layoutX="266.0" layoutY="40.0" onAction="#incrementarCantidad" text="+" />
+                     <Label layoutX="93.0" layoutY="44.0" text="Margarita">
+                        <font>
+                           <Font name="Segoe Script" size="12.0" />
+                        </font></Label>
+                     <Label layoutX="164.0" layoutY="44.0" text="10€">
+                        <font>
+                           <Font name="Segoe Script" size="12.0" />
+                        </font></Label>
+                  </children>
+               </Pane>
+                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../../../Recursos_Gráficos/Imagenes/Bebidas/EditadasTequila.png" />
+                        </image>
+                    </ImageView>
+
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+    <top>
+        <Label text="Titulo" BorderPane.alignment="CENTER">
+            <font>
+                <Font name="Bell MT" size="36.0" />
+            </font>
+        </Label>
+    </top>
+</BorderPane>

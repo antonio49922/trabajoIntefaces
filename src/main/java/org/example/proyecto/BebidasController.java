@@ -7,37 +7,50 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import java.io.IOException;
 
-public class SegundoController {
+public class BebidasController {
 
-    @FXML private TextField txtCantidadEntrecot, txtCantidadSalmon, txtCantidadPollo;
+    @FXML private TextField txtCantidadCesar, txtCantidadWrap, txtCantidadSandwich;
+    @FXML private Pane ron;
+    @FXML private Pane vodka;
+    @FXML private Pane gin;
+    @FXML private Pane tequila;
 
-    // Métodos para incrementar la cantidad de cada plato
+
+    @FXML
+    public void initialize() {
+        ron.setVisible(false);
+        vodka.setVisible(false);
+        gin.setVisible(false);
+        tequila.setVisible(false);
+    }
+
+
     @FXML
     private void incrementarCantidad(ActionEvent event) {
         Button btn = (Button) event.getSource();
         switch (btn.getId()) {
-            case "btnMasEntrecot" -> txtCantidadEntrecot.setText(aumentarCantidad(txtCantidadEntrecot));
-            case "btnMasSalmon" -> txtCantidadSalmon.setText(aumentarCantidad(txtCantidadSalmon));
-            case "btnMasPollo" -> txtCantidadPollo.setText(aumentarCantidad(txtCantidadPollo));
+            case "btnMasCesar" -> txtCantidadCesar.setText(aumentarCantidad(txtCantidadCesar));
+            case "btnMasWrap" -> txtCantidadWrap.setText(aumentarCantidad(txtCantidadWrap));
+            case "btnMasSandwich" -> txtCantidadSandwich.setText(aumentarCantidad(txtCantidadSandwich));
         }
     }
 
-    // Métodos para disminuir la cantidad de cada plato
     @FXML
     private void decrementarCantidad(ActionEvent event) {
         Button btn = (Button) event.getSource();
         switch (btn.getId()) {
-            case "btnMenosEntrecot" -> txtCantidadEntrecot.setText(disminuirCantidad(txtCantidadEntrecot));
-            case "btnMenosSalmon" -> txtCantidadSalmon.setText(disminuirCantidad(txtCantidadSalmon));
-            case "btnMenosPollo" -> txtCantidadPollo.setText(disminuirCantidad(txtCantidadPollo));
+            case "btnMenosCesar" -> txtCantidadCesar.setText(disminuirCantidad(txtCantidadCesar));
+            case "btnMenosWrap" -> txtCantidadWrap.setText(disminuirCantidad(txtCantidadWrap));
+            case "btnMenosSandwich" -> txtCantidadSandwich.setText(disminuirCantidad(txtCantidadSandwich));
         }
     }
 
-    // Métodos auxiliares para manejar cantidades
     private String aumentarCantidad(TextField textField) {
         return String.valueOf(Integer.parseInt(textField.getText()) + 1);
     }
@@ -47,7 +60,6 @@ public class SegundoController {
         return cantidad > 0 ? String.valueOf(cantidad - 1) : "0";
     }
 
-    // Métodos para cambiar entre las categorías del menú
     @FXML private void volverMenu(ActionEvent event) throws IOException { cambiarEscena(event, "Menu.fxml"); }
     @FXML private void cambiarAPrimeros(ActionEvent event) throws IOException { cambiarEscena(event, "Primero.fxml"); }
     @FXML private void cambiarASegundos(ActionEvent event) throws IOException { cambiarEscena(event, "Segundo.fxml"); }
@@ -56,7 +68,8 @@ public class SegundoController {
     @FXML private void cambiarABebidas(ActionEvent event) throws IOException { cambiarEscena(event, "Bebidas.fxml"); }
     @FXML private void cambiarAEspeciales(ActionEvent event) throws IOException { cambiarEscena(event, "especial.fxml"); }
 
-    // Método auxiliar para cambiar de escena
+//    @FXML private void cambiarA(ActionEvent event) throws IOException { cambiarEscena(event, "Bebidas.fxml"); }
+
     private void cambiarEscena(ActionEvent event, String fxml) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/org/example/proyecto/" + fxml));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -64,5 +77,18 @@ public class SegundoController {
         stage.show();
     }
 
+    public void abrirRones(MouseEvent mouseEvent) {
+        ron.setVisible(true);
+    }
+
+    public void abrirVodkas(MouseEvent mouseEvent) {
+        vodka.setVisible(true);
+    }
+    public void abrirGin(MouseEvent mouseEvent) {
+        gin.setVisible(true);
+    }
+    public void abrirTequila(MouseEvent mouseEvent){
+        tequila.setVisible(true);
+    }
 
 }

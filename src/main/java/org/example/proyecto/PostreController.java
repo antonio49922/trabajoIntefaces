@@ -51,6 +51,8 @@ public class PostreController {
     @FXML private void cambiarASegundos(ActionEvent event) throws IOException { cambiarEscena(event, "Segundo.fxml"); }
     @FXML private void cambiarATapas(ActionEvent event) throws IOException { cambiarEscena(event, "Tapas.fxml"); }
     @FXML private void cambiarABebidas(ActionEvent event) throws IOException { cambiarEscena(event, "Bebidas.fxml"); }
+    @FXML private void cambiarAEspeciales(ActionEvent event) throws IOException { cambiarEscena(event, "especial.fxml"); }
+
 
     private void cambiarEscena(ActionEvent event, String fxml) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/org/example/proyecto/" + fxml));
