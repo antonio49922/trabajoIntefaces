@@ -11,6 +11,11 @@ import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import java.io.IOException;
 
+/**
+ * Created by David and Antonio.
+ *
+ * @author David
+ */
 public class PrimeroController {
 
     @FXML private TextField txtCantidadCesar, txtCantidadWrap, txtCantidadSandwich;

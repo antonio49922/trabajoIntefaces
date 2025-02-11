@@ -62,6 +62,11 @@
                         </font>
                      </Label>
                   </VBox>
+                  <Label alignment="BOTTOM_CENTER" prefHeight="32.0" prefWidth="48.0" text="4.00€" textAlignment="CENTER">
+                     <font>
+                        <Font name="Segoe Script" size="10.0" />
+                     </font>
+                  </Label>
                   <HBox spacing="5.0">
                      <Button fx:id="btnMenosPatatas" onAction="#decrementarCantidad" text="-" />
                      <TextField fx:id="txtCantidadPatatas" alignment="CENTER" editable="false" prefWidth="40" text="0" />
@@ -75,12 +80,17 @@
                <!-- Croquetas de Jamón y Queso -->
                <HBox alignment="TOP_CENTER" spacing="10.0">
                   <VBox alignment="TOP_CENTER">
-                     <Label fx:id="CroquetasLabel" text="Croquetas de Jamón y Queso">
+                     <Label fx:id="CroquetasLabel" text="Croquetas de Jamón &#10;y Queso" textAlignment="CENTER">
                         <font>
                            <Font name="Segoe Script" size="18.0" />
                         </font>
                      </Label>
                   </VBox>
+                  <Label alignment="BOTTOM_CENTER" prefHeight="32.0" prefWidth="48.0" text="4.00€" textAlignment="CENTER">
+                     <font>
+                        <Font name="Segoe Script" size="10.0" />
+                     </font>
+                  </Label>
                   <HBox spacing="5.0">
                      <Button fx:id="btnMenosCroquetas" onAction="#decrementarCantidad" text="-" />
                      <TextField fx:id="txtCantidadCroquetas" alignment="CENTER" editable="false" prefWidth="40" text="0" />
@@ -94,12 +104,17 @@
                <!-- Montaditos de Tortilla con Cebolla -->
                <HBox alignment="TOP_CENTER" spacing="10.0">
                   <VBox alignment="TOP_CENTER">
-                     <Label fx:id="MontaditosLabel" prefHeight="66.0" prefWidth="300.0" text="Montaditos de Tortilla con&#10;Cebolla" textAlignment="CENTER">
+                     <Label fx:id="MontaditosLabel" prefHeight="66.0" prefWidth="300.0" text="Montaditos de Tortilla &#10;con Cebolla" textAlignment="CENTER">
                         <font>
                            <Font name="Segoe Script" size="18.0" />
                         </font>
                      </Label>
                   </VBox>
+                  <Label alignment="BOTTOM_CENTER" prefHeight="32.0" prefWidth="48.0" text="4.00€" textAlignment="CENTER">
+                     <font>
+                        <Font name="Segoe Script" size="10.0" />
+                     </font>
+                  </Label>
                   <HBox spacing="5.0">
                      <Button fx:id="btnMenosMontaditos" onAction="#decrementarCantidad" text="-" />
                      <TextField fx:id="txtCantidadMontaditos" alignment="CENTER" editable="false" prefWidth="40" text="0" />
@@ -119,6 +134,11 @@
                         </font>
                      </Label>
                   </VBox>
+                  <Label alignment="BOTTOM_CENTER" prefHeight="32.0" prefWidth="48.0" text="4.00€" textAlignment="CENTER">
+                     <font>
+                        <Font name="Segoe Script" size="10.0" />
+                     </font>
+                  </Label>
                   <HBox spacing="5.0">
                      <Button fx:id="btnMenosBunuelos" onAction="#decrementarCantidad" text="-" />
                      <TextField fx:id="txtCantidadBunuelos" alignment="CENTER" editable="false" prefWidth="40" text="0" />

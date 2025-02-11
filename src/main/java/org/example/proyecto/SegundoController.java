@@ -10,7 +10,11 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import java.io.IOException;
-
+/**
+ * Created by David an Antonio.
+ *
+ * @author David
+ */
 public class SegundoController {
 
     @FXML private TextField txtCantidadEntrecot, txtCantidadSalmon, txtCantidadPollo;

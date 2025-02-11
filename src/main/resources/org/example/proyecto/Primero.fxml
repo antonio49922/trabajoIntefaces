@@ -6,42 +6,39 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="781.0" prefWidth="577.0" style="-fx-background-color: #EAD7D1;"
-            xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="org.example.proyecto.PrimeroController">
+<BorderPane prefHeight="781.0" prefWidth="577.0" style="-fx-background-color: #EAD7D1;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.proyecto.PrimeroController">
 
     <!-- Menú lateral para categorías -->
     <left>
-        <VBox alignment="CENTER" prefHeight="675.0" prefWidth="127.0" spacing="10.0"
-              style="-fx-border-color: #5c4da8; -fx-border-width: 2px; -fx-padding: 10px;">
+        <VBox alignment="CENTER" prefHeight="675.0" prefWidth="127.0" spacing="10.0" style="-fx-border-color: #5c4da8; -fx-border-width: 2px; -fx-padding: 10px;">
             <ImageView fitHeight="105.0" fitWidth="113.0" opacity="0.86" pickOnBounds="true" preserveRatio="true">
                 <image>
-                    <Image url="@../../../Recursos_Gráficos/Fuentes/Ejemplo_Logo-removebg-cuadrado.png"/>
+                    <Image url="@../../../Recursos_Gráficos/Fuentes/Ejemplo_Logo-removebg-cuadrado.png" />
                 </image>
             </ImageView>
             <Hyperlink onAction="#cambiarABebidas" style="-fx-text-fill: #5c4da8;" text="Bebidas">
                 <font>
-                    <Font name="Segoe Script Bold" size="14.0"/>
+                    <Font name="Segoe Script Bold" size="14.0" />
                 </font>
             </Hyperlink>
             <Hyperlink onAction="#cambiarATapas" style="-fx-text-fill: #5c4da8;" text="Tapas">
                 <font>
-                    <Font name="Segoe Script Bold" size="14.0"/>
+                    <Font name="Segoe Script Bold" size="14.0" />
                 </font>
             </Hyperlink>
             <Hyperlink onAction="#cambiarASegundos" style="-fx-text-fill: #5c4da8;" text="Segundos">
                 <font>
-                    <Font name="Segoe Script Bold" size="14.0"/>
+                    <Font name="Segoe Script Bold" size="14.0" />
                 </font>
             </Hyperlink>
             <Hyperlink onAction="#cambiarAEspeciales" style="-fx-text-fill: #5c4da8;" text="Especiales">
                 <font>
-                    <Font name="Segoe Script Bold" size="14.0"/>
+                    <Font name="Segoe Script Bold" size="14.0" />
                 </font>
             </Hyperlink>
             <Hyperlink onAction="#cambiarAPostres" style="-fx-text-fill: #5c4da8;" text="Postres">
                 <font>
-                    <Font name="Segoe Script Bold" size="14.0"/>
+                    <Font name="Segoe Script Bold" size="14.0" />
                 </font>
             </Hyperlink>
         </VBox>
@@ -51,10 +48,9 @@
     <center>
         <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" prefHeight="675.0">
             <content>
-                <VBox alignment="TOP_CENTER" prefHeight="680.0" prefWidth="425.0" spacing="10.0"
-                      style="-fx-border-color: #5c4da8; -fx-border-width: 2px; -fx-padding: 10px;">
+                <VBox alignment="TOP_CENTER" prefHeight="680.0" prefWidth="425.0" spacing="10.0" style="-fx-border-color: #5c4da8; -fx-border-width: 2px; -fx-padding: 10px;">
                     <padding>
-                        <Insets bottom="10" left="10" right="10" top="10"/>
+                        <Insets bottom="10" left="10" right="10" top="10" />
                     </padding>
 
                     <!-- Ensalada César -->
@@ -62,17 +58,22 @@
                         <VBox alignment="TOP_CENTER">
                             <Label fx:id="CesarLabel" text="Ensalada César">
                                 <font>
-                                    <Font name="Segoe Script" size="18.0"/>
+                                    <Font name="Segoe Script" size="18.0" />
                                 </font>
                             </Label>
                         </VBox>
+                        <Label alignment="BOTTOM_CENTER" prefHeight="32.0" prefWidth="48.0" text="4.00€" textAlignment="CENTER">
+                            <font>
+                                <Font name="Segoe Script" size="10.0" />
+                            </font>
+                        </Label>
                         <HBox spacing="5.0">
-                            <Button fx:id="btnMenosCesar" onAction="#decrementarCantidad" text="-"/>
-                            <TextField fx:id="txtCantidadCesar" alignment="CENTER" editable="false" prefWidth="40" text="0"/>
-                            <Button fx:id="btnMasCesar" onAction="#incrementarCantidad" text="+"/>
+                            <Button fx:id="btnMenosCesar" onAction="#decrementarCantidad" text="-" />
+                            <TextField fx:id="txtCantidadCesar" alignment="CENTER" editable="false" prefWidth="40" text="0" />
+                            <Button fx:id="btnMasCesar" onAction="#incrementarCantidad" text="+" />
                         </HBox>
                         <padding>
-                            <Insets top="15.0"/>
+                            <Insets top="15.0" />
                         </padding>
                     </HBox>
 
@@ -81,17 +82,22 @@
                         <VBox alignment="TOP_CENTER">
                             <Label fx:id="MixtaLabel" text="Ensalada Mixta">
                                 <font>
-                                    <Font name="Segoe Script" size="18.0"/>
+                                    <Font name="Segoe Script" size="18.0" />
                                 </font>
                             </Label>
                         </VBox>
+                        <Label alignment="BOTTOM_CENTER" prefHeight="32.0" prefWidth="48.0" text="4.00€" textAlignment="CENTER">
+                            <font>
+                                <Font name="Segoe Script" size="10.0" />
+                            </font>
+                        </Label>
                         <HBox spacing="5.0">
-                            <Button fx:id="btnMenosMixta" onAction="#decrementarCantidad" text="-"/>
-                            <TextField fx:id="txtCantidadMixta" alignment="CENTER" editable="false" prefWidth="40" text="0"/>
-                            <Button fx:id="btnMasMixta" onAction="#incrementarCantidad" text="+"/>
+                            <Button fx:id="btnMenosMixta" onAction="#decrementarCantidad" text="-" />
+                            <TextField fx:id="txtCantidadMixta" alignment="CENTER" editable="false" prefWidth="40" text="0" />
+                            <Button fx:id="btnMasMixta" onAction="#incrementarCantidad" text="+" />
                         </HBox>
                         <padding>
-                            <Insets top="90.0"/>
+                            <Insets top="90.0" />
                         </padding>
                     </HBox>
 
@@ -100,17 +106,22 @@
                         <VBox alignment="TOP_CENTER">
                             <Label fx:id="WrapLabel" text="Wrap de Pollo">
                                 <font>
-                                    <Font name="Segoe Script" size="18.0"/>
+                                    <Font name="Segoe Script" size="18.0" />
                                 </font>
                             </Label>
                         </VBox>
+                        <Label alignment="BOTTOM_CENTER" prefHeight="32.0" prefWidth="48.0" text="4.00€" textAlignment="CENTER">
+                            <font>
+                                <Font name="Segoe Script" size="10.0" />
+                            </font>
+                        </Label>
                         <HBox spacing="5.0">
-                            <Button fx:id="btnMenosWrap" onAction="#decrementarCantidad" text="-"/>
-                            <TextField fx:id="txtCantidadWrap" alignment="CENTER" editable="false" prefWidth="40" text="0"/>
-                            <Button fx:id="btnMasWrap" onAction="#incrementarCantidad" text="+"/>
+                            <Button fx:id="btnMenosWrap" onAction="#decrementarCantidad" text="-" />
+                            <TextField fx:id="txtCantidadWrap" alignment="CENTER" editable="false" prefWidth="40" text="0" />
+                            <Button fx:id="btnMasWrap" onAction="#incrementarCantidad" text="+" />
                         </HBox>
                         <padding>
-                            <Insets top="90.0"/>
+                            <Insets top="90.0" />
                         </padding>
                     </HBox>
 
@@ -119,25 +130,24 @@
                         <VBox alignment="TOP_CENTER">
                             <Label fx:id="SandwichLabel" text="Sándwich Club">
                                 <font>
-                                    <Font name="Segoe Script" size="18.0"/>
+                                    <Font name="Segoe Script" size="18.0" />
                                 </font>
                             </Label>
                         </VBox>
+                        <Label alignment="BOTTOM_CENTER" prefHeight="32.0" prefWidth="48.0" text="4.00€" textAlignment="CENTER">
+                            <font>
+                                <Font name="Segoe Script" size="10.0" />
+                            </font>
+                        </Label>
                         <HBox spacing="5.0">
-                            <Button fx:id="btnMenosSandwich" onAction="#decrementarCantidad" text="-"/>
-                            <TextField fx:id="txtCantidadSandwich" alignment="CENTER" editable="false" prefWidth="40" text="0"/>
-                            <Button fx:id="btnMasSandwich" onAction="#incrementarCantidad" text="+"/>
+                            <Button fx:id="btnMenosSandwich" onAction="#decrementarCantidad" text="-" />
+                            <TextField fx:id="txtCantidadSandwich" alignment="CENTER" editable="false" prefWidth="40" text="0" />
+                            <Button fx:id="btnMasSandwich" onAction="#incrementarCantidad" text="+" />
                         </HBox>
                         <padding>
-                            <Insets top="95.0"/>
+                            <Insets top="95.0" />
                         </padding>
                     </HBox>
-
-                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                            <Image url="@../../../Recursos_Gráficos/Imagenes/Alimentos/Sanwi.png"/>
-                        </image>
-                    </ImageView>
 
                 </VBox>
             </content>
@@ -147,7 +157,7 @@
     <top>
         <ImageView fitHeight="106.0" fitWidth="577.0" pickOnBounds="true" BorderPane.alignment="TOP_RIGHT">
             <image>
-                <Image url="@../../../Recursos_Gráficos/Imagenes/Recursos/rural-landscape-village-sketch-f.png"/>
+                <Image url="@../../../Recursos_Gráficos/Imagenes/Recursos/rural-landscape-village-sketch-f.png" />
             </image>
         </ImageView>
     </top>

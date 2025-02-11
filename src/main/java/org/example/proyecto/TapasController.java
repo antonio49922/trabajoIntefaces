@@ -10,7 +10,11 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import java.io.IOException;
-
+/**
+ * Created by David and Antonio.
+ *
+ * @author David
+ */
 public class TapasController {
 
     @FXML private TextField txtCantidadPatatas, txtCantidadCroquetas, txtCantidadMontaditos, txtCantidadBunuelos;
