@@ -5,6 +5,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
+<!--  -->
+
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="536.0" prefWidth="535.0" style="-fx-background-color: EAD7D1;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.proyecto.Menu">
    <top>
       <Label alignment="CENTER" prefHeight="75.0" prefWidth="110.0" styleClass="titulo" text="Menu" textAlignment="CENTER" textFill="WHITE" BorderPane.alignment="CENTER">

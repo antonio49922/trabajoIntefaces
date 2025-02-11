@@ -4,6 +4,8 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
+<!--  -->
+
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="233.0" prefWidth="263.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.proyecto.ScreenP">
    <children>
       <ProgressBar fx:id="progress" layoutX="32.0" layoutY="209.0" prefHeight="20.0" prefWidth="200.0" progress="0.0" />
