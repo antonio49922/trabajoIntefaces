@@ -1,79 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<!--  -->
+<BorderPane prefHeight="781.0" prefWidth="577.0" style="-fx-background-color: #EAD7D1;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.proyecto.Menu">
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="536.0" prefWidth="535.0" style="-fx-background-color: EAD7D1;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.proyecto.Menu">
+   <!-- Encabezado -->
    <top>
-      <Label alignment="CENTER" prefHeight="75.0" prefWidth="110.0" styleClass="titulo" text="Menu" textAlignment="CENTER" textFill="WHITE" BorderPane.alignment="CENTER">
-         <font>
-            <Font name="Segoe Script Bold" size="36.0" />
-         </font></Label>
+      <Pane prefHeight="85.0" prefWidth="577.0" style="-fx-background-color: #5c4da8;" BorderPane.alignment="CENTER" />
    </top>
+
+   <!-- Contenido central -->
    <center>
-      <Pane prefHeight="496.0" prefWidth="535.0" BorderPane.alignment="CENTER">
-         <children>
-            <ImageView id="bebidas" fitHeight="153.0" fitWidth="135.0" layoutX="55.0" layoutY="40.0" onMouseClicked="#bebidas_clic" pickOnBounds="true" preserveRatio="true">
+      <VBox alignment="CENTER" spacing="20.0" style="-fx-border-color: #5c4da8; -fx-border-width: 2px; -fx-padding: 10px;">
+         <padding>
+            <Insets bottom="20" left="20" right="20" top="20" />
+         </padding>
+         <ImageView fitHeight="25.0" fitWidth="22.0" onMouseClicked="#iniciarSesion" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../../Recursos_Gráficos/Imagenes/usuarioIcono.png" />
+            </image>
+         </ImageView>
+         <Label onMouseClicked="#iniciarSesion" text="Iniciar Sesión">
+            <font>
+               <Font name="Segoe Script" size="13.0" />
+            </font>
+         </Label>
+         <GridPane alignment="CENTER" hgap="40" vgap="30">
+            <columnConstraints>
+               <ColumnConstraints halignment="CENTER" />
+               <ColumnConstraints halignment="CENTER" />
+               <ColumnConstraints halignment="CENTER" />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints valignment="CENTER" />
+               <RowConstraints valignment="CENTER" />
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
+
+            <!-- Bebidas -->
+            <ImageView fitHeight="153.0" fitWidth="135.0" onMouseClicked="#bebidas_clic" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="0">
                <image>
                   <Image url="@../../../Recursos_Gráficos/Imagenes/Bebidas/EditadasBrandy.png" />
-               </image></ImageView>
-            <ImageView fitHeight="129.0" fitWidth="98.0" layoutX="221.0" layoutY="68.0" onMouseClicked="#tapas_clic" pickOnBounds="true" preserveRatio="true">
+               </image>
+            </ImageView>
+            <Label text="Bebidas" GridPane.columnIndex="0" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Segoe Script Bold" size="14.0" />
+               </font>
+            </Label>
+
+            <!-- Tapas -->
+            <ImageView fitHeight="129.0" fitWidth="98.0" onMouseClicked="#tapas_clic" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="0">
                <image>
                   <Image url="@../../../Recursos_Gráficos/Imagenes/Alimentos/Sanwi.png" />
-               </image></ImageView>
-            <Label layoutX="81.0" layoutY="198.0" text="Bebidas">
+               </image>
+            </ImageView>
+            <Label text="Tapas" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font name="Segoe Script Bold" size="14.0" />
-               </font></Label>
-            <Label layoutX="240.0" layoutY="200.0" text="Tapas">
-               <font>
-                  <Font name="Segoe Script Bold" size="14.0" />
-               </font></Label>
-            <ImageView fitHeight="134.0" fitWidth="99.0" layoutX="371.0" layoutY="61.0" onMouseClicked="#primero_clic" pickOnBounds="true" preserveRatio="true">
+               </font>
+            </Label>
+
+            <!-- Primer Plato -->
+            <ImageView fitHeight="134.0" fitWidth="99.0" onMouseClicked="#primero_clic" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="0">
                <image>
                   <Image url="@../../../Recursos_Gráficos/Imagenes/Alimentos/Ensalada.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="130.0" fitWidth="94.0" layoutX="58.0" layoutY="267.0" onMouseClicked="#segundo_clic" pickOnBounds="true" preserveRatio="true">
+            <Label text="Primer Plato" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Segoe Script Bold" size="14.0" />
+               </font>
+            </Label>
+
+            <!-- Segundo Plato -->
+            <ImageView fitHeight="130.0" fitWidth="94.0" onMouseClicked="#segundo_clic" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="2">
                <image>
                   <Image url="@../../../Recursos_Gráficos/Imagenes/Alimentos/Burger.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="114.0" layoutX="202.0" layoutY="258.0" onMouseClicked="#postres_clic" pickOnBounds="true" preserveRatio="true">
+            <Label text="Segundo Plato" GridPane.columnIndex="0" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Segoe Script Bold" size="14.0" />
+               </font>
+            </Label>
+
+            <!-- Postres -->
+            <ImageView fitHeight="150.0" fitWidth="114.0" onMouseClicked="#postres_clic" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <image>
                   <Image url="@../../../Recursos_Gráficos/Imagenes/Alimentos/Sanwi02.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="99.0" fitWidth="130.0" layoutX="354.0" layoutY="257.0" onMouseClicked="#especial_clic" pickOnBounds="true" preserveRatio="true">
+            <Label text="Postres" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Segoe Script Bold" size="14.0" />
+               </font>
+            </Label>
+
+            <!-- Especial -->
+            <ImageView fitHeight="99.0" fitWidth="130.0" onMouseClicked="#especial_clic" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <image>
                   <Image url="@../../../Recursos_Gráficos/Imagenes/Alimentos/Ensalada02.png" />
                </image>
             </ImageView>
-            <Label layoutX="381.0" layoutY="200.0" text="Primer Plato">
+            <Label text="Especial de la casa" GridPane.columnIndex="2" GridPane.rowIndex="3">
                <font>
                   <Font name="Segoe Script Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="59.0" layoutY="408.0" text="Segundo Plato">
-               <font>
-                  <Font name="Segoe Script Bold" size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="231.0" layoutY="408.0" text="Postres">
-               <font>
-                  <Font name="Segoe Script Bold" size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="359.0" layoutY="408.0" text="Especial de la casa">
-               <font>
-                  <Font name="Segoe Script Bold" size="14.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
+         </GridPane>
+      </VBox>
    </center>
+   <top>
+      <ImageView fitHeight="106.0" fitWidth="577.0" pickOnBounds="true" BorderPane.alignment="TOP_RIGHT">
+         <image>
+            <Image url="@../../../Recursos_Gráficos/Imagenes/Recursos/rural-landscape-village-sketch-f.png" />
+         </image>
+      </ImageView>
+   </top>
 </BorderPane>

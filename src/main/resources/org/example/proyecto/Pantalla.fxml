@@ -6,12 +6,17 @@
 
 <!--  -->
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="233.0" prefWidth="263.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.proyecto.ScreenP">
+<Pane prefHeight="233.0" prefWidth="402.0" style="-fx-background-color: white;"
+      xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.proyecto.ScreenP" stylesheets="@../../../styles.css">
    <children>
-      <ProgressBar fx:id="progress" layoutX="32.0" layoutY="209.0" prefHeight="20.0" prefWidth="200.0" progress="0.0" />
-      <ImageView fitHeight="186.0" fitWidth="200.0" layoutX="32.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+      <ProgressBar fx:id="progress" layoutX="99.0" layoutY="209.0"
+                   prefHeight="20.0" prefWidth="200.0" progress="0.0"/>
+      <ImageView fitHeight="159.0" fitWidth="416.0" layoutX="5.0" layoutY="23.0"
+                 pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../Recursos_Gráficos/Imagenes/Alimentos/Burger%20diseño.jpg" />
-         </image></ImageView>
+            <Image url="@../../../Recursos_Gráficos/Imagenes/Recursos/rural-landscape-village-sketch-f.png"/>
+         </image>
+      </ImageView>
    </children>
 </Pane>

@@ -5,56 +5,63 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<!--  -->
-
 
 <BorderPane prefHeight="781.0" prefWidth="577.0" style="-fx-background-color: #EAD7D1;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.proyecto.BebidasController">
 
     <!-- Menú lateral para categorías -->
     <left>
-        <VBox alignment="CENTER" prefWidth="150.0" spacing="10.0">
-         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-            <Hyperlink onAction="#cambiarASegundos" text="Segundos">
+        <VBox alignment="CENTER" prefHeight="675.0" prefWidth="127.0" spacing="10.0" style="-fx-border-color: #5c4da8; -fx-border-width: 2px; -fx-padding: 10px;">
+         <ImageView fitHeight="105.0" fitWidth="113.0" opacity="0.86" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../../Recursos_Gráficos/Fuentes/Ejemplo_Logo-removebg-cuadrado.png" />
+            </image></ImageView>
+            <Hyperlink onAction="#cambiarATapas" style="-fx-text-fill: #5c4da8;" text="Tapas">
                 <font>
                     <Font name="Segoe Script Bold" size="14.0" />
                 </font></Hyperlink>
-            <Hyperlink onAction="#cambiarAPostres" text="Postres">
+            <Hyperlink onAction="#cambiarAPrimeros" style="-fx-text-fill: #5c4da8;" text="Primeros">
                 <font>
                     <Font name="Segoe Script Bold" size="14.0" />
                 </font></Hyperlink>
-            <Hyperlink onAction="#cambiarATapas" text="Tapas">
+            <Hyperlink onAction="#cambiarASegundos" style="-fx-text-fill: #5c4da8;" text="Segundos">
                 <font>
                     <Font name="Segoe Script Bold" size="14.0" />
                 </font></Hyperlink>
-            <Hyperlink onAction="#cambiarAPrimeros" text="Primeros">
+            <Hyperlink layoutX="47.0" layoutY="409.0" onAction="#cambiarAEspeciales" style="-fx-text-fill: #5c4da8;" text="Especiales">
+                <font>
+                    <Font name="Segoe Script Bold" size="14.0" />
+                </font>
+            </Hyperlink>
+            <Hyperlink onAction="#cambiarAPostres" style="-fx-text-fill: #5c4da8;" text="Postres">
                 <font>
                     <Font name="Segoe Script Bold" size="14.0" />
                 </font></Hyperlink>
-         <Hyperlink layoutX="47.0" layoutY="409.0" onAction="#cambiarAEspeciales" text="Especiales">
-            <font>
-               <Font name="Segoe Script Bold" size="14.0" />
-            </font>
-         </Hyperlink>
         </VBox>
     </left>
 
     <!-- Contenido del menú -->
     <center>
-        <ScrollPane fitToWidth="true" prefHeight="600.0">
+        <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" prefHeight="675.0">
             <content>
-                <VBox alignment="TOP_CENTER" prefHeight="700.0" prefWidth="392.0" spacing="10.0">
+                <VBox alignment="TOP_CENTER" prefHeight="680.0" prefWidth="425.0" spacing="10.0" style="-fx-border-color: #5c4da8; -fx-border-width: 2px; -fx-padding: 10px;">
                     <padding>
                         <Insets bottom="10" left="10" right="10" top="10" />
                     </padding>
 
-                    <!-- Ensalada César -->
+                    <!-- Ron -->
                     <HBox alignment="TOP_CENTER" spacing="10.0">
                         <VBox alignment="TOP_CENTER">
-                            <Label fx:id="RonLabel" onMouseClicked="#abrirRones" prefHeight="34.0" prefWidth="40.0" text="Ron">
+                            <Label fx:id="RonLabel" onMouseClicked="#abrirRones" prefHeight="34.0" prefWidth="60.0" text="Ron ▾">
                         <font>
                            <Font name="Segoe Script" size="18.0" />
                         </font></Label>
                         </VBox>
+                  <opaqueInsets>
+                     <Insets />
+                  </opaqueInsets>
+                  <padding>
+                     <Insets top="15.0" />
+                  </padding>
                     </HBox>
                <Pane fx:id="ron" prefHeight="77.0" prefWidth="372.0">
                   <children>
@@ -72,7 +79,7 @@
                                     <Tooltip text="Añadir 1" />
                                 </tooltip>
                             </Button>
-                            <Button fx:id="btnMenosCesar" layoutX="194.0" layoutY="5.0" onAction="#decrementarCantidad" text="-" >
+                            <Button fx:id="btnMenosCesar" layoutX="194.0" layoutY="5.0" onAction="#decrementarCantidad" text="-">
                                 <tooltip>
                                     <Tooltip text="Quitar 1" />
                                 </tooltip>
@@ -86,23 +93,28 @@
                            <Font name="Segoe Script" size="12.0" />
                         </font></Label>
                      <TextField fx:id="txtCantidadCesar1" alignment="CENTER" editable="false" layoutX="215.0" layoutY="41.0" prefWidth="40" text="0" />
-                     <Button fx:id="btnMasCesar1" layoutX="257.0" layoutY="41.0" onAction="#incrementarCantidad" text="+" >
+                     <Button fx:id="btnMasCesar1" layoutX="257.0" layoutY="41.0" onAction="#incrementarCantidad" text="+">
                          <tooltip>
                              <Tooltip text="Añadir 1" />
                          </tooltip>
                      </Button>
-                     <Button fx:id="btnMenosCesar1" layoutX="194.0" layoutY="41.0" onAction="#decrementarCantidad" text="-" >
+                     <Button fx:id="btnMenosCesar1" layoutX="194.0" layoutY="41.0" onAction="#decrementarCantidad" text="-">
                          <tooltip>
                              <Tooltip text="Quitar 1" />
                          </tooltip>
                      </Button>
+                      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-33.0" layoutY="-45.0" pickOnBounds="true" preserveRatio="true" rotate="48.8">
+                          <image>
+                              <Image url="@../../../Recursos_Gráficos/Imagenes/Bebidas/EditadasRum.png" />
+                          </image>
+                      </ImageView>
                   </children>
                </Pane>
 
 
                     <HBox alignment="TOP_CENTER" prefHeight="15.0" prefWidth="372.0" spacing="10.0">
                         <VBox alignment="TOP_CENTER">
-                            <Label fx:id="vodkaLabel" onMouseClicked="#abrirVodkas" text="Vodka">
+                            <Label fx:id="vodkaLabel" onMouseClicked="#abrirVodkas" text="Vodka ▾">
                         <font>
                            <Font name="Segoe Script" size="18.0" />
                         </font></Label>
@@ -111,13 +123,13 @@
                     </HBox>
                <Pane fx:id="vodka" prefHeight="78.0" prefWidth="372.0">
                   <children>
-                            <Button fx:id="btnMenosMixta" layoutX="201.0" layoutY="1.0" onAction="#decrementarCantidad" text="-" >
+                            <Button fx:id="btnMenosMixta" layoutX="201.0" layoutY="1.0" onAction="#decrementarCantidad" text="-">
                                 <tooltip>
                                     <Tooltip text="Quitar 1" />
                                 </tooltip>
                             </Button>
                             <TextField fx:id="txtCantidadMixta" alignment="CENTER" editable="false" layoutX="227.0" layoutY="1.0" prefWidth="40" text="0" />
-                            <Button fx:id="btnMasMixta" layoutX="271.0" layoutY="1.0" onAction="#incrementarCantidad" text="+" >
+                            <Button fx:id="btnMasMixta" layoutX="271.0" layoutY="1.0" onAction="#incrementarCantidad" text="+">
                                 <tooltip>
                                     <Tooltip text="Añadir 1" />
                                 </tooltip>
@@ -130,13 +142,13 @@
                         <font>
                            <Font name="Segoe Script" size="12.0" />
                         </font></Label>
-                     <Button fx:id="btnMenosMixta1" layoutX="201.0" layoutY="36.0" onAction="#decrementarCantidad" text="-" >
+                     <Button fx:id="btnMenosMixta1" layoutX="201.0" layoutY="36.0" onAction="#decrementarCantidad" text="-">
                          <tooltip>
                              <Tooltip text="Quitar 1" />
                          </tooltip>
                      </Button>
                      <TextField fx:id="txtCantidadMixta1" alignment="CENTER" editable="false" layoutX="227.0" layoutY="36.0" prefWidth="40" text="0" />
-                     <Button fx:id="btnMasMixta1" layoutX="271.0" layoutY="36.0" onAction="#incrementarCantidad" text="+" >
+                     <Button fx:id="btnMasMixta1" layoutX="271.0" layoutY="36.0" onAction="#incrementarCantidad" text="+">
                          <tooltip>
                              <Tooltip text="Añadir 1" />
                          </tooltip>
@@ -149,12 +161,17 @@
                         <font>
                            <Font name="Segoe Script" size="12.0" />
                         </font></Label>
+                          <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="333.0" layoutY="-36.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                  <Image url="@../../../Recursos_Gráficos/Imagenes/Bebidas/EditadasVodka.png" />
+                              </image>
+                          </ImageView>
                   </children>
                </Pane>
 
                     <HBox alignment="TOP_CENTER" prefHeight="21.0" prefWidth="372.0" spacing="10.0">
                         <VBox alignment="TOP_CENTER">
-                            <Label fx:id="ginLabel" onMouseClicked="#abrirGin" text="Ginebra">
+                            <Label fx:id="ginLabel" onMouseClicked="#abrirGin" text="Ginebra ▾">
                         <font>
                            <Font name="Segoe Script" size="18.0" />
                         </font></Label>
@@ -163,13 +180,13 @@
                     </HBox>
                <Pane fx:id="gin" prefHeight="83.0" prefWidth="372.0">
                   <children>
-                     <Button fx:id="btnMenosMixta2" layoutX="196.0" layoutY="1.0" onAction="#decrementarCantidad" text="-" >
+                     <Button fx:id="btnMenosMixta2" layoutX="196.0" layoutY="1.0" onAction="#decrementarCantidad" text="-">
                          <tooltip>
                              <Tooltip text="Quitar 1" />
                          </tooltip>
                      </Button>
                      <TextField fx:id="txtCantidadMixta2" alignment="CENTER" editable="false" layoutX="222.0" layoutY="1.0" prefWidth="40" text="0" />
-                     <Button fx:id="btnMasMixta2" layoutX="266.0" layoutY="1.0" onAction="#incrementarCantidad" text="+" >
+                     <Button fx:id="btnMasMixta2" layoutX="266.0" layoutY="1.0" onAction="#incrementarCantidad" text="+">
                          <tooltip>
                              <Tooltip text="Añadir 1" />
                          </tooltip>
@@ -182,13 +199,13 @@
                         <font>
                            <Font name="Segoe Script" size="12.0" />
                         </font></Label>
-                     <Button fx:id="btnMenosMixta11" layoutX="196.0" layoutY="36.0" onAction="#decrementarCantidad" text="-" >
+                     <Button fx:id="btnMenosMixta11" layoutX="196.0" layoutY="36.0" onAction="#decrementarCantidad" text="-">
                          <tooltip>
                              <Tooltip text="Quitar 1" />
                          </tooltip>
                      </Button>
                      <TextField fx:id="txtCantidadMixta11" alignment="CENTER" editable="false" layoutX="222.0" layoutY="36.0" prefWidth="40" text="0" />
-                     <Button fx:id="btnMasMixta11" layoutX="266.0" layoutY="36.0" onAction="#incrementarCantidad" text="+" >
+                     <Button fx:id="btnMasMixta11" layoutX="266.0" layoutY="36.0" onAction="#incrementarCantidad" text="+">
                          <tooltip>
                              <Tooltip text="Añadir 1" />
                          </tooltip>
@@ -201,12 +218,17 @@
                         <font>
                            <Font name="Segoe Script" size="12.0" />
                         </font></Label>
+                      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-40.0" layoutY="-39.0" opacity="0.7" pickOnBounds="true" preserveRatio="true" rotate="48.8">
+                          <image>
+                              <Image url="@../../../Recursos_Gráficos/Imagenes/Bebidas/EditadasGin.png" />
+                          </image>
+                      </ImageView>
                   </children>
                </Pane>
 
                     <HBox alignment="TOP_CENTER" prefWidth="372.0" spacing="10.0">
                         <VBox alignment="TOP_CENTER">
-                            <Label fx:id="tequilaLabel" onMouseClicked="#abrirTequila" text="Tequila">
+                            <Label fx:id="tequilaLabel" onMouseClicked="#abrirTequila" text="Tequila ▾">
                         <font>
                            <Font name="Segoe Script" size="18.0" />
                         </font></Label>
@@ -215,13 +237,13 @@
                     </HBox>
                <Pane fx:id="tequila" layoutX="20.0" layoutY="318.0" prefHeight="71.0" prefWidth="372.0">
                   <children>
-                     <Button fx:id="btnMenosMixta21" layoutX="196.0" layoutY="5.0" onAction="#decrementarCantidad" text="-" >
+                     <Button fx:id="btnMenosMixta21" layoutX="196.0" layoutY="5.0" onAction="#decrementarCantidad" text="-">
                          <tooltip>
                              <Tooltip text="Quitar 1" />
                          </tooltip>
                      </Button>
                      <TextField fx:id="txtCantidadMixta21" alignment="CENTER" editable="false" layoutX="222.0" layoutY="5.0" prefWidth="40" text="0" />
-                     <Button fx:id="btnMasMixta21" layoutX="266.0" layoutY="5.0" onAction="#incrementarCantidad" text="+" >
+                     <Button fx:id="btnMasMixta21" layoutX="266.0" layoutY="5.0" onAction="#incrementarCantidad" text="+">
                          <tooltip>
                              <Tooltip text="Añadir 1" />
                          </tooltip>
@@ -234,13 +256,13 @@
                         <font>
                            <Font name="Segoe Script" size="12.0" />
                         </font></Label>
-                     <Button fx:id="btnMenosMixta111" layoutX="196.0" layoutY="40.0" onAction="#decrementarCantidad" text="-" >
+                     <Button fx:id="btnMenosMixta111" layoutX="196.0" layoutY="40.0" onAction="#decrementarCantidad" text="-">
                          <tooltip>
                              <Tooltip text="Quitar 1" />
                          </tooltip>
                      </Button>
                      <TextField fx:id="txtCantidadMixta111" alignment="CENTER" editable="false" layoutX="222.0" layoutY="40.0" prefWidth="40" text="0" />
-                     <Button fx:id="btnMasMixta111" layoutX="266.0" layoutY="40.0" onAction="#incrementarCantidad" text="+" >
+                     <Button fx:id="btnMasMixta111" layoutX="266.0" layoutY="40.0" onAction="#incrementarCantidad" text="+">
                          <tooltip>
                              <Tooltip text="Añadir 1" />
                          </tooltip>
@@ -253,26 +275,24 @@
                         <font>
                            <Font name="Segoe Script" size="12.0" />
                         </font></Label>
+                          <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="320.0" layoutY="-55.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                  <Image url="@../../../Recursos_Gráficos/Imagenes/Bebidas/EditadasTequila.png" />
+                              </image>
+                          </ImageView>
                   </children>
                </Pane>
-                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                            <Image url="@../../../Recursos_Gráficos/Imagenes/Bebidas/EditadasTequila.png" />
-                        </image>
-                    </ImageView>
 
                 </VBox>
             </content>
         </ScrollPane>
     </center>
     <top>
-        <ImageView fitHeight="126.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="TOP_RIGHT">
+        <ImageView fitHeight="106.0" fitWidth="577.0" pickOnBounds="true" BorderPane.alignment="TOP_RIGHT">
             <image>
-                <Image url="@../../../Recursos_Gráficos/Fuentes/Ejemplo_Logo-removebg-preview.png" />
+                <Image url="@../../../Recursos_Gráficos/Imagenes/Recursos/rural-landscape-village-sketch-f.png" />
             </image>
-            <BorderPane.margin>
-                <Insets right="50.0" />
-            </BorderPane.margin>
+
         </ImageView>
     </top>
 </BorderPane>

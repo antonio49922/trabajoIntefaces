@@ -1,0 +1,15 @@
+/**
+ * Created by David on 11/02/2025.
+ *
+ * @author David
+ */
+
+/* Cambia el color de la barra de progreso */
+.progress-bar {
+    -fx-accent: #5c4da8;
+}
+
+/* Cambia el color de fondo del contenedor de la barra */
+.progress-bar .track {
+    -fx-background-color: #EAD7D1;
+}

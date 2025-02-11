@@ -49,5 +49,11 @@ public class Menu {
         CambioPantalla.switchScene(currentStage, "Menu.fxml", "Registrate");
     }
 
+    @FXML
+    public void iniciarSesion(MouseEvent event) throws IOException {
+        Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        CambioPantalla.switchScene(currentStage, "InicioSesion.fxml", "Registrate");
+    }
+
 
 }
