@@ -10,7 +10,7 @@
 
    <!-- Menú lateral para categorías -->
    <left>
-      <VBox alignment="CENTER" prefWidth="150.0" spacing="10.0">
+      <VBox alignment="CENTER" prefWidth="185.0" spacing="10.0">
          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
          <Hyperlink onAction="#cambiarASegundos" text="Segundos">
             <font>
@@ -56,9 +56,17 @@
                      <Label style="-fx-font-size: 16px;" text="5.00€" />
                   </VBox>
                   <HBox spacing="5.0">
-                     <Button fx:id="btnMenosTiramisu" onAction="#decrementarCantidad" text="-" />
+                     <Button fx:id="btnMenosTiramisu" onAction="#decrementarCantidad" text="-">
+                        <tooltip>
+                           <Tooltip text="Quitar 1" />
+                        </tooltip>
+                     </Button>
                      <TextField fx:id="txtCantidadTiramisu" alignment="CENTER" editable="false" prefWidth="40" text="0" />
-                     <Button fx:id="btnMasTiramisu" onAction="#incrementarCantidad" text="+" />
+                     <Button fx:id="btnMasTiramisu" onAction="#incrementarCantidad" text="+">
+                        <tooltip>
+                           <Tooltip text="Añadir 1" />
+                        </tooltip>
+                     </Button>
                   </HBox>
                </HBox>
 
@@ -72,9 +80,17 @@
                      <Label style="-fx-font-size: 16px;" text="4.50€" />
                   </VBox>
                   <HBox spacing="5.0">
-                     <Button fx:id="btnMenosFlan" onAction="#decrementarCantidad" text="-" />
+                     <Button fx:id="btnMenosFlan" onAction="#decrementarCantidad" text="-">
+                        <tooltip>
+                           <Tooltip text="Quitar 1" />
+                        </tooltip>
+                     </Button>
                      <TextField fx:id="txtCantidadFlan" alignment="CENTER" editable="false" prefWidth="40" text="0" />
-                     <Button fx:id="btnMasFlan" onAction="#incrementarCantidad" text="+" />
+                     <Button fx:id="btnMasFlan" onAction="#incrementarCantidad" text="+" >
+                           <tooltip>
+                              <Tooltip text="Añadir 1" />
+                           </tooltip>
+                     </Button>
                   </HBox>
                </HBox>
 
@@ -88,9 +104,17 @@
                      <Label style="-fx-font-size: 16px;" text="6.00€" />
                   </VBox>
                   <HBox spacing="5.0">
-                     <Button fx:id="btnMenosCrepe" onAction="#decrementarCantidad" text="-" />
+                     <Button fx:id="btnMenosCrepe" onAction="#decrementarCantidad" text="-">
+                        <tooltip>
+                           <Tooltip text="Añadir 1" />
+                        </tooltip>
+                     </Button>
                      <TextField fx:id="txtCantidadCrepe" alignment="CENTER" editable="false" prefWidth="40" text="0" />
-                     <Button fx:id="btnMasCrepe" onAction="#incrementarCantidad" text="+" />
+                     <Button fx:id="btnMasCrepe" onAction="#incrementarCantidad" text="+">
+                        <tooltip>
+                           <Tooltip text="Añadir 1" />
+                        </tooltip>
+                     </Button>
                   </HBox>
                </HBox>
 
@@ -104,9 +128,17 @@
                      <Label style="-fx-font-size: 16px;" text="4.00€" />
                   </VBox>
                   <HBox spacing="5.0">
-                     <Button fx:id="btnMenosArroz" onAction="#decrementarCantidad" text="-" />
+                     <Button fx:id="btnMenosArroz" onAction="#decrementarCantidad" text="-" >
+                        <tooltip>
+                           <Tooltip text="Quitar 1" />
+                        </tooltip>
+                     </Button>
                      <TextField fx:id="txtCantidadArroz" alignment="CENTER" editable="false" prefWidth="40" text="0" />
-                     <Button fx:id="btnMasArroz" onAction="#incrementarCantidad" text="+" />
+                     <Button fx:id="btnMasArroz" onAction="#incrementarCantidad" text="+" >
+                        <tooltip>
+                           <Tooltip text="Añadir 1" />
+                        </tooltip>
+                     </Button>
                   </HBox>
                </HBox>
 
