@@ -8,12 +8,6 @@
 <!--  -->
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="536.0" prefWidth="535.0" style="-fx-background-color: EAD7D1;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.proyecto.Menu">
-   <top>
-      <Label alignment="CENTER" prefHeight="75.0" prefWidth="110.0" styleClass="titulo" text="Menu" textAlignment="CENTER" textFill="WHITE" BorderPane.alignment="CENTER">
-         <font>
-            <Font name="Segoe Script Bold" size="36.0" />
-         </font></Label>
-   </top>
    <center>
       <Pane prefHeight="496.0" prefWidth="535.0" BorderPane.alignment="CENTER">
          <children>
@@ -76,4 +70,25 @@
          </children>
       </Pane>
    </center>
+   <top>
+      <Pane prefHeight="85.0" prefWidth="535.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="213.0" layoutY="10.0" text="Menú" textFill="WHITE">
+               <font>
+                  <Font name="Segoe Script" size="36.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="32.0" fitWidth="40.0" layoutX="393.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#iniciarSesion">
+               <image>
+                  <Image url="@../../../Recursos_Gráficos/Imagenes/usuarioIcono.png"/>
+               </image>
+            </ImageView>
+            <Label layoutX="425.0" layoutY="35.0" text="Iniciar Sesión" onMouseClicked="#iniciarSesion">
+               <font>
+                  <Font name="Segoe Script" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </top>
 </BorderPane>
