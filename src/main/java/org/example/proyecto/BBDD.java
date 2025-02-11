@@ -7,12 +7,13 @@ import java.sql.DriverManager;
 **/
 public class BBDD {
 
-    String url="jdbc:mysql://localhost:3306/biblioteca";
+    String url="jdbc:mysql://localhost:3306/bar";
     String usuario="root";
     String password="";
     Connection con;
 
     public Connection conectar() {
+
         try {
             con= DriverManager.getConnection(url,usuario,password);
             System.out.println("Conexion establecida :)");
