@@ -86,4 +86,43 @@ public class BebidasController {
     public void abrirVodkas(MouseEvent mouseEvent) { vodka.setVisible(true); }
     public void abrirGin(MouseEvent mouseEvent) { gin.setVisible(true); }
     public void abrirTequila(MouseEvent mouseEvent) { tequila.setVisible(true); }
+
+    @FXML
+    private void añadirAlCarrito(ActionEvent event) throws IOException {
+        CarritoModel carrito = CarritoModel.getInstance();
+
+        agregarBebidaSiExiste(txtCantidadCesar, "Mojito", 5.00);
+        agregarBebidaSiExiste(txtCantidadCesar1, "Daikiri Bosque", 8.00);
+        agregarBebidaSiExiste(txtCantidadMixta, "Cosmopolitan", 7.00);
+        agregarBebidaSiExiste(txtCantidadMixta1, "Long Island Ice Tea", 12.00);
+        agregarBebidaSiExiste(txtCantidadMixta2, "Gin Fizz", 10.00);
+        agregarBebidaSiExiste(txtCantidadMixta11, "Leche de Bantha", 6.00);
+        agregarBebidaSiExiste(txtCantidadMixta21, "Tequila Sunrise", 7.00);
+        agregarBebidaSiExiste(txtCantidadMixta111, "Margarita", 10.00);
+
+        System.out.println("Productos añadidos al carrito.");
+
+        // Cambiar a la pantalla del carrito
+        Parent root = FXMLLoader.load(getClass().getResource("/org/example/proyecto/Carrito.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
+
+    private void agregarBebidaSiExiste(TextField textField, String nombre, double precio) {
+        if (textField != null && !textField.getText().isEmpty()) {
+            int cantidad = Integer.parseInt(textField.getText());
+            if (cantidad > 0) {
+                CarritoModel.getInstance().agregarItem(nombre + " x" + cantidad, cantidad * precio);
+            }
+        }
+    }
+
+    @FXML
+    private void seguirComprando(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/org/example/proyecto/Menu.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
 }
