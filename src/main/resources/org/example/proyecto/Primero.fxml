@@ -41,6 +41,11 @@
                     <Font name="Segoe Script Bold" size="14.0" />
                 </font>
             </Hyperlink>
+            <Button fx:id="btnAñadirCesta" onAction="#añadirAlCarrito" prefHeight="37.0" prefWidth="114.0" style="-fx-background-color: #FFA500; -fx-text-fill: white; -fx-font-size: 14px;" text="A la Cesta">
+                <font>
+                    <Font name="Segoe Script Bold" size="14.0" />
+                </font>
+            </Button>
         </VBox>
     </left>
 
@@ -148,6 +153,11 @@
                             <Insets top="95.0" />
                         </padding>
                     </HBox>
+
+                    <!-- Panes adicionales -->
+                    <Pane fx:id="panePlato1" />
+                    <Pane fx:id="panePlato2" />
+                    <Pane fx:id="panePlato3" />
 
                 </VBox>
             </content>

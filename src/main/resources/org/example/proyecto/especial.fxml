@@ -26,12 +26,12 @@
                <Font name="Segoe Script Bold" size="14.0" />
             </font>
          </Hyperlink>
-         <Hyperlink onAction="#cambiarAPrimeros" style="-fx-text-fill: #5c4da8;" text="Primeros">
+         <Hyperlink onAction="#cambiarASegundos" style="-fx-text-fill: #5c4da8;" text="Segundos">
             <font>
                <Font name="Segoe Script Bold" size="14.0" />
             </font>
          </Hyperlink>
-         <Hyperlink onAction="#cambiarASegundos" style="-fx-text-fill: #5c4da8;" text="Segundos">
+         <Hyperlink onAction="#cambiarAEspeciales" style="-fx-text-fill: #5c4da8;" text="Especiales">
             <font>
                <Font name="Segoe Script Bold" size="14.0" />
             </font>
@@ -41,6 +41,11 @@
                <Font name="Segoe Script Bold" size="14.0" />
             </font>
          </Hyperlink>
+         <Button fx:id="btnAñadirCesta" onAction="#añadirAlCarrito" prefHeight="37.0" prefWidth="114.0" style="-fx-background-color: #FFA500; -fx-text-fill: white; -fx-font-size: 14px;" text="A la Cesta">
+            <font>
+               <Font name="Segoe Script Bold" size="14.0" />
+            </font>
+         </Button>
       </VBox>
    </left>
 
@@ -68,9 +73,9 @@
                      </font>
                   </Label>
                   <HBox spacing="5.0">
-                     <Button fx:id="btnMenosClasica" onAction="#decrementarCantidad" text="-" />
-                     <TextField fx:id="txtCantidadClasica" alignment="CENTER" editable="false" prefWidth="40" text="0" />
-                     <Button fx:id="btnMasClasica" onAction="#incrementarCantidad" text="+" />
+                     <Button fx:id="btnMenosChampinones" onAction="#decrementarCantidad" text="-" />
+                     <TextField fx:id="txtCantidadChampinones" alignment="CENTER" editable="false" prefWidth="40" text="0" />
+                     <Button fx:id="btnMasChampinones" onAction="#incrementarCantidad" text="+" />
                   </HBox>
                   <padding>
                      <Insets top="15.0" />
@@ -92,9 +97,9 @@
                      </font>
                   </Label>
                   <HBox spacing="5.0">
-                     <Button fx:id="btnMenosDoble" onAction="#decrementarCantidad" text="-" />
-                     <TextField fx:id="txtCantidadDoble" alignment="CENTER" editable="false" prefWidth="40" text="0" />
-                     <Button fx:id="btnMasDoble" onAction="#incrementarCantidad" text="+" />
+                     <Button fx:id="btnMenosBerenjenas" onAction="#decrementarCantidad" text="-" />
+                     <TextField fx:id="txtCantidadBerenjenas" alignment="CENTER" editable="false" prefWidth="40" text="0" />
+                     <Button fx:id="btnMasBerenjenas" onAction="#incrementarCantidad" text="+" />
                   </HBox>
                   <padding>
                      <Insets top="90.0" />
@@ -116,9 +121,9 @@
                      </font>
                   </Label>
                   <HBox spacing="5.0">
-                     <Button fx:id="btnMenosMerluza" onAction="#decrementarCantidad" text="-" />
-                     <TextField fx:id="txtCantidadMerluza" alignment="CENTER" editable="false" prefWidth="40" text="0" />
-                     <Button fx:id="btnMasMerluza" onAction="#incrementarCantidad" text="+" />
+                     <Button fx:id="btnMenosBoquerones" onAction="#decrementarCantidad" text="-" />
+                     <TextField fx:id="txtCantidadBoquerones" alignment="CENTER" editable="false" prefWidth="40" text="0" />
+                     <Button fx:id="btnMasBoquerones" onAction="#incrementarCantidad" text="+" />
                   </HBox>
                   <padding>
                      <Insets top="90.0" />
@@ -140,14 +145,19 @@
                      </font>
                   </Label>
                   <HBox spacing="5.0">
-                     <Button fx:id="btnMenosLomo" onAction="#decrementarCantidad" text="-" />
-                     <TextField fx:id="txtCantidadLomo" alignment="CENTER" editable="false" prefWidth="40" text="0" />
-                     <Button fx:id="btnMasLomo" onAction="#incrementarCantidad" text="+" />
+                     <Button fx:id="btnMenosRabas" onAction="#decrementarCantidad" text="-" />
+                     <TextField fx:id="txtCantidadRabas" alignment="CENTER" editable="false" prefWidth="40" text="0" />
+                     <Button fx:id="btnMasRabas" onAction="#incrementarCantidad" text="+" />
                   </HBox>
                   <padding>
                      <Insets top="95.0" />
                   </padding>
                </HBox>
+
+               <!-- Panes adicionales -->
+               <Pane fx:id="paneEspecial1" />
+               <Pane fx:id="paneEspecial2" />
+               <Pane fx:id="paneEspecial3" />
 
             </VBox>
          </content>
