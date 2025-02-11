@@ -24,13 +24,13 @@
                 <font>
                     <Font name="Segoe Script Bold" size="14.0" />
                 </font></Hyperlink>
-            <Hyperlink onAction="#cambiarAPrimeros" style="-fx-font-weight: bold;" text="Primeros">
+            <Hyperlink onAction="#cambiarAPrimeros" text="Primeros">
                 <font>
-                    <Font name="Segoe Script" size="14.0" />
+                    <Font name="Segoe Script Bold" size="14.0" />
                 </font></Hyperlink>
-         <Hyperlink layoutX="47.0" layoutY="409.0" onAction="#cambiarAEspeciales" style="-fx-font-weight: bold;" text="Especiales">
+         <Hyperlink layoutX="47.0" layoutY="409.0" onAction="#cambiarAEspeciales" text="Especiales">
             <font>
-               <Font name="Segoe Script" size="14.0" />
+               <Font name="Segoe Script Bold" size="14.0" />
             </font>
          </Hyperlink>
         </VBox>

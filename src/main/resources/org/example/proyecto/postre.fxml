@@ -24,13 +24,13 @@
             <font>
                <Font name="Segoe Script Bold" size="14.0" />
             </font></Hyperlink>
-         <Hyperlink onAction="#cambiarAPrimeros" style="-fx-font-weight: bold;" text="Primeros">
+         <Hyperlink onAction="#cambiarAPrimeros" text="Primeros">
             <font>
-               <Font name="Segoe Script" size="14.0" />
+               <Font name="Segoe Script Bold" size="14.0" />
             </font></Hyperlink>
-         <Hyperlink layoutX="47.0" layoutY="359.0" onAction="#cambiarAEspeciales" style="-fx-font-weight: bold;" text="Especiales">
+         <Hyperlink layoutX="47.0" layoutY="359.0" onAction="#cambiarAEspeciales" text="Especiales">
             <font>
-               <Font name="Segoe Script" size="14.0" />
+               <Font name="Segoe Script Bold" size="14.0" />
             </font>
          </Hyperlink>
       </VBox>
@@ -52,8 +52,14 @@
 
                   </ImageView>
                   <VBox>
-                     <Label style="-fx-font-size: 20px;" text="Tiramisú" />
-                     <Label style="-fx-font-size: 16px;" text="5.00€" />
+                     <Label text="Tiramisú">
+                        <font>
+                           <Font name="Segoe Script" size="20.0" />
+                        </font></Label>
+                     <Label text="5.00€">
+                        <font>
+                           <Font name="Segoe Script" size="16.0" />
+                        </font></Label>
                   </VBox>
                   <HBox spacing="5.0">
                      <Button fx:id="btnMenosTiramisu" onAction="#decrementarCantidad" text="-" />
@@ -68,8 +74,14 @@
 
                   </ImageView>
                   <VBox>
-                     <Label style="-fx-font-size: 20px;" text="Flan Casero" />
-                     <Label style="-fx-font-size: 16px;" text="4.50€" />
+                     <Label text="Flan Casero">
+                        <font>
+                           <Font name="Segoe Script" size="20.0" />
+                        </font></Label>
+                     <Label text="4.50€">
+                        <font>
+                           <Font name="Segoe Script" size="16.0" />
+                        </font></Label>
                   </VBox>
                   <HBox spacing="5.0">
                      <Button fx:id="btnMenosFlan" onAction="#decrementarCantidad" text="-" />
@@ -84,8 +96,14 @@
 
                   </ImageView>
                   <VBox>
-                     <Label style="-fx-font-size: 20px;" text="Crepe de Chocolate" />
-                     <Label style="-fx-font-size: 16px;" text="6.00€" />
+                     <Label text="Crepe de Chocolate">
+                        <font>
+                           <Font name="Segoe Script" size="16.0" />
+                        </font></Label>
+                     <Label text="6.00€">
+                        <font>
+                           <Font name="Segoe Script" size="16.0" />
+                        </font></Label>
                   </VBox>
                   <HBox spacing="5.0">
                      <Button fx:id="btnMenosCrepe" onAction="#decrementarCantidad" text="-" />
@@ -100,8 +118,14 @@
 
                   </ImageView>
                   <VBox>
-                     <Label style="-fx-font-size: 20px;" text="Arroz con Leche" />
-                     <Label style="-fx-font-size: 16px;" text="4.00€" />
+                     <Label text="Arroz con Leche">
+                        <font>
+                           <Font name="Segoe Script" size="20.0" />
+                        </font></Label>
+                     <Label text="4.00€">
+                        <font>
+                           <Font name="Segoe Script" size="16.0" />
+                        </font></Label>
                   </VBox>
                   <HBox spacing="5.0">
                      <Button fx:id="btnMenosArroz" onAction="#decrementarCantidad" text="-" />

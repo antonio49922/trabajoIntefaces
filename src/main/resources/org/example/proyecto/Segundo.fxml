@@ -8,6 +8,17 @@
 
 <BorderPane style="-fx-background-color: #EAD7D1;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.proyecto.SegundoController">
 
+   <top>
+      <ImageView fitHeight="126.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="TOP_RIGHT">
+         <image>
+            <Image url="@../../../Recursos_Gráficos/Fuentes/Ejemplo_Logo-removebg-preview.png" />
+         </image>
+         <BorderPane.margin>
+            <Insets right="50.0" />
+         </BorderPane.margin>
+      </ImageView>
+   </top>
+
    <!-- Menú lateral para categorías -->
    <left>
       <VBox alignment="CENTER" prefWidth="150.0" spacing="10.0">
@@ -15,22 +26,26 @@
          <Hyperlink onAction="#cambiarABebidas" text="Bebidas">
             <font>
                <Font name="Segoe Script Bold" size="14.0" />
-            </font></Hyperlink>
+            </font>
+         </Hyperlink>
          <Hyperlink onAction="#cambiarAPostres" text="Postres">
             <font>
                <Font name="Segoe Script Bold" size="14.0" />
-            </font></Hyperlink>
+            </font>
+         </Hyperlink>
          <Hyperlink onAction="#cambiarATapas" text="Tapas">
             <font>
                <Font name="Segoe Script Bold" size="14.0" />
-            </font></Hyperlink>
-         <Hyperlink onAction="#cambiarAPrimeros" style="-fx-font-weight: bold;" text="Primeros">
+            </font>
+         </Hyperlink>
+         <Hyperlink onAction="#cambiarAPrimeros" text="Primeros">
             <font>
-               <Font name="Segoe Script" size="14.0" />
-            </font></Hyperlink>
-         <Hyperlink layoutX="47.0" layoutY="359.0" onAction="#cambiarAEspeciales" style="-fx-font-weight: bold;" text="Especiales">
+               <Font name="Segoe Script Bold" size="14.0" />
+            </font>
+         </Hyperlink>
+         <Hyperlink onAction="#cambiarAEspeciales" text="Especiales">
             <font>
-               <Font name="Segoe Script" size="14.0" />
+               <Font name="Segoe Script Bold" size="14.0" />
             </font>
          </Hyperlink>
       </VBox>
@@ -46,13 +61,18 @@
                </padding>
 
                <!-- Hamburguesa Clásica -->
-               <HBox spacing="10.0">
-                  <ImageView fitHeight="100.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
-
-                  </ImageView>
-                  <VBox>
-                     <Label style="-fx-font-size: 20px;" text="Hamburguesa Clásica" />
-                     <Label style="-fx-font-size: 16px;" text="10.00€" />
+               <HBox alignment="TOP_CENTER" prefHeight="86.0" prefWidth="475.0" spacing="10.0">
+                  <VBox alignment="TOP_CENTER">
+                     <Label text="Hamburguesa Clásica">
+                        <font>
+                           <Font name="Segoe Script" size="20.0" />
+                        </font>
+                     </Label>
+                     <Label text="10.00€">
+                        <font>
+                           <Font name="Segoe Script" size="16.0" />
+                        </font>
+                     </Label>
                   </VBox>
                   <HBox spacing="5.0">
                      <Button fx:id="btnMenosClasica" onAction="#decrementarCantidad" text="-" />
@@ -62,13 +82,18 @@
                </HBox>
 
                <!-- Hamburguesa Doble con Queso -->
-               <HBox spacing="10.0">
-                  <ImageView fitHeight="100.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
-
-                  </ImageView>
-                  <VBox>
-                     <Label style="-fx-font-size: 20px;" text="Hamburguesa Doble con Queso" />
-                     <Label style="-fx-font-size: 16px;" text="12.50€" />
+               <HBox alignment="TOP_CENTER" prefHeight="99.0" prefWidth="475.0" spacing="10.0">
+                  <VBox alignment="TOP_CENTER">
+                     <Label text="Hamburguesa Doble con Queso">
+                        <font>
+                           <Font name="Segoe Script" size="20.0" />
+                        </font>
+                     </Label>
+                     <Label text="12.50€">
+                        <font>
+                           <Font name="Segoe Script" size="16.0" />
+                        </font>
+                     </Label>
                   </VBox>
                   <HBox spacing="5.0">
                      <Button fx:id="btnMenosDoble" onAction="#decrementarCantidad" text="-" />
@@ -78,13 +103,18 @@
                </HBox>
 
                <!-- Merluza en Salsa Verde -->
-               <HBox spacing="10.0">
-                  <ImageView fitHeight="100.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
-
-                  </ImageView>
-                  <VBox>
-                     <Label style="-fx-font-size: 20px;" text="Merluza en Salsa Verde" />
-                     <Label style="-fx-font-size: 16px;" text="15.00€" />
+               <HBox alignment="TOP_CENTER" prefHeight="108.0" prefWidth="475.0" spacing="10.0">
+                  <VBox alignment="TOP_CENTER" prefWidth="366.0">
+                     <Label text="Merluza en Salsa Verde">
+                        <font>
+                           <Font name="Segoe Script" size="20.0" />
+                        </font>
+                     </Label>
+                     <Label text="15.00€">
+                        <font>
+                           <Font name="Segoe Script" size="16.0" />
+                        </font>
+                     </Label>
                   </VBox>
                   <HBox spacing="5.0">
                      <Button fx:id="btnMenosMerluza" onAction="#decrementarCantidad" text="-" />
@@ -94,13 +124,18 @@
                </HBox>
 
                <!-- Filete de Lomo con Patatas -->
-               <HBox spacing="10.0">
-                  <ImageView fitHeight="100.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
-
-                  </ImageView>
-                  <VBox>
-                     <Label style="-fx-font-size: 20px;" text="Filete de Lomo con Patatas" />
-                     <Label style="-fx-font-size: 16px;" text="14.00€" />
+               <HBox alignment="TOP_CENTER" prefHeight="110.0" prefWidth="475.0" spacing="10.0">
+                  <VBox alignment="TOP_CENTER">
+                     <Label text="Filete de Lomo con Patatas">
+                        <font>
+                           <Font name="Segoe Script" size="20.0" />
+                        </font>
+                     </Label>
+                     <Label text="14.00€">
+                        <font>
+                           <Font name="Segoe Script" size="16.0" />
+                        </font>
+                     </Label>
                   </VBox>
                   <HBox spacing="5.0">
                      <Button fx:id="btnMenosLomo" onAction="#decrementarCantidad" text="-" />
@@ -113,14 +148,4 @@
          </content>
       </ScrollPane>
    </center>
-   <top>
-      <ImageView fitHeight="126.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="TOP_RIGHT">
-         <image>
-            <Image url="@../../../Recursos_Gráficos/Fuentes/Ejemplo_Logo-removebg-preview.png" />
-         </image>
-         <BorderPane.margin>
-            <Insets right="100.0" />
-         </BorderPane.margin>
-      </ImageView>
-   </top>
 </BorderPane>

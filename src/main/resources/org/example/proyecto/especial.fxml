@@ -24,9 +24,9 @@
             <font>
                <Font name="Segoe Script Bold" size="14.0" />
             </font></Hyperlink>
-         <Hyperlink onAction="#cambiarAPrimeros" style="-fx-font-weight: bold;" text="Primeros">
+         <Hyperlink onAction="#cambiarAPrimeros" text="Primeros">
             <font>
-               <Font name="Segoe Script" size="14.0" />
+               <Font name="Segoe Script Bold" size="14.0" />
             </font></Hyperlink>
       </VBox>
    </left>
