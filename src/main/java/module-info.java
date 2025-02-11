@@ -3,6 +3,7 @@ module org.example.proyecto {
     requires javafx.fxml;
     requires javafx.graphics;
     requires java.sql;
+    requires java.desktop;
 
 
     opens org.example.proyecto to javafx.fxml;
