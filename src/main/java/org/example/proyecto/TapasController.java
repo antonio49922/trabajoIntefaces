@@ -38,11 +38,14 @@ public class TapasController {
     }
 
     private String aumentarCantidad(TextField textField) {
-        return String.valueOf(Integer.parseInt(textField.getText()) + 1);
+        String text = textField.getText().trim();
+        int cantidad = text.isEmpty() ? 0 : Integer.parseInt(text);
+        return String.valueOf(cantidad + 1);
     }
 
     private String disminuirCantidad(TextField textField) {
-        int cantidad = Integer.parseInt(textField.getText());
+        String text = textField.getText().trim();
+        int cantidad = text.isEmpty() ? 0 : Integer.parseInt(text);
         return cantidad > 0 ? String.valueOf(cantidad - 1) : "0";
     }
 

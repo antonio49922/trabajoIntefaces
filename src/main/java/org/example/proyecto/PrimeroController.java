@@ -13,7 +13,7 @@ import java.io.IOException;
 
 public class PrimeroController {
 
-    @FXML private TextField txtCantidadCesar, txtCantidadWrap, txtCantidadSandwich;
+    @FXML private TextField txtCantidadCesar, txtCantidadWrap, txtCantidadSandwich, txtCantidadMixta;
 
     @FXML
     private void incrementarCantidad(ActionEvent event) {
@@ -22,6 +22,7 @@ public class PrimeroController {
             case "btnMasCesar" -> txtCantidadCesar.setText(aumentarCantidad(txtCantidadCesar));
             case "btnMasWrap" -> txtCantidadWrap.setText(aumentarCantidad(txtCantidadWrap));
             case "btnMasSandwich" -> txtCantidadSandwich.setText(aumentarCantidad(txtCantidadSandwich));
+            case "btnMasMixta" -> txtCantidadMixta.setText(aumentarCantidad(txtCantidadMixta));
         }
     }
 
@@ -32,6 +33,7 @@ public class PrimeroController {
             case "btnMenosCesar" -> txtCantidadCesar.setText(disminuirCantidad(txtCantidadCesar));
             case "btnMenosWrap" -> txtCantidadWrap.setText(disminuirCantidad(txtCantidadWrap));
             case "btnMenosSandwich" -> txtCantidadSandwich.setText(disminuirCantidad(txtCantidadSandwich));
+            case "btnMenosMixta" -> txtCantidadMixta.setText(disminuirCantidad(txtCantidadMixta));
         }
     }
 

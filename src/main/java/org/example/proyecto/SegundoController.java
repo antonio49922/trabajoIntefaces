@@ -13,41 +13,46 @@ import java.io.IOException;
 
 public class SegundoController {
 
-    @FXML private TextField txtCantidadEntrecot, txtCantidadSalmon, txtCantidadPollo;
+    @FXML private TextField txtCantidadClasica, txtCantidadDoble, txtCantidadMerluza, txtCantidadLomo;
 
-    // Métodos para incrementar la cantidad de cada plato
+    // Metodos para incrementar la cantidad de cada plato
     @FXML
     private void incrementarCantidad(ActionEvent event) {
         Button btn = (Button) event.getSource();
         switch (btn.getId()) {
-            case "btnMasEntrecot" -> txtCantidadEntrecot.setText(aumentarCantidad(txtCantidadEntrecot));
-            case "btnMasSalmon" -> txtCantidadSalmon.setText(aumentarCantidad(txtCantidadSalmon));
-            case "btnMasPollo" -> txtCantidadPollo.setText(aumentarCantidad(txtCantidadPollo));
+            case "btnMasClasica" -> txtCantidadClasica.setText(aumentarCantidad(txtCantidadClasica));
+            case "btnMasDoble" -> txtCantidadDoble.setText(aumentarCantidad(txtCantidadDoble));
+            case "btnMasMerluza" -> txtCantidadMerluza.setText(aumentarCantidad(txtCantidadMerluza));
+            case "btnMasLomo" -> txtCantidadLomo.setText(aumentarCantidad(txtCantidadLomo));
         }
     }
 
-    // Métodos para disminuir la cantidad de cada plato
+    // Metodos para disminuir la cantidad de cada plato
     @FXML
     private void decrementarCantidad(ActionEvent event) {
         Button btn = (Button) event.getSource();
         switch (btn.getId()) {
-            case "btnMenosEntrecot" -> txtCantidadEntrecot.setText(disminuirCantidad(txtCantidadEntrecot));
-            case "btnMenosSalmon" -> txtCantidadSalmon.setText(disminuirCantidad(txtCantidadSalmon));
-            case "btnMenosPollo" -> txtCantidadPollo.setText(disminuirCantidad(txtCantidadPollo));
+            case "btnMenosClasica" -> txtCantidadClasica.setText(disminuirCantidad(txtCantidadClasica));
+            case "btnMenosDoble" -> txtCantidadDoble.setText(disminuirCantidad(txtCantidadDoble));
+            case "btnMenosMerluza" -> txtCantidadMerluza.setText(disminuirCantidad(txtCantidadMerluza));
+            case "btnMenosLomo" -> txtCantidadLomo.setText(disminuirCantidad(txtCantidadLomo));
         }
     }
 
-    // Métodos auxiliares para manejar cantidades
+    // Metodos auxiliares para manejar cantidades
     private String aumentarCantidad(TextField textField) {
-        return String.valueOf(Integer.parseInt(textField.getText()) + 1);
+        String text = textField.getText().trim();
+        int cantidad = text.isEmpty() ? 0 : Integer.parseInt(text);
+        return String.valueOf(cantidad + 1);
     }
 
     private String disminuirCantidad(TextField textField) {
-        int cantidad = Integer.parseInt(textField.getText());
+        String text = textField.getText().trim();
+        int cantidad = text.isEmpty() ? 0 : Integer.parseInt(text);
         return cantidad > 0 ? String.valueOf(cantidad - 1) : "0";
     }
 
-    // Métodos para cambiar entre las categorías del menú
+    // Metodos para cambiar entre las categorías del menu
     @FXML private void volverMenu(ActionEvent event) throws IOException { cambiarEscena(event, "Menu.fxml"); }
     @FXML private void cambiarAPrimeros(ActionEvent event) throws IOException { cambiarEscena(event, "Primero.fxml"); }
     @FXML private void cambiarASegundos(ActionEvent event) throws IOException { cambiarEscena(event, "Segundo.fxml"); }
@@ -56,13 +61,11 @@ public class SegundoController {
     @FXML private void cambiarABebidas(ActionEvent event) throws IOException { cambiarEscena(event, "Bebidas.fxml"); }
     @FXML private void cambiarAEspeciales(ActionEvent event) throws IOException { cambiarEscena(event, "especial.fxml"); }
 
-    // Método auxiliar para cambiar de escena
+    // Metodo auxiliar para cambiar de escena
     private void cambiarEscena(ActionEvent event, String fxml) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/org/example/proyecto/" + fxml));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();
     }
-
-
 }
