@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<!--  -->
 
-<BorderPane style="-fx-background-color: #EAD7D1;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.proyecto.TapasController">
+
+<BorderPane prefHeight="781.0" prefWidth="577.0" style="-fx-background-color: #EAD7D1;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.proyecto.BebidasController">
 
    <top>
       <ImageView fitHeight="126.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="TOP_RIGHT">
@@ -20,35 +20,36 @@
          </BorderPane.margin>
       </ImageView>
    </top>
+
    <!-- Menú lateral para categorías -->
    <left>
-      <VBox alignment="CENTER" prefWidth="150.0" spacing="10.0">
-         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-         <Hyperlink onAction="#cambiarASegundos" text="Segundos">
+      <VBox alignment="CENTER" prefHeight="675.0" prefWidth="127.0" spacing="10.0" style="-fx-border-color: #5c4da8; -fx-border-width: 2px; -fx-padding: 10px;">
+         <ImageView fitHeight="105.0" fitWidth="113.0" opacity="0.86" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../../Recursos_Gráficos/Fuentes/Ejemplo_Logo-removebg-cuadrado.png" />
+            </image></ImageView>
+         <Hyperlink onAction="#cambiarABebidas" text="Bebidas" style="-fx-text-fill: #5c4da8;">
             <font>
                <Font name="Segoe Script Bold" size="14.0" />
             </font>
          </Hyperlink>
-         <Hyperlink onAction="#cambiarAPostres" text="Postres">
+         <Hyperlink onAction="#cambiarAPrimeros" style="-fx-text-fill: #5c4da8;" text="Primeros">
+            <font>
+               <Font name="Segoe Script Bold" size="14.0" />
+            </font></Hyperlink>
+         <Hyperlink onAction="#cambiarASegundos" style="-fx-text-fill: #5c4da8;" text="Segundos">
+            <font>
+               <Font name="Segoe Script Bold" size="14.0" />
+            </font></Hyperlink>
+         <Hyperlink layoutX="47.0" layoutY="409.0" onAction="#cambiarAEspeciales" style="-fx-text-fill: #5c4da8;" text="Especiales">
             <font>
                <Font name="Segoe Script Bold" size="14.0" />
             </font>
          </Hyperlink>
-         <Hyperlink onAction="#cambiarABebidas" text="Bebidas">
+         <Hyperlink onAction="#cambiarAPostres" style="-fx-text-fill: #5c4da8;" text="Postres">
             <font>
                <Font name="Segoe Script Bold" size="14.0" />
-            </font>
-         </Hyperlink>
-         <Hyperlink onAction="#cambiarAPrimeros" text="Primeros">
-            <font>
-               <Font name="Segoe Script Bold" size="14.0" />
-            </font>
-         </Hyperlink>
-         <Hyperlink layoutX="47.0" layoutY="359.0" onAction="#cambiarAEspeciales" text="Especiales">
-            <font>
-               <Font name="Segoe Script Bold" size="14.0" />
-            </font>
-         </Hyperlink>
+            </font></Hyperlink>
       </VBox>
    </left>
 
@@ -149,4 +150,12 @@
          </content>
       </ScrollPane>
    </center>
+   <top>
+      <ImageView fitHeight="106.0" fitWidth="698.0" pickOnBounds="true" BorderPane.alignment="TOP_RIGHT">
+         <image>
+            <Image url="@../../../Recursos_Gráficos/Imagenes/Recursos/rural-landscape-village-sketch-f.png" />
+         </image>
+
+      </ImageView>
+   </top>
 </BorderPane>

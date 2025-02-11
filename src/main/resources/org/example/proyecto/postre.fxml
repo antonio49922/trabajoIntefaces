@@ -12,25 +12,29 @@
 
    <!-- Menú lateral para categorías -->
    <left>
-      <VBox alignment="CENTER" prefWidth="185.0" spacing="10.0">
-         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-         <Hyperlink onAction="#cambiarASegundos" text="Segundos">
+      <VBox alignment="CENTER" prefHeight="675.0" prefWidth="127.0" spacing="10.0" style="-fx-border-color: #5c4da8; -fx-border-width: 2px; -fx-padding: 10px;">
+         <ImageView fitHeight="105.0" fitWidth="113.0" opacity="0.86" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../../Recursos_Gráficos/Fuentes/Ejemplo_Logo-removebg-cuadrado.png" />
+            </image></ImageView>
+         <Hyperlink onAction="#cambiarABebidas" text="Bebidas" style="-fx-text-fill: #5c4da8;">
+            <font>
+               <Font name="Segoe Script Bold" size="14.0" />
+            </font>
+         </Hyperlink>
+         <Hyperlink onAction="#cambiarATapas" style="-fx-text-fill: #5c4da8;" text="Tapas">
             <font>
                <Font name="Segoe Script Bold" size="14.0" />
             </font></Hyperlink>
-         <Hyperlink onAction="#cambiarABebidas" text="Bebidas">
+         <Hyperlink onAction="#cambiarAPrimeros" style="-fx-text-fill: #5c4da8;" text="Primeros">
             <font>
                <Font name="Segoe Script Bold" size="14.0" />
             </font></Hyperlink>
-         <Hyperlink onAction="#cambiarATapas" text="Tapas">
+         <Hyperlink onAction="#cambiarASegundos" style="-fx-text-fill: #5c4da8;" text="Segundos">
             <font>
                <Font name="Segoe Script Bold" size="14.0" />
             </font></Hyperlink>
-         <Hyperlink onAction="#cambiarAPrimeros" text="Primeros">
-            <font>
-               <Font name="Segoe Script Bold" size="14.0" />
-            </font></Hyperlink>
-         <Hyperlink layoutX="47.0" layoutY="359.0" onAction="#cambiarAEspeciales" text="Especiales">
+         <Hyperlink layoutX="47.0" layoutY="409.0" onAction="#cambiarAEspeciales" style="-fx-text-fill: #5c4da8;" text="Especiales">
             <font>
                <Font name="Segoe Script Bold" size="14.0" />
             </font>
@@ -173,13 +177,10 @@
       </ScrollPane>
    </center>
    <top>
-      <ImageView fitHeight="126.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="TOP_RIGHT">
+      <ImageView fitHeight="106.0" fitWidth="577.0" pickOnBounds="true" BorderPane.alignment="TOP_RIGHT">
          <image>
-            <Image url="@../../../Recursos_Gráficos/Fuentes/Ejemplo_Logo-removebg-preview.png" />
+            <Image url="@../../../Recursos_Gráficos/Imagenes/Recursos/rural-landscape-village-sketch-f.png" />
          </image>
-         <BorderPane.margin>
-            <Insets right="50.0" />
-         </BorderPane.margin>
       </ImageView>
    </top>
 </BorderPane>
