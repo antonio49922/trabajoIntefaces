@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
@@ -125,10 +126,13 @@
       </ScrollPane>
    </center>
    <top>
-      <Label text="Titulo" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
+      <ImageView fitHeight="126.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="TOP_RIGHT">
+         <image>
+            <Image url="@../../../Recursos_Gráficos/Fuentes/Ejemplo_Logo-removebg-preview.png" />
+         </image>
+         <BorderPane.margin>
+            <Insets right="100.0" />
+         </BorderPane.margin>
+      </ImageView>
    </top>
 </BorderPane>
