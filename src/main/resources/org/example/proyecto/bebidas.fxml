@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
 <BorderPane prefHeight="781.0" prefWidth="577.0" style="-fx-background-color: #EAD7D1;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.proyecto.BebidasController">
 
     <!-- Menú lateral para categorías -->
@@ -42,9 +41,9 @@
 
     <!-- Contenido del menú -->
     <center>
-        <ScrollPane fitToWidth="true" prefHeight="600.0">
+        <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" prefHeight="675.0">
             <content>
-                <VBox alignment="TOP_CENTER" prefHeight="673.0" prefWidth="438.0" spacing="10.0" style="-fx-border-color: #5c4da8; -fx-border-width: 2px; -fx-padding: 10px;">
+                <VBox alignment="TOP_CENTER" prefHeight="680.0" prefWidth="425.0" spacing="10.0" style="-fx-border-color: #5c4da8; -fx-border-width: 2px; -fx-padding: 10px;">
                     <padding>
                         <Insets bottom="10" left="10" right="10" top="10" />
                     </padding>
@@ -52,11 +51,17 @@
                     <!-- Ron -->
                     <HBox alignment="TOP_CENTER" spacing="10.0">
                         <VBox alignment="TOP_CENTER">
-                            <Label fx:id="RonLabel" onMouseClicked="#abrirRones" prefHeight="34.0" prefWidth="40.0" text="Ron">
+                            <Label fx:id="RonLabel" onMouseClicked="#abrirRones" prefHeight="34.0" prefWidth="60.0" text="Ron ▾">
                         <font>
                            <Font name="Segoe Script" size="18.0" />
                         </font></Label>
                         </VBox>
+                  <opaqueInsets>
+                     <Insets />
+                  </opaqueInsets>
+                  <padding>
+                     <Insets top="15.0" />
+                  </padding>
                     </HBox>
                <Pane fx:id="ron" prefHeight="77.0" prefWidth="372.0">
                   <children>
@@ -98,13 +103,18 @@
                              <Tooltip text="Quitar 1" />
                          </tooltip>
                      </Button>
+                      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-33.0" layoutY="-45.0" pickOnBounds="true" preserveRatio="true" rotate="48.8">
+                          <image>
+                              <Image url="@../../../Recursos_Gráficos/Imagenes/Bebidas/EditadasRum.png" />
+                          </image>
+                      </ImageView>
                   </children>
                </Pane>
 
 
                     <HBox alignment="TOP_CENTER" prefHeight="15.0" prefWidth="372.0" spacing="10.0">
                         <VBox alignment="TOP_CENTER">
-                            <Label fx:id="vodkaLabel" onMouseClicked="#abrirVodkas" text="Vodka">
+                            <Label fx:id="vodkaLabel" onMouseClicked="#abrirVodkas" text="Vodka ▾">
                         <font>
                            <Font name="Segoe Script" size="18.0" />
                         </font></Label>
@@ -151,12 +161,17 @@
                         <font>
                            <Font name="Segoe Script" size="12.0" />
                         </font></Label>
+                          <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="333.0" layoutY="-36.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                  <Image url="@../../../Recursos_Gráficos/Imagenes/Bebidas/EditadasVodka.png" />
+                              </image>
+                          </ImageView>
                   </children>
                </Pane>
 
                     <HBox alignment="TOP_CENTER" prefHeight="21.0" prefWidth="372.0" spacing="10.0">
                         <VBox alignment="TOP_CENTER">
-                            <Label fx:id="ginLabel" onMouseClicked="#abrirGin" text="Ginebra">
+                            <Label fx:id="ginLabel" onMouseClicked="#abrirGin" text="Ginebra ▾">
                         <font>
                            <Font name="Segoe Script" size="18.0" />
                         </font></Label>
@@ -203,12 +218,17 @@
                         <font>
                            <Font name="Segoe Script" size="12.0" />
                         </font></Label>
+                      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-40.0" layoutY="-39.0" opacity="0.7" pickOnBounds="true" preserveRatio="true" rotate="48.8">
+                          <image>
+                              <Image url="@../../../Recursos_Gráficos/Imagenes/Bebidas/EditadasGin.png" />
+                          </image>
+                      </ImageView>
                   </children>
                </Pane>
 
                     <HBox alignment="TOP_CENTER" prefWidth="372.0" spacing="10.0">
                         <VBox alignment="TOP_CENTER">
-                            <Label fx:id="tequilaLabel" onMouseClicked="#abrirTequila" text="Tequila">
+                            <Label fx:id="tequilaLabel" onMouseClicked="#abrirTequila" text="Tequila ▾">
                         <font>
                            <Font name="Segoe Script" size="18.0" />
                         </font></Label>
