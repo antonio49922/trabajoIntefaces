@@ -11,6 +11,7 @@
    <!-- Menú lateral para categorías -->
    <left>
       <VBox alignment="CENTER" prefWidth="150.0" spacing="10.0">
+         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
          <Hyperlink onAction="#cambiarABebidas" text="Bebidas">
             <font>
                <Font name="Segoe Script Bold" size="14.0" />
