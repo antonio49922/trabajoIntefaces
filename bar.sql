@@ -184,9 +184,9 @@ INSERT INTO `platos` (`id`, `nombre`, `descripcion`, `precio`) VALUES
 (17, 'Montaditos de Tortilla con Cebolla', '', 4.00),
 (18, 'Mini Buñuelos de Queso', '', 4.00),
 (19, 'Champiñones al Ajillo', '', 6.00),
-(19, 'Berenjenas fritas con Miel', '', 7.00),
-(19, 'Boquerones en Vinagre', '', 7.50),
-(19, 'Rabas de Calamar', '', 8.50);
+(20, 'Berenjenas fritas con Miel', '', 7.00),
+(21, 'Boquerones en Vinagre', '', 7.50),
+(22, 'Rabas de Calamar', '', 8.50);
 
 
 
