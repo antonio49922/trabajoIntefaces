@@ -26,7 +26,7 @@
                <Font name="Segoe Script Bold" size="14.0" />
             </font>
          </Hyperlink>
-         <Hyperlink onAction="#cambiarASegundos" style="-fx-text-fill: #5c4da8;" text="Segundos">
+         <Hyperlink onAction="#cambiarAPrimeros" style="-fx-text-fill: #5c4da8;" text="Primeros">
             <font>
                <Font name="Segoe Script Bold" size="14.0" />
             </font>
