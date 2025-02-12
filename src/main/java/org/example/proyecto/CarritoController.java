@@ -5,8 +5,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -52,8 +54,13 @@ public class CarritoController {
 
     @FXML
     private void confirmarPedido() {
-        System.out.println("Pedido aceptado");
         CarritoModel.getInstance().limpiarCarrito();
         actualizarResumen();
+
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Confirmación de Pedido");
+        alert.setHeaderText(null);
+        alert.setContentText("Pedido aceptado");
+        alert.showAndWait();
     }
 }
