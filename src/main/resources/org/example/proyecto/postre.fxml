@@ -26,17 +26,17 @@
                <Font name="Segoe Script Bold" size="14.0" />
             </font>
          </Hyperlink>
+         <Hyperlink onAction="#cambiarAPrimeros" style="-fx-text-fill: #5c4da8;" text="Primeros" translateY="-75.0">
+            <font>
+               <Font name="Segoe Script Bold" size="14.0" />
+            </font>
+         </Hyperlink>
          <Hyperlink onAction="#cambiarASegundos" style="-fx-text-fill: #5c4da8;" text="Segundos" translateY="-75.0">
             <font>
                <Font name="Segoe Script Bold" size="14.0" />
             </font>
          </Hyperlink>
          <Hyperlink onAction="#cambiarAEspeciales" style="-fx-text-fill: #5c4da8;" text="Especiales" translateY="-75.0">
-            <font>
-               <Font name="Segoe Script Bold" size="14.0" />
-            </font>
-         </Hyperlink>
-         <Hyperlink onAction="#cambiarAPrimeros" style="-fx-text-fill: #5c4da8;" text="Primeros" translateY="-75.0">
             <font>
                <Font name="Segoe Script Bold" size="14.0" />
             </font>
