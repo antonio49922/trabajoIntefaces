@@ -81,10 +81,10 @@ public class EspecialController {
     private void añadirAlCarrito(ActionEvent event) throws IOException {
         CarritoModel carrito = CarritoModel.getInstance();
 
-        agregarEspecialSiExiste(txtCantidadChampinones, "Champiñones al ajillo", 4.00);
-        agregarEspecialSiExiste(txtCantidadBerenjenas, "Berenjenas fritas con miel", 4.00);
-        agregarEspecialSiExiste(txtCantidadBoquerones, "Boquerones en vinagre", 4.00);
-        agregarEspecialSiExiste(txtCantidadRabas, "Rabas de calamar", 4.00);
+        agregarEspecialSiExiste(txtCantidadChampinones, "Champiñones al ajillo", 6.00);
+        agregarEspecialSiExiste(txtCantidadBerenjenas, "Berenjenas fritas con miel", 7.00);
+        agregarEspecialSiExiste(txtCantidadBoquerones, "Boquerones en vinagre", 7.50);
+        agregarEspecialSiExiste(txtCantidadRabas, "Rabas de calamar", 8.50);
 
         System.out.println("Productos añadidos al carrito.");
 

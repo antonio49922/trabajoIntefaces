@@ -81,10 +81,10 @@ public class PrimeroController {
     private void añadirAlCarrito(ActionEvent event) throws IOException {
         CarritoModel carrito = CarritoModel.getInstance();
 
-        agregarPlatoSiExiste(txtCantidadCesar, "Ensalada César", 4.00);
-        agregarPlatoSiExiste(txtCantidadMixta, "Ensalada Mixta", 4.00);
-        agregarPlatoSiExiste(txtCantidadWrap, "Wrap de Pollo", 4.00);
-        agregarPlatoSiExiste(txtCantidadSandwich, "Sándwich Club", 4.00);
+        agregarPlatoSiExiste(txtCantidadCesar, "Ensalada César", 8.50);
+        agregarPlatoSiExiste(txtCantidadMixta, "Ensalada Mixta", 7.50);
+        agregarPlatoSiExiste(txtCantidadWrap, "Wrap de Pollo", 9.00);
+        agregarPlatoSiExiste(txtCantidadSandwich, "Sándwich Club", 9.50);
 
         System.out.println("Productos añadidos al carrito.");
 

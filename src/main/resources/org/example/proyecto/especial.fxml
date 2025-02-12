@@ -67,7 +67,7 @@
                         </font>
                      </Label>
                   </VBox>
-                  <Label alignment="BOTTOM_CENTER" prefHeight="32.0" prefWidth="48.0" text="4.00€" textAlignment="CENTER">
+                  <Label alignment="BOTTOM_CENTER" prefHeight="32.0" prefWidth="48.0" text="6.00€" textAlignment="CENTER">
                      <font>
                         <Font name="Segoe Script" size="10.0" />
                      </font>
@@ -91,7 +91,7 @@
                         </font>
                      </Label>
                   </VBox>
-                  <Label alignment="BOTTOM_CENTER" prefHeight="32.0" prefWidth="48.0" text="4.00€" textAlignment="CENTER">
+                  <Label alignment="BOTTOM_CENTER" prefHeight="32.0" prefWidth="48.0" text="7.00€" textAlignment="CENTER">
                      <font>
                         <Font name="Segoe Script" size="10.0" />
                      </font>
@@ -115,7 +115,7 @@
                         </font>
                      </Label>
                   </VBox>
-                  <Label alignment="BOTTOM_CENTER" prefHeight="32.0" prefWidth="48.0" text="4.00€" textAlignment="CENTER">
+                  <Label alignment="BOTTOM_CENTER" prefHeight="32.0" prefWidth="48.0" text="7.50€" textAlignment="CENTER">
                      <font>
                         <Font name="Segoe Script" size="10.0" />
                      </font>
@@ -139,7 +139,7 @@
                         </font>
                      </Label>
                   </VBox>
-                  <Label alignment="BOTTOM_CENTER" prefHeight="32.0" prefWidth="48.0" text="4.00€" textAlignment="CENTER">
+                  <Label alignment="BOTTOM_CENTER" prefHeight="32.0" prefWidth="48.0" text="8.50€" textAlignment="CENTER">
                      <font>
                         <Font name="Segoe Script" size="10.0" />
                      </font>
