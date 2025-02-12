@@ -62,7 +62,7 @@ public class ScreenP {
             SplashStage.close();
         }
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Menu.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("InicioSesion.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(fxmlLoader.load(), 550, 700);
         stage.setTitle("Menu");
