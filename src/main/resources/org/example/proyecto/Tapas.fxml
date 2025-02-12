@@ -11,37 +11,37 @@
    <!-- Menú lateral para categorías -->
    <left>
       <VBox alignment="CENTER" prefHeight="675.0" prefWidth="127.0" spacing="10.0" style="-fx-border-color: #5c4da8; -fx-border-width: 2px; -fx-padding: 10px;">
-         <ImageView fitHeight="105.0" fitWidth="113.0" opacity="0.86" pickOnBounds="true" preserveRatio="true">
+         <ImageView fitHeight="105.0" fitWidth="113.0" opacity="0.86" pickOnBounds="true" preserveRatio="true" translateY="-145.0">
             <image>
                <Image url="@../../../Recursos_Gráficos/Fuentes/Ejemplo_Logo-removebg-cuadrado.png" />
             </image>
          </ImageView>
-         <Hyperlink onAction="#cambiarABebidas" style="-fx-text-fill: #5c4da8;" text="Bebidas">
+         <Hyperlink onAction="#cambiarABebidas" style="-fx-text-fill: #5c4da8;" text="Bebidas" translateY="-75.0">
             <font>
                <Font name="Segoe Script Bold" size="14.0" />
             </font>
          </Hyperlink>
-         <Hyperlink onAction="#cambiarAPrimeros" style="-fx-text-fill: #5c4da8;" text="Primeros">
+         <Hyperlink onAction="#cambiarAPrimeros" style="-fx-text-fill: #5c4da8;" text="Primeros" translateY="-75.0">
             <font>
                <Font name="Segoe Script Bold" size="14.0" />
             </font>
          </Hyperlink>
-         <Hyperlink onAction="#cambiarASegundos" style="-fx-text-fill: #5c4da8;" text="Segundos">
+         <Hyperlink onAction="#cambiarASegundos" style="-fx-text-fill: #5c4da8;" text="Segundos" translateY="-75.0">
             <font>
                <Font name="Segoe Script Bold" size="14.0" />
             </font>
          </Hyperlink>
-         <Hyperlink onAction="#cambiarAEspeciales" style="-fx-text-fill: #5c4da8;" text="Especiales">
+         <Hyperlink onAction="#cambiarAEspeciales" style="-fx-text-fill: #5c4da8;" text="Especiales" translateY="-75.0">
             <font>
                <Font name="Segoe Script Bold" size="14.0" />
             </font>
          </Hyperlink>
-         <Hyperlink onAction="#cambiarAPostres" style="-fx-text-fill: #5c4da8;" text="Postres">
+         <Hyperlink onAction="#cambiarAPostres" style="-fx-text-fill: #5c4da8;" text="Postres" translateY="-75.0">
             <font>
                <Font name="Segoe Script Bold" size="14.0" />
             </font>
          </Hyperlink>
-         <Button fx:id="btnAñadirCesta" onAction="#añadirAlCarrito" prefHeight="37.0" prefWidth="114.0" style="-fx-background-color: #FFA500; -fx-text-fill: white; -fx-font-size: 14px;" text="A la Cesta">
+         <Button fx:id="btnAñadirCesta" onAction="#añadirAlCarrito" prefHeight="37.0" prefWidth="114.0" style="-fx-background-color: #5c4da8; -fx-text-fill: #EAD7D1; -fx-font-size: 14px;" text="A la Cesta" translateY="-75.0">
             <font>
                <Font name="Segoe Script Bold" size="14.0" />
             </font>
@@ -57,14 +57,22 @@
                <padding>
                   <Insets bottom="10" left="10" right="10" top="10" />
                </padding>
+               <Label text="Tapas" textFill="#5c4da8">
+                  <font>
+                     <Font name="Segoe Script" size="25.0" />
+                  </font>
+               </Label>
 
                <!-- Patatas con Alioli -->
                <HBox alignment="TOP_CENTER" spacing="10.0">
                   <VBox alignment="TOP_CENTER">
-                     <Label fx:id="PatatasLabel" text="Patatas con Alioli">
+                     <Label fx:id="PatatasLabel" prefHeight="33.0" prefWidth="182.0" text="Patatas con Alioli">
                         <font>
                            <Font name="Segoe Script" size="18.0" />
                         </font>
+                        <VBox.margin>
+                           <Insets left="10.0" />
+                        </VBox.margin>
                      </Label>
                   </VBox>
                   <Label alignment="BOTTOM_CENTER" prefHeight="32.0" prefWidth="48.0" text="4.00€" textAlignment="CENTER">
@@ -78,17 +86,20 @@
                      <Button fx:id="btnMasPatatas" onAction="#incrementarCantidad" text="+" />
                   </HBox>
                   <padding>
-                     <Insets top="15.0" />
+                     <Insets top="35.0" />
                   </padding>
                </HBox>
 
                <!-- Croquetas de Jamón y Queso -->
                <HBox alignment="TOP_CENTER" spacing="10.0">
                   <VBox alignment="TOP_CENTER">
-                     <Label fx:id="CroquetasLabel" text="Croquetas de Jamón &#10;y Queso" textAlignment="CENTER">
+                     <Label fx:id="CroquetasLabel" prefHeight="66.0" prefWidth="205.0" text="Croquetas de Jamón &#10;y Queso" textAlignment="CENTER">
                         <font>
                            <Font name="Segoe Script" size="18.0" />
                         </font>
+                        <VBox.margin>
+                           <Insets left="10.0" />
+                        </VBox.margin>
                      </Label>
                   </VBox>
                   <Label alignment="BOTTOM_CENTER" prefHeight="32.0" prefWidth="48.0" text="4.00€" textAlignment="CENTER">
@@ -109,10 +120,13 @@
                <!-- Montaditos de Tortilla con Cebolla -->
                <HBox alignment="TOP_CENTER" spacing="10.0">
                   <VBox alignment="TOP_CENTER">
-                     <Label fx:id="MontaditosLabel" prefHeight="66.0" prefWidth="257.0" text="Montaditos de Tortilla &#10;con Cebolla" textAlignment="CENTER">
+                     <Label fx:id="MontaditosLabel" prefHeight="66.0" prefWidth="242.0" text="Montaditos de Tortilla &#10;con Cebolla" textAlignment="CENTER">
                         <font>
                            <Font name="Segoe Script" size="18.0" />
                         </font>
+                        <VBox.margin>
+                           <Insets left="10.0" />
+                        </VBox.margin>
                      </Label>
                   </VBox>
                   <Label alignment="BOTTOM_CENTER" prefHeight="32.0" prefWidth="59.0" text="4.00€" textAlignment="CENTER">
@@ -123,7 +137,7 @@
                   <HBox spacing="5.0">
                      <Button fx:id="btnMenosMontaditos" onAction="#decrementarCantidad" text="-" />
                      <TextField fx:id="txtCantidadMontaditos" alignment="CENTER" editable="false" prefWidth="40" text="0" />
-                     <Button fx:id="btnMasMontaditos" onAction="#incrementarCantidad" prefHeight="25.0" prefWidth="35.0" text="+" />
+                     <Button fx:id="btnMasMontaditos" onAction="#incrementarCantidad" prefHeight="25.0" prefWidth="29.0" text="+" />
                   </HBox>
                   <padding>
                      <Insets top="90.0" />
@@ -133,10 +147,13 @@
                <!-- Mini Buñuelos de Queso -->
                <HBox alignment="TOP_CENTER" spacing="10.0">
                   <VBox alignment="TOP_CENTER">
-                     <Label fx:id="BunuelosLabel" text="Mini Buñuelos de Queso">
+                     <Label fx:id="BunuelosLabel" text="Mini Buñuelos de Queso" textAlignment="CENTER">
                         <font>
                            <Font name="Segoe Script" size="18.0" />
                         </font>
+                        <VBox.margin>
+                           <Insets left="10.0" />
+                        </VBox.margin>
                      </Label>
                   </VBox>
                   <Label alignment="BOTTOM_CENTER" prefHeight="32.0" prefWidth="48.0" text="4.00€" textAlignment="CENTER">
@@ -147,7 +164,7 @@
                   <HBox spacing="5.0">
                      <Button fx:id="btnMenosBunuelos" onAction="#decrementarCantidad" text="-" />
                      <TextField fx:id="txtCantidadBunuelos" alignment="CENTER" editable="false" prefWidth="40" text="0" />
-                     <Button fx:id="btnMasBunuelos" onAction="#incrementarCantidad" text="+" />
+                     <Button fx:id="btnMasBunuelos" onAction="#incrementarCantidad" prefHeight="25.0" prefWidth="26.0" text="+" />
                   </HBox>
                   <padding>
                      <Insets top="95.0" />

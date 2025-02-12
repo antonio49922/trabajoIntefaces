@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
@@ -11,32 +12,35 @@
     <!-- Menú lateral para categorías -->
     <left>
         <VBox alignment="CENTER" prefHeight="675.0" prefWidth="127.0" spacing="10.0" style="-fx-border-color: #5c4da8; -fx-border-width: 2px; -fx-padding: 10px;">
-         <ImageView fitHeight="105.0" fitWidth="113.0" opacity="0.86" pickOnBounds="true" preserveRatio="true">
+         <ImageView fitHeight="105.0" fitWidth="113.0" opacity="0.86" pickOnBounds="true" preserveRatio="true" translateY="-145.0">
             <image>
                <Image url="@../../../Recursos_Gráficos/Fuentes/Ejemplo_Logo-removebg-cuadrado.png" />
-            </image></ImageView>
-            <Hyperlink onAction="#cambiarATapas" style="-fx-text-fill: #5c4da8;" text="Tapas">
+            </image>
+            <cursor>
+               <Cursor fx:constant="DEFAULT" />
+            </cursor></ImageView>
+            <Hyperlink onAction="#cambiarATapas" style="-fx-text-fill: #5c4da8;" text="Tapas" translateY="-75.0">
                 <font>
                     <Font name="Segoe Script Bold" size="14.0" />
                 </font></Hyperlink>
-            <Hyperlink onAction="#cambiarAPrimeros" style="-fx-text-fill: #5c4da8;" text="Primeros">
+            <Hyperlink onAction="#cambiarAPrimeros" style="-fx-text-fill: #5c4da8;" text="Primeros" translateY="-75.0">
                 <font>
                     <Font name="Segoe Script Bold" size="14.0" />
                 </font></Hyperlink>
-            <Hyperlink onAction="#cambiarASegundos" style="-fx-text-fill: #5c4da8;" text="Segundos">
+            <Hyperlink onAction="#cambiarASegundos" style="-fx-text-fill: #5c4da8;" text="Segundos" translateY="-75.0">
                 <font>
                     <Font name="Segoe Script Bold" size="14.0" />
                 </font></Hyperlink>
-            <Hyperlink layoutX="47.0" layoutY="409.0" onAction="#cambiarAEspeciales" style="-fx-text-fill: #5c4da8;" text="Especiales">
+            <Hyperlink layoutX="47.0" layoutY="409.0" onAction="#cambiarAEspeciales" style="-fx-text-fill: #5c4da8;" text="Especiales" translateY="-75.0">
                 <font>
                     <Font name="Segoe Script Bold" size="14.0" />
                 </font>
             </Hyperlink>
-            <Hyperlink onAction="#cambiarAPostres" style="-fx-text-fill: #5c4da8;" text="Postres">
+            <Hyperlink onAction="#cambiarAPostres" style="-fx-text-fill: #5c4da8;" text="Postres" translateY="-75.0">
                 <font>
                     <Font name="Segoe Script Bold" size="14.0" />
                 </font></Hyperlink>
-            <Button fx:id="btnAñadirCesta" onAction="#añadirAlCarrito" prefHeight="37.0" prefWidth="114.0" style="-fx-background-color: #FFA500; -fx-text-fill: white; -fx-font-size: 14px;" text="A la Cesta">
+            <Button fx:id="btnAñadirCesta" onAction="#añadirAlCarrito" prefHeight="37.0" prefWidth="114.0" style="-fx-background-color: #5c4da8; -fx-text-fill: #EAD7D1; -fx-font-size: 14px;" text="A la Cesta" translateY="-75.0">
                 <font>
                     <Font name="Segoe Script Bold" size="14.0" />
                 </font>
@@ -53,6 +57,11 @@
                     <padding>
                         <Insets bottom="10" left="10" right="10" top="10" />
                     </padding>
+               <Label text="Bebidas" textFill="#5c4da8">
+                  <font>
+                     <Font name="Segoe Script" size="25.0" />
+                  </font>
+               </Label>
 
                     <!-- Ron -->
                     <HBox alignment="TOP_CENTER" spacing="10.0">
@@ -60,7 +69,10 @@
                             <Label fx:id="RonLabel" onMouseClicked="#abrirRones" prefHeight="34.0" prefWidth="60.0" text="Ron ▾">
                         <font>
                            <Font name="Segoe Script" size="18.0" />
-                        </font></Label>
+                        </font>
+                        <padding>
+                           <Insets top="20.0" />
+                        </padding></Label>
                         </VBox>
                   <opaqueInsets>
                      <Insets />
