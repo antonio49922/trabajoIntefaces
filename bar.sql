@@ -170,7 +170,25 @@ INSERT INTO `platos` (`id`, `nombre`, `descripcion`, `precio`) VALUES
 (3, 'Wrap de Pollo', 'Tortilla de trigo rellena de pollo, lechuga, tomate y aderezo César', 9.00),
 (4, 'Sándwich Club', 'Sándwich con pollo, queso, lechuga, tomate y aderezo César', 9.50),
 (5, 'Ensalada Mixta', 'Mezcla de lechuga, tomate, cebolla y crutones con aderezo César', 7.50),
-(6, 'Cheeseburger Doble', 'Hamburguesa doble con queso, lechuga, tomate y cebolla', 12.00);
+(6, 'Cheeseburger Doble', 'Hamburguesa doble con queso, lechuga, tomate y cebolla', 12.00),
+(7, 'Tarta de Queso', '', 3.00),
+(8, 'Helado de Vainilla', '', 2.50),
+(9, 'Flan de Huevo', '', 2.00),
+(10, 'Brownie de Chocolate', '', 3.50),
+(11, 'Filite de Ternera', '', 8.00),
+(12, 'Pescado a la Plancha', '', 7.00),
+(13, 'Pollo Asado', '', 6.00),
+(14, 'Hamburguesa Completa', '', 5.00),
+(15, 'Patatas con Alioli', '', 4.00),
+(16, 'Croqueta de Jamon y Queso', '', 4.00),
+(17, 'Montaditos de Tortilla con Cebolla', '', 4.00),
+(18, 'Mini Buñuelos de Queso', '', 4.00),
+(19, 'Champiñones al Ajillo', '', 6.00),
+(19, 'Berenjenas fritas con Miel', '', 7.00),
+(19, 'Boquerones en Vinagre', '', 7.50),
+(19, 'Rabas de Calamar', '', 8.50);
+
+
 
 -- --------------------------------------------------------
 
@@ -181,6 +199,7 @@ INSERT INTO `platos` (`id`, `nombre`, `descripcion`, `precio`) VALUES
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
   `nombre` varchar(255) NOT NULL,
+  `apellido` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `contraseña` varchar(255) NOT NULL,
   `rol` enum('admin','usuario') DEFAULT 'usuario'
@@ -190,9 +209,9 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nombre`, `email`, `contraseña`, `rol`) VALUES
-(1, 'Admin', 'admin@bar.com', 'admin123', 'admin'),
-(2, 'Usuario', 'usuario@bar.com', 'usuario123', 'usuario');
+INSERT INTO `usuarios` (`id`, `nombre`, `apellido` ,  `email`, `contraseña`, `rol`) VALUES
+(1, 'Admin', 'admin'  ,  'admin@bar.com', 'admin123', 'admin'),
+(2, 'Usuario', 'usuario', 'usuario@bar.com', 'usuario123', 'usuario');
 
 --
 -- Índices para tablas volcadas
