@@ -4,15 +4,15 @@ public class Usuario {
 
     // Variables
     private String nombre;
-    private String apellidos;
+    private String apellido;
     private String correo;
     private String password;
     private Rol rol;
 
     // Constructor
-    public Usuario(String nombre, String apellidos, String correo, String password, Rol rol) {
+    public Usuario(String nombre, String apellido, String correo, String password, Rol rol) {
         this.nombre = nombre;
-        this.apellidos = apellidos;
+        this.apellido = apellido;
         this.correo = correo;
         this.password = password;
         this.rol = rol;}
@@ -20,11 +20,11 @@ public class Usuario {
     public Usuario() {}
 
     // Getter and Setter
-    public String getApellidos() {
-        return apellidos;}
+    public String getApellido() {
+        return apellido;}
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;}
+    public void setApellido(String apellido) {
+        this.apellido = apellido;}
 
     public String getNombre() {
         return nombre;}
