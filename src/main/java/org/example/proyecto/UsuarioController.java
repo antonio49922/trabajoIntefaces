@@ -7,6 +7,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
+import java.awt.Desktop;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.PreparedStatement;
@@ -43,6 +45,9 @@ public class UsuarioController {
     @FXML
     private Button sentForm;
 
+    @FXML
+    private Hyperlink verDescripcion; // Hyperlink agregado para abrir el PDF
+
     private DAOUsuarios daoUsuarios = new DAOUsuarios();
 
     /**
@@ -52,6 +57,23 @@ public class UsuarioController {
     private void initialize() {
         sentForm.setOnAction(event -> addUser());
         mensaje = new Properties();
+    }
+
+    /**
+     * Método para abrir el archivo PDF de la descripción.
+     */
+    @FXML
+    private void abrirDescripcionPDF() {
+        try {
+            File pdfFile = new File("Javadoc/DESCRIPCION.pdf"); // Ruta del archivo PDF
+            if (pdfFile.exists() && Desktop.isDesktopSupported()) {
+                Desktop.getDesktop().open(pdfFile);
+            } else {
+                System.out.println("El archivo PDF no se encontró.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
