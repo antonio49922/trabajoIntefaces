@@ -15,6 +15,9 @@ import java.sql.SQLException;
 import java.util.Properties;
 import java.util.regex.Pattern;
 
+/**
+ * Controlador que gestiona el registro y autenticacion de usuarios dentro de la app
+ */
 public class UsuarioController {
 
     @FXML
@@ -37,11 +40,21 @@ public class UsuarioController {
 
     private DAOUsuarios daoUsuarios = new DAOUsuarios();
 
+    /**
+     * Se inicia al ejecutar el programa
+     *
+     * sentForm se usa para ejecutar el adduser
+     */
     @FXML
+
     private void initialize() {
         sentForm.setOnAction(event -> addUser());
         mensaje = new Properties(); // Initialize the mensaje property
     }
+
+    /**
+     * Metodo encargado de validar los datos ingresados  y registrar un nuevo usuario
+     */
 
     private void addUser() {
         String name = nameField.getText().trim();
@@ -50,6 +63,9 @@ public class UsuarioController {
         String password = passwordField.getText().trim();
         String rol = rolField.getText().trim();
 
+        /**
+         * Verifica si el formato es correcto, si es correcto retorna True si es incorrecto False
+         */
         // Validar email
         if (!validateEmail(email)) {
             showAlert("ERROR", "Verifica el correo",
@@ -57,6 +73,9 @@ public class UsuarioController {
             return;
         }
 
+        /**
+         * Verifica si la contraseña es correcta y cumple los requisitos
+         */
         // Validar contraseña
         if (!validatePassword(password)) {
             showAlert("ERROR", "Verifica la contraseña",
@@ -64,6 +83,9 @@ public class UsuarioController {
             return;
         }
 
+        /**
+         * Verificiacion de rol si el usuario es el especificadio se convertira en administrador
+         */
         // Verificar el rol
         Rol rolUser = rol.equals("losDeAtras-25") ? Rol.ADMIN : Rol.USUARIO;
 
@@ -127,6 +149,11 @@ public class UsuarioController {
         }
     }
 
+    /**
+     * Metodo que recupera el nombre y apellido del usuario desde la base de datos
+     * @param email se verifica desde el email
+     * @return un string con nombre y apellido del usuario
+     */
     private String[] getUserDataFromDB(String email) {
         String query = "SELECT nombre, apellido FROM usuarios WHERE email = ?";
         try (PreparedStatement statement = daoUsuarios.getConnection().prepareStatement(query)) {
@@ -158,6 +185,10 @@ public class UsuarioController {
 
     private Properties mensaje;
 
+    /**
+     * Cambio de idioma del menu a ingles
+     */
+
     @FXML
     private void cambiarAIngles() {
         String selectedLanguage = "ingles_en.properties";
@@ -165,6 +196,9 @@ public class UsuarioController {
         updateTexts();
     }
 
+    /**
+     * Cambia el idioma del menu a español
+     */
     @FXML
     private void cambiarAEspanol() {
         String selectedLanguage = "espanol_es.properties";
@@ -172,6 +206,10 @@ public class UsuarioController {
         updateTexts();
     }
 
+    /**
+     * Carga los textos desde un archivo en properties
+     * @param lang
+     */
     private void loadLanguage(String lang) {
         String fileName = lang;
         try (InputStream input = getClass().getClassLoader().getResourceAsStream(fileName)) {
@@ -186,6 +224,9 @@ public class UsuarioController {
         }
     }
 
+    /**
+     * Metodo que actualiza los textos de la interfaz gráfica con los valores cargados en mensaje.
+     */
     private void updateTexts() {
         titulo_inicio.setText(mensaje.getProperty("label.inicioSesion", "Inicio de Sesion"));
         nombre.setText(mensaje.getProperty("label.nombre", "Nombre"));
