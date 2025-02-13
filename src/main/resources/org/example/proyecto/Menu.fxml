@@ -27,10 +27,10 @@
             </image></ImageView>
          <ImageView fitHeight="45.0" fitWidth="35.0" layoutX="61.0" layoutY="512.0" onMouseClicked="#cambiarAEspanol" pickOnBounds="true" preserveRatio="true" translateX="-200.0" translateY="-60.0">
             <image>
-               <Image url="@../../../Recursos_Gráficos/Imagenes/Recursos/uk-flag.442x512.png" />
+               <Image url="@../../../Recursos_Gráficos/Imagenes/Recursos/es-flag.442x512.png" />
             </image>
          </ImageView>
-         <Label fx:id="welcomeLabel" text="¡Hola!" translateY="-65.0">
+         <Label fx:id="welcomeLabel" text="¡Bienvenido!" textFill="#5c4da8" translateY="-65.0">
             <font>
                <Font name="Segoe Script" size="25.0" />
             </font>
@@ -54,7 +54,7 @@
                   <Image url="@../../../Recursos_Gráficos/Imagenes/Bebidas/EditadasBrandy.png" />
                </image>
             </ImageView>
-            <Label fx:id="bebidasLabel" text="Bebidas" translateY="-65.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <Label fx:id="bebidasLabel" text="Bebidas" textFill="#5c4da8" translateY="-65.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
                <font>
                   <Font name="Segoe Script Bold" size="14.0" />
                </font>
@@ -66,7 +66,7 @@
                   <Image url="@../../../Recursos_Gráficos/Imagenes/Alimentos/Sanwi.png" />
                </image>
             </ImageView>
-            <Label fx:id="tapasLabel" text="Tapas" translateY="-65.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Label fx:id="tapasLabel" text="Tapas" textFill="#5c4da8" translateY="-65.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font name="Segoe Script Bold" size="14.0" />
                </font>
@@ -78,7 +78,7 @@
                   <Image url="@../../../Recursos_Gráficos/Imagenes/Alimentos/Ensalada.png" />
                </image>
             </ImageView>
-            <Label fx:id="primerosLabel" text="Primer Plato" translateY="-65.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Label fx:id="primerosLabel" text="Primer Plato" textFill="#5c4da8" translateY="-65.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <font>
                   <Font name="Segoe Script Bold" size="14.0" />
                </font>
@@ -90,7 +90,7 @@
                   <Image url="@../../../Recursos_Gráficos/Imagenes/Alimentos/Burger.png" />
                </image>
             </ImageView>
-            <Label fx:id="segundosLabel" text="Segundo Plato" translateY="-65.0" GridPane.columnIndex="0" GridPane.rowIndex="3">
+            <Label fx:id="segundosLabel" text="Segundo Plato" textFill="#5c4da8" translateY="-65.0" GridPane.columnIndex="0" GridPane.rowIndex="3">
                <font>
                   <Font name="Segoe Script Bold" size="14.0" />
                </font>
@@ -102,7 +102,7 @@
                   <Image url="@../../../Recursos_Gráficos/Imagenes/Alimentos/Sanwi02.png" />
                </image>
             </ImageView>
-            <Label fx:id="postresLabel" text="Postres" translateY="-65.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Label fx:id="postresLabel" text="Postres" textFill="#5c4da8" translateY="-65.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
                   <Font name="Segoe Script Bold" size="14.0" />
                </font>
@@ -114,7 +114,7 @@
                   <Image url="@../../../Recursos_Gráficos/Imagenes/Alimentos/Ensalada02.png" />
                </image>
             </ImageView>
-            <Label fx:id="especialesLabel" text="Especial de la casa" translateY="-65.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+            <Label fx:id="especialesLabel" text="Especial de la casa" textFill="#5c4da8" translateY="-65.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
                <font>
                   <Font name="Segoe Script Bold" size="14.0" />
                </font>

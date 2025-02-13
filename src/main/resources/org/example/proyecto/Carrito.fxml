@@ -15,18 +15,18 @@
 
     <!-- Contenido Central: Resumen del Pedido -->
     <center>
-        <VBox alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
+        <VBox alignment="CENTER" spacing="20.0" style="-fx-border-width: 2px; -fx-border-color: #5c4da8; -fx-border-radius: 10px;" BorderPane.alignment="CENTER">
             <padding>
                 <Insets bottom="20" left="20" right="20" top="20" />
             </padding>
 
-            <Label fx:id="TituloResumen" style="-fx-text-fill: #5c4da8; -fx-alignment: CENTER;" text="Resumen del Pedido">
+            <Label fx:id="TituloResumen" style="-fx-text-fill: #5c4da8; -fx-alignment: CENTER;" text="Resumen del Pedido" underline="true">
                 <font>
                     <Font name="Segoe Script Bold" size="18.0" />
                 </font>
             </Label>
 
-            <Label fx:id="usuarioLabel" style="-fx-text-fill: #5c4da8; -fx-alignment: CENTER;" text="Usuario:">
+            <Label fx:id="usuarioLabel" style="-fx-text-fill: #5c4da8; -fx-alignment: CENTER;" text="El pedido de ">
                 <font>
                     <Font name="Segoe Script Bold" size="14.0" />
                 </font>
@@ -37,14 +37,14 @@
                     <VBox fx:id="resumenPedido" alignment="BOTTOM_LEFT" prefHeight="195.0" prefWidth="631.0" spacing="10.0" style="-fx-padding: 10;">
                         <style>
                             -fx-font-family: "Segoe Script Bold";
-                            -fx-font-size: 14.0;
+                            -fx-font-size: 22.0;
                             -fx-alignment: BOTTOM_LEFT;
                         </style>
                     </VBox>
                 </content>
             </ScrollPane>
 
-            <Label fx:id="totalPrecio" style="-fx-text-fill: black; -fx-alignment: CENTER;" text="Total: 0 €">
+            <Label fx:id="totalPrecio" style="-fx-text-fill: #5b4ca7; -fx-alignment: CENTER;" text="Total: 0 €">
                 <font>
                     <Font name="Segoe Script Bold" size="14.0" />
                 </font>
@@ -65,15 +65,15 @@
             </ImageView>
 
             <ImageView fitHeight="45.0" fitWidth="35.0" onMouseClicked="#cambiarAEspanol" pickOnBounds="true" preserveRatio="true">
-                <image>
-                    <Image url="@../../../Recursos_Gráficos/Imagenes/Recursos/uk-flag.442x512.png" />
-                </image>
             <HBox.margin>
                <Insets right="100.0" />
             </HBox.margin>
+            <image>
+               <Image url="@../../../Recursos_Gráficos/Imagenes/Recursos/es-flag.442x512.png" />
+            </image>
             </ImageView>
 
-            <Button fx:id="btnSeguirComprando" onAction="#seguirComprando" style="-fx-text-fill: #5c4da8; -fx-alignment: CENTER;" text="Seguir Comprando">
+            <Button fx:id="btnSeguirComprando" onAction="#seguirComprando" style="-fx-text-fill: #5c4da8; -fx-alignment: CENTER; -fx-background-color: transparent;" text="Seguir Comprando">
                 <font>
                     <Font name="Segoe Script Bold" size="14.0" />
                 </font>

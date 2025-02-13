@@ -79,7 +79,7 @@
                      </image></ImageView>
                   <ImageView fitHeight="45.0" fitWidth="35.0" layoutX="61.0" layoutY="512.0" onMouseClicked="#cambiarAEspanol" pickOnBounds="true" preserveRatio="true" translateY="-263.0">
                      <image>
-                        <Image url="@../../../Recursos_Gráficos/Imagenes/Recursos/uk-flag.442x512.png" />
+                        <Image url="@../../../Recursos_Gráficos/Imagenes/Recursos/es-flag.442x512.png" />
                      </image>
                   </ImageView>
                </children>
