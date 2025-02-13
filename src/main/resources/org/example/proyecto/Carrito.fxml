@@ -34,7 +34,7 @@
 
             <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="400.0">
                 <content>
-                    <VBox fx:id="resumenPedido" alignment="BOTTOM_LEFT" prefHeight="361.0" prefWidth="553.0" spacing="10.0" style="-fx-padding: 10;">
+                    <VBox fx:id="resumenPedido" alignment="BOTTOM_LEFT" prefHeight="195.0" prefWidth="631.0" spacing="10.0" style="-fx-padding: 10;">
                         <style>
                             -fx-font-family: "Segoe Script Bold";
                             -fx-font-size: 14.0;

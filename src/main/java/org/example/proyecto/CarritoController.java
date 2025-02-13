@@ -67,7 +67,9 @@ public class CarritoController {
 
         for (Map.Entry<String, Integer> item : carrito.getItems().entrySet()) {
             double precioUnitario = carrito.getPrecioUnitario(item.getKey());
-            resumenPedido.getChildren().add(new Label(item.getKey() + " x" + item.getValue() + " - " + precioUnitario + " €"));
+            Label label = new Label(item.getKey() + " x" + item.getValue() + " - " + precioUnitario + " €");
+            label.setStyle("-fx-font-family: 'Segoe Script'; -fx-font-size: 14.0; -fx-alignment: BOTTOM_LEFT;");
+            resumenPedido.getChildren().add(label);
         }
 
         totalPrecio.setText("Total: " + carrito.getTotalPrecio() + " €");
