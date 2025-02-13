@@ -25,11 +25,6 @@
                         <Font name="Segoe Script" size="14.0" />
                      </font>
                   </TextField>
-                  <PasswordField id="passwordField" fx:id="passwordField" layoutX="259.0" layoutY="159.0">
-                     <font>
-                        <Font name="Segoe Script" size="14.0" />
-                     </font>
-                  </PasswordField>
                   <Label fx:id="apellido" layoutX="160.0" layoutY="75.0" text="Apellidos">
                      <font>
                         <Font name="Segoe Script" size="14.0" />
@@ -55,21 +50,29 @@
                         <Font name="Segoe Script" size="14.0" />
                      </font>
                   </Label>
-                  <Button id="sentForm" fx:id="sentForm" layoutX="233.0" layoutY="258.0" mnemonicParsing="false" onAction="#initialize" text="Accede al Menú">
+                  <PasswordField id="passwordField" fx:id="passwordField" layoutX="259.0" layoutY="159.0">
+                     <tooltip>
+                        <Tooltip text="(Debe tener mín 8 carácteres, una mayús y un número)" />
+                     </tooltip>
                      <font>
                         <Font name="Segoe Script" size="14.0" />
                      </font>
-                  </Button>
+                  </PasswordField>
                   <Label fx:id="rol" layoutX="206.0" layoutY="209.0" text="Rol">
                      <font>
                         <Font name="Segoe Script" size="14.0" />
                      </font>
                   </Label>
-                  <TextField id="rolField" fx:id="rolField" layoutX="259.0" layoutY="204.0">
+                  <TextField id="rolField" fx:id="rolField" layoutX="259.0" layoutY="204.0" promptText="Usuario">
                      <font>
                         <Font name="Segoe Script" size="14.0" />
                      </font>
                   </TextField>
+                  <Button id="sentForm" fx:id="sentForm" layoutX="233.0" layoutY="258.0" mnemonicParsing="false" onAction="#initialize" text="Accede al Menú">
+                     <font>
+                        <Font name="Segoe Script" size="14.0" />
+                     </font>
+                  </Button>
                   <Button fx:id="cambiarIngles" layoutX="35.0" layoutY="31.0" mnemonicParsing="false" onAction="#cambiarAIngles" text="ingles" />
                   <Button fx:id="cambiarEspanol" layoutX="35.0" layoutY="76.0" mnemonicParsing="false" onAction="#cambiarAEspanol" text="español" />
                </children>

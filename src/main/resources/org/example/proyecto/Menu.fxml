@@ -19,16 +19,6 @@
          <padding>
             <Insets bottom="20" left="20" right="20" top="20" />
          </padding>
-         <ImageView fitHeight="25.0" fitWidth="22.0" onMouseClicked="#iniciarSesion" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@../../../Recursos_Gráficos/Imagenes/usuarioIcono.png" />
-            </image>
-         </ImageView>
-         <Label onMouseClicked="#iniciarSesion" text="Iniciar Sesión">
-            <font>
-               <Font name="Segoe Script" size="13.0" />
-            </font>
-         </Label>
          <GridPane alignment="CENTER" hgap="40" vgap="30">
             <columnConstraints>
                <ColumnConstraints halignment="CENTER" />
@@ -117,7 +107,7 @@
       </VBox>
    </center>
    <top>
-      <ImageView fitHeight="106.0" fitWidth="577.0" pickOnBounds="true" BorderPane.alignment="TOP_RIGHT">
+      <ImageView fitHeight="106" fitWidth="577" pickOnBounds="true" BorderPane.alignment="TOP_RIGHT">
          <image>
             <Image url="@../../../Recursos_Gráficos/Imagenes/Recursos/rural-landscape-village-sketch-f.png" />
          </image>

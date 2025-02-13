@@ -37,6 +37,7 @@ public class UsuarioController {
     @FXML
     private void initialize() {
         sentForm.setOnAction(event -> addUser());
+        mensaje = new Properties(); // Initialize the mensaje property
     }
 
     private void addUser() {
@@ -118,7 +119,6 @@ public class UsuarioController {
 
     private Properties mensaje;
 
-
     @FXML
     private void cambiarAIngles() {
         String selectedLanguage = "ingles_en.properties";
@@ -141,6 +141,7 @@ public class UsuarioController {
                 return;
             }
             mensaje.load(input);
+
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -155,8 +156,4 @@ public class UsuarioController {
         rol.setText(mensaje.getProperty("label.rol", "Rol"));
         sentForm.setText(mensaje.getProperty("button.login", "Accede al Menu"));
     }
-
-
-
-
 }
