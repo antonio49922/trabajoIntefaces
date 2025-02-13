@@ -9,6 +9,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Properties;
 import java.util.regex.Pattern;
 
@@ -59,8 +62,8 @@ public class UsuarioController {
 
         // Verificar si el usuario ya existe
         if(daoUsuarios.userExists(email)) {
-            showAlert("ERROR", "El usuario ya existe", "Ya existe un usuario con ese correo.");
-            redirectMenu();
+            showAlert("!ATENCIÓN¡", "El usuario ya existe", "Ya existe un usuario con ese correo.");
+            redirectMenu(email);
 
         } else {
             // Crear y registrar el usuario
@@ -68,7 +71,7 @@ public class UsuarioController {
             daoUsuarios.addUser(usuario);
 
             showAlert("¡ÉXITO!", "Usuario registrado correctamente", "Bienvenido/a " + name);
-            redirectMenu();
+            redirectMenu(email);
         }
     }
 
@@ -85,14 +88,22 @@ public class UsuarioController {
         alert.showAndWait();
     }
 
-    private void redirectMenu() {
+    private void redirectMenu(String email) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Menu.fxml"));
-            Stage stage = new Stage();
-            Scene scene = new Scene(fxmlLoader.load(), 600, 500);
+            Parent root = fxmlLoader.load();
 
+            Menu menu = fxmlLoader.getController();
+
+            String[] userData = getUserDataFromDB(email);
+            if(userData != null) {
+                menu.setWelcomeMessage(userData[0], userData[1]);
+            }
+
+            Stage stage = new Stage();
             stage.setTitle("Menú");
-            stage.setScene(scene);
+            stage.setScene(new Scene(root, 577, 680));
+
             stage.setResizable(false);
             stage.show();
 
@@ -102,6 +113,23 @@ public class UsuarioController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    // UsuarioController.java
+    private String[] getUserDataFromDB(String email) {
+        String query = "SELECT nombre, apellido FROM usuarios WHERE email = ?";
+        try (PreparedStatement statement = daoUsuarios.getConnection().prepareStatement(query)) {
+            statement.setString(1, email);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                String nombre = resultSet.getString("nombre");
+                String apellido = resultSet.getString("apellido");
+                return new String[]{nombre, apellido};
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     @FXML

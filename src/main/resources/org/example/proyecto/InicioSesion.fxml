@@ -9,7 +9,7 @@
    <center>
       <VBox alignment="TOP_CENTER" prefHeight="427.0" prefWidth="700.0" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="titulo_inicio" text="Inicio de sesión">
+            <Label fx:id="titulo_inicio" text="Bienvenido a Casa Noble">
                <font>
                   <Font name="Segoe Script" size="24.0" />
                </font>

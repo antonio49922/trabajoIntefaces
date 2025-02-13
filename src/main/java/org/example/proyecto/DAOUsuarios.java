@@ -6,6 +6,10 @@ public class DAOUsuarios {
 
     private Connection connection;
 
+    public Connection getConnection() {
+        return connection;
+    }
+
     public DAOUsuarios() {
         try {
             // Load the MySQL JDBC driver
