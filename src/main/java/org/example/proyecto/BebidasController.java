@@ -13,6 +13,17 @@ import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import java.io.IOException;
 
+/**
+ * @author Antonio-- Alberto
+ * @vesion 1.0
+ * @since 10/02/2025
+ **/
+
+/**
+ *Controlador para la interfaz de seleccion de bebidas en la aplicacion
+ * se permite incrementar y decrementar la cantidad de bebidas, cambiar de menu
+ * y añadir nuevos elementos al carrito
+ **/
 public class BebidasController {
 
     @FXML private TextField txtCantidadCesar, txtCantidadCesar1, txtCantidadMixta, txtCantidadMixta1, txtCantidadMixta2, txtCantidadMixta11, txtCantidadMixta21, txtCantidadMixta111;
@@ -26,6 +37,11 @@ public class BebidasController {
         tequila.setVisible(false);
     }
 
+    /**
+     * Incrementa la cantidad de bebidas
+     * segun el boton presionado
+     * @param event Evento que se genera al precionar el boton
+     */
     @FXML
     private void incrementarCantidad(ActionEvent event) {
         Button btn = (Button) event.getSource();
@@ -41,6 +57,11 @@ public class BebidasController {
         }
     }
 
+    /**
+     * Decrementa la cantidad de bebidas
+     * segun el boton precionado
+     * @param event Evento que se genera al precionar el boton
+     */
     @FXML
     private void decrementarCantidad(ActionEvent event) {
         Button btn = (Button) event.getSource();
@@ -56,10 +77,25 @@ public class BebidasController {
         }
     }
 
+    /**
+     * Aumento en uno la cantidad de bebida que se asocia a un textfield
+     *
+     * @param textField Campo de texto con la cantidad actual
+     * @return Nueva cantidad
+     */
+
     private String aumentarCantidad(TextField textField) {
         if (textField == null || textField.getText().isEmpty()) return "1";
         return String.valueOf(Integer.parseInt(textField.getText()) + 1);
     }
+
+    /**
+     * Disminuye en uno la cantidad de bebida asociada a un textfield
+     *
+     * @param textField Campo de texto con la cantidad actual de bebida
+     *
+     * @return nueva cantidad, no puede ser inferior a 0
+     */
 
     private String disminuirCantidad(TextField textField) {
         if (textField == null || textField.getText().isEmpty()) return "0";
@@ -75,6 +111,14 @@ public class BebidasController {
     @FXML private void cambiarABebidas(ActionEvent event) throws IOException { cambiarEscena(event, "Bebidas.fxml"); }
     @FXML private void cambiarAEspeciales(ActionEvent event) throws IOException { cambiarEscena(event, "especial.fxml"); }
 
+
+    /**
+     * Cambiar la escena
+     * @param event Evento de accion
+     * @param fxml Nombre del archivo fxml
+     * @throws IOException Si ocurre un error al cargar la escena
+     */
+
     private void cambiarEscena(ActionEvent event, String fxml) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/org/example/proyecto/" + fxml));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -87,6 +131,12 @@ public class BebidasController {
     public void abrirGin(MouseEvent mouseEvent) { gin.setVisible(true); }
     public void abrirTequila(MouseEvent mouseEvent) { tequila.setVisible(true); }
 
+    /**
+     * Añade bebidas seleccionadas al carrito si la cantidasd es mayor a 0
+     *
+     * @param event Evento de accion del boton añadir
+     * @throws IOException Si ocurre un error al cambiar a la pantalla del carrito
+     */
     @FXML
     private void añadirAlCarrito(ActionEvent event) throws IOException {
         CarritoModel carrito = CarritoModel.getInstance();
@@ -108,6 +158,14 @@ public class BebidasController {
         stage.setScene(new Scene(root));
         stage.show();
     }
+
+    /**
+     * Agrega una bebida al carrito si su cantidad es mayor que 0
+     *
+     * @param textField campo de texto con la cantidad
+     * @param nombre Nombre de la bebida
+     * @param precio PRecio de la bebida
+     */
 
     private void agregarBebidaSiExiste(TextField textField, String nombre, double precio) {
         if (textField != null && !textField.getText().isEmpty()) {

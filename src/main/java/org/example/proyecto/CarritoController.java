@@ -16,6 +16,15 @@ import java.io.IOException;
 import java.util.Map;
 import javafx.event.ActionEvent;
 
+/**
+ * @author Alberto
+ * @vesion 1.0
+ * @since 10/02/2025
+ **/
+
+/**
+ * Comtrolador para gestionar el resumen del pedido y confirmar comprar
+ */
 public class CarritoController {
 
     @FXML
@@ -27,10 +36,17 @@ public class CarritoController {
     @FXML
     private Button confirmarPedido;
 
+    /**
+     * Inicializacion del controlador y actualizacion del pedido
+     */
     @FXML
     public void initialize() {
         actualizarResumen();
     }
+
+    /**
+     * ACtualiza la vista con los elementos del carrito y mueestra el total del pedido
+     */
 
     private void actualizarResumen() {
         CarritoModel carrito = CarritoModel.getInstance();
@@ -44,6 +60,12 @@ public class CarritoController {
         totalPrecio.setText("Total: " + carrito.getTotalPrecio() + " €");
     }
 
+    /**
+     * Permite al usuario seguir comprando y vuelve al menu principal
+     * @param event Evento de accion del boton
+     * @throws IOException Si ocurre un error al cargar la nueva escena
+     */
+
     @FXML
     private void seguirComprando(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/org/example/proyecto/Menu.fxml"));
@@ -51,6 +73,10 @@ public class CarritoController {
         stage.setScene(new Scene(root));
         stage.show();
     }
+
+    /**
+     * Confirma el pedido, vacia el carrito y muestra una alerta de confirmacion
+     */
 
     @FXML
     private void confirmarPedido() {

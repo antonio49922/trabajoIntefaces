@@ -5,11 +5,23 @@ import java.sql.DriverManager;
 
 /**@author AlejandroGpublic
 **/
+
+/**
+ * Clase para gestionar la conexion con la base de datos
+ *
+ */
+
 public class Cone {
     String url="jdbc:mysql://localhost:3306/bar";
     String usuario="root";
     String password="";
     Connection con;
+
+    /**
+     * Establece la conexion con la base de datos
+     * @return Si la conexion es exitosa devuelve el objeto connection,
+     * si falla es null
+     */
 
     public Connection conectar() {
 
