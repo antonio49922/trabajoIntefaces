@@ -6,7 +6,15 @@ public class DAOUsuarios {
 
     private Connection connection;
 
+    /**
+     * Clase para hacer modificacion en usuarios
+     *
+     */
     public DAOUsuarios() {
+
+        /**
+         * Metodos para acceder a la conexion de la base de datos
+         */
         try {
             // Load the MySQL JDBC driver
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -20,6 +28,12 @@ public class DAOUsuarios {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Metodo para saber si un usuario existe mediante su email
+     * @param email Email del usuario
+     * @return devuelve True si minimo se tiene un usuario
+     */
 
     public boolean userExists(String email) {
         String query = "SELECT COUNT(*) FROM usuarios WHERE email = ?";
@@ -36,6 +50,10 @@ public class DAOUsuarios {
         return false; // Devolver false si hay un error o no se encontró el usuario
     }
 
+    /**
+     * Metodo para añadir un nuevo usuario
+     * @param usuario variables a tener en cuenta para añadir al usuario
+     */
     public void addUser(Usuario usuario) {
         String query = "INSERT INTO usuarios (nombre, apellido, email, contraseña, rol) VALUES (?, ?, ?, ?, ?)";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
