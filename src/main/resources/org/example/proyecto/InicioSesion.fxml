@@ -16,7 +16,7 @@
             </Label>
             <Pane prefHeight="342.0" prefWidth="584.0">
                <children>
-                  <Label fx:id="nombre" style="-fx-text-fill: #5c4da8;" layoutX="107.0" layoutY="13.0" text="Nombre">
+                  <Label fx:id="nombre" layoutX="107.0" layoutY="13.0" style="-fx-text-fill: #5c4da8;" text="Nombre">
                      <font>
                         <Font name="Segoe Script" size="14.0" />
                      </font></Label>
@@ -25,7 +25,7 @@
                         <Font name="Segoe Script" size="14.0" />
                      </font>
                   </TextField>
-                  <Label fx:id="apellido" style="-fx-text-fill: #5c4da8;" layoutX="316.0" layoutY="13.0" text="Apellidos">
+                  <Label fx:id="apellido" layoutX="316.0" layoutY="13.0" style="-fx-text-fill: #5c4da8;" text="Apellidos">
                      <font>
                         <Font name="Segoe Script" size="14.0" />
                      </font>
@@ -35,7 +35,7 @@
                         <Font name="Segoe Script" size="14.0" />
                      </font>
                   </TextField>
-                  <Label fx:id="email" style="-fx-text-fill: #5c4da8;" layoutX="107.0" layoutY="89.0" text="Correo">
+                  <Label fx:id="email" layoutX="107.0" layoutY="89.0" style="-fx-text-fill: #5c4da8;" text="Correo">
                      <font>
                         <Font name="Segoe Script" size="14.0" />
                      </font>
@@ -45,20 +45,20 @@
                         <Font name="Segoe Script" size="14.0" />
                      </font>
                   </TextField>
-                  <Label fx:id="password" style="-fx-text-fill: #5c4da8;" layoutX="316.0" layoutY="82.0" text="Contraseña">
+                  <Label fx:id="password" layoutX="316.0" layoutY="82.0" style="-fx-text-fill: #5c4da8;" text="Contraseña">
                      <font>
                         <Font name="Segoe Script" size="14.0" />
                      </font>
                   </Label>
                   <PasswordField id="passwordField" fx:id="passwordField" layoutX="316.0" layoutY="115.0">
                      <tooltip>
-                        <Tooltip text="(Debe tener mín 8 carácteres, una mayús y un número)" fx:id="toolPass"/>
+                        <Tooltip fx:id="toolPass" text="(Debe tener mín 8 carácteres, una mayús y un número)" />
                      </tooltip>
                      <font>
                         <Font name="Segoe Script" size="14.0" />
                      </font>
                   </PasswordField>
-                  <Label fx:id="rol" style="-fx-text-fill: #5c4da8;" layoutX="107.0" layoutY="167.0" text="Rol">
+                  <Label fx:id="rol" layoutX="107.0" layoutY="167.0" style="-fx-text-fill: #5c4da8;" text="Rol">
                      <font>
                         <Font name="Segoe Script" size="14.0" />
                      </font>
@@ -68,13 +68,20 @@
                         <Font name="Segoe Script" size="14.0" />
                      </font>
                   </TextField>
-                  <Button id="sentForm" fx:id="sentForm" style="-fx-background-color: #5c4da8; -fx-text-fill: #EAD7D1; -fx-font-size: 14px;" layoutX="218.0" layoutY="258.0" mnemonicParsing="false" onAction="#initialize" text="Accede al Menú">
+                  <Button id="sentForm" fx:id="sentForm" layoutX="218.0" layoutY="258.0" mnemonicParsing="false" onAction="#initialize" style="-fx-background-color: #5c4da8; -fx-text-fill: #EAD7D1; -fx-font-size: 14px;" text="Accede al Menú">
                      <font>
                         <Font name="Segoe Script" size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="cambiarIngles" layoutX="11.0" layoutY="281.0" mnemonicParsing="false" onAction="#cambiarAIngles" text="ingles" />
-                  <Button fx:id="cambiarEspanol" layoutX="62.0" layoutY="281.0" mnemonicParsing="false" onAction="#cambiarAEspanol" text="español" />
+                  <ImageView fitHeight="45.0" fitWidth="35.0" onMouseClicked="#cambiarAIngles" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="250.0">
+                     <image>
+                        <Image url="@../../../Recursos_Gráficos/Imagenes/Recursos/uk-flag.442x512.png" />
+                     </image></ImageView>
+                  <ImageView fitHeight="45.0" fitWidth="35.0" layoutX="61.0" layoutY="512.0" onMouseClicked="#cambiarAEspanol" pickOnBounds="true" preserveRatio="true" translateY="-263.0">
+                     <image>
+                        <Image url="@../../../Recursos_Gráficos/Imagenes/Recursos/uk-flag.442x512.png" />
+                     </image>
+                  </ImageView>
                </children>
             </Pane>
          </children>
