@@ -20,13 +20,11 @@ import java.util.Properties;
 import javafx.event.ActionEvent;
 
 /**
+ * Controlador para gestionar el resumen del pedido y confirmar la compra.
+ *
  * @author Alberto
- * @vesion 1.0
+ * @version 1.0
  * @since 10/02/2025
- **/
-
-/**
- * Comtrolador para gestionar el resumen del pedido y confirmar comprar
  */
 public class CarritoController {
 
@@ -37,21 +35,32 @@ public class CarritoController {
     private Label totalPrecio;
 
     @FXML
-    private Button confirmarPedido;
+    private Label usuarioLabel;  // Muestra el nombre del usuario
+
+    @FXML
+    private Button confirmarPedido;  // Botón para confirmar el pedido
+
+    @FXML
+    private Label TituloResumen;
+
+    @FXML
+    private Button btnSeguirComprando; // Se corrigió el tipo de dato a Button
+
+    private Properties mensaje;
 
     /**
-     * Inicializacion del controlador y actualizacion del pedido
+     * Inicialización del controlador y actualización del pedido.
      */
     @FXML
     public void initialize() {
         actualizarResumen();
+        mostrarUsuario();
         mensaje = new Properties();
     }
 
     /**
-     * ACtualiza la vista con los elementos del carrito y mueestra el total del pedido
+     * Actualiza la vista con los elementos del carrito y muestra el total del pedido.
      */
-
     private void actualizarResumen() {
         CarritoModel carrito = CarritoModel.getInstance();
         resumenPedido.getChildren().clear();
@@ -65,11 +74,25 @@ public class CarritoController {
     }
 
     /**
-     * Permite al usuario seguir comprando y vuelve al menu principal
-     * @param event Evento de accion del boton
-     * @throws IOException Si ocurre un error al cargar la nueva escena
+     * Muestra el nombre del usuario que ha iniciado sesión.
      */
+    private void mostrarUsuario() {
+        UsuarioModel usuario = UsuarioModel.getInstance();
+        String nombreCompleto = usuario.getNombreCompleto();
 
+        if (nombreCompleto == null || nombreCompleto.trim().isEmpty()) {
+            usuarioLabel.setText("Usuario: No identificado");
+        } else {
+            usuarioLabel.setText("Usuario: " + nombreCompleto);
+        }
+    }
+
+    /**
+     * Permite al usuario seguir comprando y vuelve al menú principal.
+     *
+     * @param event Evento de acción del botón.
+     * @throws IOException Si ocurre un error al cargar la nueva escena.
+     */
     @FXML
     private void seguirComprando(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/org/example/proyecto/Menu.fxml"));
@@ -79,9 +102,8 @@ public class CarritoController {
     }
 
     /**
-     * Confirma el pedido, vacia el carrito y muestra una alerta de confirmacion
+     * Confirma el pedido, vacía el carrito y muestra una alerta de confirmación.
      */
-
     @FXML
     private void confirmarPedido() {
         CarritoModel.getInstance().limpiarCarrito();
@@ -93,18 +115,6 @@ public class CarritoController {
         alert.setContentText("Pedido aceptado");
         alert.showAndWait();
     }
-
-
-    @FXML
-    private Label TituloResumen;
-    @FXML
-    private Button btnSeguirComprando;
-
-
-
-
-
-    private Properties mensaje;
 
     @FXML
     private void cambiarAIngles() {
@@ -120,20 +130,26 @@ public class CarritoController {
         updateTexts();
     }
 
+    /**
+     * Carga el idioma seleccionado desde el archivo de propiedades.
+     *
+     * @param lang Nombre del archivo de idioma.
+     */
     private void loadLanguage(String lang) {
-        String fileName = lang;
-        try (InputStream input = getClass().getClassLoader().getResourceAsStream(fileName)) {
+        try (InputStream input = getClass().getClassLoader().getResourceAsStream(lang)) {
             if (input == null) {
-                System.out.println("Lo siento, no se pudo encontrar el archivo: " + fileName);
+                System.out.println("Lo siento, no se pudo encontrar el archivo: " + lang);
                 return;
             }
             mensaje.load(input);
-
         } catch (IOException ex) {
             ex.printStackTrace();
         }
     }
 
+    /**
+     * Actualiza los textos de la interfaz con el idioma seleccionado.
+     */
     private void updateTexts() {
         TituloResumen.setText(mensaje.getProperty("label.resumen", "Resumen del Pedido"));
         btnSeguirComprando.setText(mensaje.getProperty("label.seguirCompra", "Seguir Comprando"));

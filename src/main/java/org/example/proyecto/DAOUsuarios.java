@@ -54,4 +54,18 @@ public class DAOUsuarios {
             e.printStackTrace();
         }
     }
+
+    public String getUserNameByEmail(String email) {
+        String query = "SELECT nombre FROM usuarios WHERE email = ?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, email);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                return resultSet.getString("nombre"); // Retorna el nombre real
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null; // Retorna null si no se encuentra el usuario
+    }
 }

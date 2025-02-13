@@ -15,6 +15,14 @@ import java.sql.SQLException;
 import java.util.Properties;
 import java.util.regex.Pattern;
 
+/**
+ * Controlador para la gestión de usuarios en la aplicación.
+ * Permite el registro y validación de usuarios antes de acceder al sistema.
+ *
+ * @author Emily
+ * @version 1.0
+ * @since 13/02/2025
+ */
 public class UsuarioController {
 
     @FXML
@@ -37,12 +45,18 @@ public class UsuarioController {
 
     private DAOUsuarios daoUsuarios = new DAOUsuarios();
 
+    /**
+     * Inicializa el controlador y configura los eventos del formulario.
+     */
     @FXML
     private void initialize() {
         sentForm.setOnAction(event -> addUser());
-        mensaje = new Properties(); // Initialize the mensaje property
+        mensaje = new Properties();
     }
 
+    /**
+     * Registra un nuevo usuario o lo redirige si ya existe.
+     */
     private void addUser() {
         String name = nameField.getText().trim();
         String surname = surnameField.getText().trim();
@@ -50,33 +64,25 @@ public class UsuarioController {
         String password = passwordField.getText().trim();
         String rol = rolField.getText().trim();
 
-        // Validar email
         if (!validateEmail(email)) {
-            showAlert("ERROR", "Verifica el correo",
-                    "El correo debe tener el formato texto@texto.texto.");
+            showAlert("ERROR", "Verifica el correo", "El correo debe tener el formato texto@texto.texto.");
             return;
         }
 
-        // Validar contraseña
         if (!validatePassword(password)) {
             showAlert("ERROR", "Verifica la contraseña",
-                    "La contraseña debe tener al menos 8 carácteres, de los cuales debe haber una mayúscula, una minúscula y un número.");
+                    "La contraseña debe tener al menos 8 caracteres, con mayúscula, minúscula y un número.");
             return;
         }
 
-        // Verificar el rol
         Rol rolUser = rol.equals("losDeAtras-25") ? Rol.ADMIN : Rol.USUARIO;
 
-        // Verificar si el usuario ya existe
         if (daoUsuarios.userExists(email)) {
-            showAlert("!ATENCIÓN¡", "El usuario ya existe", "Ya existe un usuario con ese correo.");
+            showAlert("¡ATENCIÓN!", "El usuario ya existe", "Ya existe un usuario con ese correo.");
             redirectMenu(email);
-
         } else {
-            // Crear y registrar el usuario
             Usuario usuario = new Usuario(name, surname, email, password, rolUser);
             daoUsuarios.addUser(usuario);
-
             showAlert("¡ÉXITO!", "Usuario registrado correctamente", "Bienvenido/a " + name);
             redirectMenu(email);
         }
@@ -100,14 +106,24 @@ public class UsuarioController {
         alert.showAndWait();
     }
 
+    /**
+     * Redirige al usuario al menú y actualiza `UsuarioModel` con su información.
+     *
+     * @param email Correo del usuario autenticado.
+     */
     private void redirectMenu(String email) {
         try {
+            // Obtener datos del usuario y guardarlos en UsuarioModel
+            String[] userData = getUserDataFromDB(email);
+            if (userData != null) {
+                UsuarioModel.getInstance().cargarUsuarioDesdeDB(email);
+                System.out.println("Usuario cargado en UsuarioModel: " + UsuarioModel.getInstance().getNombreCompleto());
+            }
+
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Menu.fxml"));
             Parent root = fxmlLoader.load();
 
             Menu menu = fxmlLoader.getController();
-
-            String[] userData = getUserDataFromDB(email);
             if (userData != null) {
                 menu.setWelcomeMessage(userData[0], userData[1]);
             }
@@ -115,7 +131,6 @@ public class UsuarioController {
             Stage stage = new Stage();
             stage.setTitle("Menú");
             stage.setScene(new Scene(root, 577, 680));
-
             stage.setResizable(false);
             stage.show();
 
@@ -127,15 +142,19 @@ public class UsuarioController {
         }
     }
 
+    /**
+     * Obtiene los datos del usuario desde la base de datos basado en su correo electrónico.
+     *
+     * @param email Correo del usuario.
+     * @return Un array con el nombre y apellido del usuario, o `null` si no existe.
+     */
     private String[] getUserDataFromDB(String email) {
         String query = "SELECT nombre, apellido FROM usuarios WHERE email = ?";
         try (PreparedStatement statement = daoUsuarios.getConnection().prepareStatement(query)) {
             statement.setString(1, email);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                String nombre = resultSet.getString("nombre");
-                String apellido = resultSet.getString("apellido");
-                return new String[]{nombre, apellido};
+                return new String[]{resultSet.getString("nombre"), resultSet.getString("apellido")};
             }
         } catch (SQLException e) {
             e.printStackTrace();
