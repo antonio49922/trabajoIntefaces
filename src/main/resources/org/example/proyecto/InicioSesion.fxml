@@ -5,74 +5,73 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="469" prefWidth="584" style="-fx-background-color: #EAD7D1;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.proyecto.UsuarioController">
+<BorderPane prefHeight="469.0" prefWidth="584.0" style="-fx-background-color: #EAD7D1;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.proyecto.UsuarioController">
    <center>
       <VBox alignment="TOP_CENTER" prefHeight="427.0" prefWidth="700.0" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Inicio de sesión">
+            <Label fx:id="titulo_inicio" text="Inicio de sesión">
                <font>
                   <Font name="Segoe Script" size="24.0" />
                </font>
             </Label>
             <Pane prefHeight="342.0" prefWidth="584.0">
                <children>
-                  <Label layoutX="170.0" layoutY="19.0" text="Nombre">
+                  <Label fx:id="nombre" layoutX="174.0" layoutY="31.0" text="Nombre">
                      <font>
                         <Font name="Segoe Script" size="14.0" />
                      </font></Label>
-                  <TextField id="nameField" fx:id="nameField" layoutX="255.0" layoutY="14.0">
+                  <TextField id="nameField" fx:id="nameField" layoutX="259.0" layoutY="26.0">
                      <font>
                         <Font name="Segoe Script" size="14.0" />
                      </font>
                   </TextField>
-                  <Label layoutX="156.0" layoutY="63.0" text="Apellidos">
-                     <font>
-                        <Font name="Segoe Script" size="14.0" />
-                     </font>
-                  </Label>
-                  <TextField id="surnameField" fx:id="surnameField" layoutX="255.0" layoutY="58.0">
-                     <font>
-                        <Font name="Segoe Script" size="14.0" />
-                     </font>
-                  </TextField>
-                  <Label layoutX="180.0" layoutY="106.0" text="Correo">
-                     <font>
-                        <Font name="Segoe Script" size="14.0" />
-                     </font>
-                  </Label>
-                  <TextField id="emailField" fx:id="emailField" layoutX="255.0" layoutY="102.0">
-                     <font>
-                        <Font name="Segoe Script" size="14.0" />
-                     </font>
-                  </TextField>
-                  <PasswordField id="passwordField" fx:id="passwordField" layoutX="255.0" layoutY="147.0">
-                     <tooltip>
-                        <Tooltip text="Debe tener mín 8 carácteres, una mayús y un número" />
-                     </tooltip>
+                  <PasswordField id="passwordField" fx:id="passwordField" layoutX="259.0" layoutY="159.0">
                      <font>
                         <Font name="Segoe Script" size="14.0" />
                      </font>
                   </PasswordField>
-                  <Label layoutX="144.0" layoutY="152.0" text="Contraseña">
+                  <Label fx:id="apellido" layoutX="160.0" layoutY="75.0" text="Apellidos">
                      <font>
                         <Font name="Segoe Script" size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="202.0" layoutY="197.0" text="Rol">
-                     <font>
-                        <Font name="Segoe Script" size="14.0" />
-                     </font>
-                  </Label>
-                  <TextField id="rolField" fx:id="rolField" layoutX="255.0" layoutY="192.0" promptText="Usuario">
+                  <TextField id="surnameField" fx:id="surnameField" layoutX="259.0" layoutY="70.0">
                      <font>
                         <Font name="Segoe Script" size="14.0" />
                      </font>
                   </TextField>
-                  <Button id="sentForm" fx:id="sentForm" layoutX="223.0" layoutY="253.0" mnemonicParsing="false" onAction="#initialize" text="Accede al Menú">
+                  <Label fx:id="email" layoutX="184.0" layoutY="118.0" text="Correo">
+                     <font>
+                        <Font name="Segoe Script" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField id="emailField" fx:id="emailField" layoutX="259.0" layoutY="114.0">
+                     <font>
+                        <Font name="Segoe Script" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label fx:id="password" layoutX="148.0" layoutY="164.0" text="Contraseña">
+                     <font>
+                        <Font name="Segoe Script" size="14.0" />
+                     </font>
+                  </Label>
+                  <Button id="sentForm" fx:id="sentForm" layoutX="233.0" layoutY="258.0" mnemonicParsing="false" onAction="#initialize" text="Accede al Menú">
                      <font>
                         <Font name="Segoe Script" size="14.0" />
                      </font>
                   </Button>
+                  <Label fx:id="rol" layoutX="206.0" layoutY="209.0" text="Rol">
+                     <font>
+                        <Font name="Segoe Script" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField id="rolField" fx:id="rolField" layoutX="259.0" layoutY="204.0">
+                     <font>
+                        <Font name="Segoe Script" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="cambiarIngles" layoutX="35.0" layoutY="31.0" mnemonicParsing="false" onAction="#cambiarAIngles" text="ingles" />
+                  <Button fx:id="cambiarEspanol" layoutX="35.0" layoutY="76.0" mnemonicParsing="false" onAction="#cambiarAEspanol" text="español" />
                </children>
             </Pane>
          </children>

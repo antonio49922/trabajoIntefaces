@@ -4,13 +4,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 import java.util.regex.Pattern;
 
 public class UsuarioController {
@@ -103,25 +102,60 @@ public class UsuarioController {
             e.printStackTrace();
         }
     }
-}
-/*private void redirectMenu() {
-    try {
-        // Cargar el nuevo FXML
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Menu.fxml"));
-        Stage stage = new Stage();
-        Scene scene = new Scene(fxmlLoader.load(), 600, 500);
 
-        stage.setTitle("Menú");
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.show();
+    @FXML
+    private Label titulo_inicio;
+    @FXML
+    private Label nombre;
+    @FXML
+    private Label apellido;
+    @FXML
+    private Label email;
+    @FXML
+    private Label password;
+    @FXML
+    private Label rol;
 
-        // Obtener la referencia al Stage actual y cerrarlo
-        Stage currentStage = (Stage) passwordField.getScene().getWindow(); // O usa cualquier nodo dentro de tu Login.fxml
-        currentStage.close();
+    private Properties mensaje;
 
-    } catch (IOException e) {
-        e.printStackTrace();
+    @FXML
+    private void cambiarAIngles() {
+        String selectedLanguage = "ingles_en.properties";
+        loadLanguage(selectedLanguage);
+        updateTexts();
     }
+
+    @FXML
+    private void cambiarAEspanol() {
+        String selectedLanguage = "espanol_es.properties";
+        loadLanguage(selectedLanguage);
+        updateTexts();
+    }
+
+    private void loadLanguage(String lang) {
+        String fileName = lang;
+        try (InputStream input = getClass().getClassLoader().getResourceAsStream(fileName)) {
+            if (input == null) {
+                System.out.println("Lo siento, no se pudo encontrar el archivo: " + fileName);
+                return;
+            }
+            mensaje.load(input);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    private void updateTexts() {
+        titulo_inicio.setText(mensaje.getProperty("label.inicioSesion", "Inicio de Sesion"));
+        nombre.setText(mensaje.getProperty("label.nombre", "Nombre"));
+        apellido.setText(mensaje.getProperty("label.apellido", "Apellidos"));
+        email.setText(mensaje.getProperty("label.email", "Correo"));
+        password.setText(mensaje.getProperty("label.password", "Contraseña"));
+        rol.setText(mensaje.getProperty("label.rol", "Rol"));
+        sentForm.setText(mensaje.getProperty("button.login", "Accede al Menu"));
+    }
+
+
+
+
 }
-*/
