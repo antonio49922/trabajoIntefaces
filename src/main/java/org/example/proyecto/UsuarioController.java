@@ -50,8 +50,15 @@ public class UsuarioController {
         String password = passwordField.getText().trim();
         String rol = rolField.getText().trim();
 
+        // Validar email
+        if (!validateEmail(email)) {
+            showAlert("ERROR", "Verifica el correo",
+                    "El correo debe tener el formato texto@texto.texto.");
+            return;
+        }
+
         // Validar contraseña
-        if(!validatePassword(password)) {
+        if (!validatePassword(password)) {
             showAlert("ERROR", "Verifica la contraseña",
                     "La contraseña debe tener al menos 8 carácteres, de los cuales debe haber una mayúscula, una minúscula y un número.");
             return;
@@ -61,7 +68,7 @@ public class UsuarioController {
         Rol rolUser = rol.equals("losDeAtras-25") ? Rol.ADMIN : Rol.USUARIO;
 
         // Verificar si el usuario ya existe
-        if(daoUsuarios.userExists(email)) {
+        if (daoUsuarios.userExists(email)) {
             showAlert("!ATENCIÓN¡", "El usuario ya existe", "Ya existe un usuario con ese correo.");
             redirectMenu(email);
 
@@ -73,6 +80,11 @@ public class UsuarioController {
             showAlert("¡ÉXITO!", "Usuario registrado correctamente", "Bienvenido/a " + name);
             redirectMenu(email);
         }
+    }
+
+    private boolean validateEmail(String email) {
+        String regex = "^[\\w-\\.]+@[\\w-]+\\.[a-z]{2,4}$";
+        return Pattern.matches(regex, email);
     }
 
     private boolean validatePassword(String password) {
@@ -96,7 +108,7 @@ public class UsuarioController {
             Menu menu = fxmlLoader.getController();
 
             String[] userData = getUserDataFromDB(email);
-            if(userData != null) {
+            if (userData != null) {
                 menu.setWelcomeMessage(userData[0], userData[1]);
             }
 
@@ -115,7 +127,6 @@ public class UsuarioController {
         }
     }
 
-    // UsuarioController.java
     private String[] getUserDataFromDB(String email) {
         String query = "SELECT nombre, apellido FROM usuarios WHERE email = ?";
         try (PreparedStatement statement = daoUsuarios.getConnection().prepareStatement(query)) {
