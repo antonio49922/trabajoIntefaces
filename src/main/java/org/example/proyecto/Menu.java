@@ -141,8 +141,7 @@ public class Menu {
         especialesLabel.setText(mensaje.getProperty("label.especiales", "Especial de la casa"));
     }
 
-
-
-
-
+    public void setWelcomeMessage(String nombre, String apellido) {
+        welcomeLabel.setText("¡Bienvenido, " + nombre + " " + apellido + "!");
+    }
 }
