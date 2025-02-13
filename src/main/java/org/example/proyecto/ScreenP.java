@@ -56,17 +56,18 @@ public class ScreenP {
 
 
     public void Principal () throws IOException {
-
-        // Cerrar la pantalla de carga si sigue abierta
         if (SplashStage != null) {
             SplashStage.close();
         }
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("InicioSesion.fxml"));
+
         Stage stage = new Stage();
-        Scene scene = new Scene(fxmlLoader.load(), 550, 700);
-        stage.setTitle("Menu");
+        Scene scene = new Scene(fxmlLoader.load(), 584, 469);
+
+        stage.setTitle("Acceso a menú");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 }

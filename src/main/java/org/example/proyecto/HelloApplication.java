@@ -18,9 +18,9 @@ public class HelloApplication extends Application {
         p.setSplashStage(stage);
         stage.setTitle("Cargando");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
-
 
     public static void main(String[] args) {
         launch();

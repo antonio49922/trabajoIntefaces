@@ -61,6 +61,7 @@ public class UsuarioController {
         if(daoUsuarios.userExists(email)) {
             showAlert("ERROR", "El usuario ya existe", "Ya existe un usuario con ese correo.");
             redirectMenu();
+
         } else {
             // Crear y registrar el usuario
             Usuario usuario = new Usuario(name, surname, email, password, rolUser);
@@ -86,15 +87,41 @@ public class UsuarioController {
 
     private void redirectMenu() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("menu.fxml"));
-            Parent root = loader.load();
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Menu.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(fxmlLoader.load(), 600, 500);
 
-            Stage stage = (Stage) sentForm.getScene().getWindow();
-            stage.setScene(new Scene(root));
+            stage.setTitle("Menú");
+            stage.setScene(scene);
+            stage.setResizable(false);
             stage.show();
+
+            Stage currentStage = (Stage) passwordField.getScene().getWindow();
+            currentStage.close();
 
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 }
+/*private void redirectMenu() {
+    try {
+        // Cargar el nuevo FXML
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Menu.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene(fxmlLoader.load(), 600, 500);
+
+        stage.setTitle("Menú");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+
+        // Obtener la referencia al Stage actual y cerrarlo
+        Stage currentStage = (Stage) passwordField.getScene().getWindow(); // O usa cualquier nodo dentro de tu Login.fxml
+        currentStage.close();
+
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+*/
