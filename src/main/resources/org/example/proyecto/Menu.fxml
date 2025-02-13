@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="781.0" prefWidth="577.0" style="-fx-background-color: #EAD7D1;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.proyecto.Menu">
+<BorderPane prefHeight="680.0" prefWidth="577.0" style="-fx-background-color: #EAD7D1;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.proyecto.Menu">
 
    <!-- Encabezado -->
    <top>
@@ -15,21 +15,16 @@
 
    <!-- Contenido central -->
    <center>
-      <VBox alignment="CENTER" spacing="20.0" style="-fx-border-color: #5c4da8; -fx-border-width: 2px; -fx-padding: 10px;">
+      <VBox alignment="CENTER" prefHeight="572.0" prefWidth="578.0" spacing="20.0" style="-fx-border-color: #5c4da8; -fx-border-width: 2px; -fx-padding: 10px;">
          <padding>
             <Insets bottom="20" left="20" right="20" top="20" />
          </padding>
-         <ImageView fitHeight="25.0" fitWidth="22.0" onMouseClicked="#iniciarSesion" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@../../../Recursos_Gráficos/Imagenes/usuarioIcono.png" />
-            </image>
-         </ImageView>
-         <Label onMouseClicked="#iniciarSesion" text="Iniciar Sesión">
+         <Label fx:id="welcomeLabel" text="¡Hola!">
             <font>
-               <Font name="Segoe Script" size="13.0" />
+               <Font name="Segoe Script" size="25.0" />
             </font>
          </Label>
-         <GridPane alignment="CENTER" hgap="40" vgap="30">
+         <GridPane alignment="TOP_CENTER" hgap="40" vgap="30">
             <columnConstraints>
                <ColumnConstraints halignment="CENTER" />
                <ColumnConstraints halignment="CENTER" />
@@ -55,7 +50,7 @@
             </Label>
 
             <!-- Tapas -->
-            <ImageView fitHeight="129.0" fitWidth="98.0" onMouseClicked="#tapas_clic" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <ImageView fitHeight="115.0" fitWidth="120.0" onMouseClicked="#tapas_clic" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="0">
                <image>
                   <Image url="@../../../Recursos_Gráficos/Imagenes/Alimentos/Sanwi.png" />
                </image>
@@ -117,7 +112,7 @@
       </VBox>
    </center>
    <top>
-      <ImageView fitHeight="106.0" fitWidth="577.0" pickOnBounds="true" BorderPane.alignment="TOP_RIGHT">
+      <ImageView fitHeight="106" fitWidth="577" pickOnBounds="true" BorderPane.alignment="TOP_RIGHT">
          <image>
             <Image url="@../../../Recursos_Gráficos/Imagenes/Recursos/rural-landscape-village-sketch-f.png" />
          </image>

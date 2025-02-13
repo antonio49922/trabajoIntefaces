@@ -2,27 +2,10 @@ package org.example.proyecto;
 
 import java.sql.*;
 
-/**
- * @author Emily-Antonio
- * @vesion 1.0
- * @since 10/02/2025
- **/
-
-
-/**
- * Clase para gestionar la conexion a la base de datos
- * y la manipulacio de usuario
- * Proporciona metodos para conectar a la base de datos y gestionar usuarios
- *
- */
-
 public class DAOUsuarios {
 
     private Connection connection;
 
-    /**
-     * Constructor que establece la conexion de la base de datos
-     */
     public DAOUsuarios() {
         try {
             // Load the MySQL JDBC driver
@@ -36,15 +19,7 @@ public class DAOUsuarios {
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
-
     }
-
-    /**
-     * Verifica si un usuario existe en la base de datos meduante su correo
-     *
-     * @param email Correo del usuario
-     * @return True si existe, False en caso contrario
-     */
 
     public boolean userExists(String email) {
         String query = "SELECT COUNT(*) FROM usuarios WHERE email = ?";
@@ -60,12 +35,6 @@ public class DAOUsuarios {
         }
         return false; // Devolver false si hay un error o no se encontró el usuario
     }
-
-    /**
-     * Agregar un usuario a la base de datos
-     *
-     * @param usuario  Objeto con la informacion del usuario a agregar
-     */
 
     public void addUser(Usuario usuario) {
         String query = "INSERT INTO usuarios (nombre, apellido, email, contraseña, rol) VALUES (?, ?, ?, ?, ?)";
