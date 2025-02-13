@@ -15,11 +15,22 @@
 
    <!-- Contenido central -->
    <center>
-      <VBox alignment="CENTER" prefHeight="572.0" prefWidth="578.0" spacing="20.0" style="-fx-border-color: #5c4da8; -fx-border-width: 2px; -fx-padding: 10px;">
+
+      <VBox alignment="CENTER" prefHeight="615.0" prefWidth="578.0" spacing="20.0" style="-fx-border-color: #5c4da8; -fx-border-width: 2px; -fx-padding: 10px;">
+
          <padding>
             <Insets bottom="20" left="20" right="20" top="20" />
          </padding>
-         <Label fx:id="welcomeLabel" text="¡Hola!">
+         <ImageView fitHeight="45.0" fitWidth="35.0" onMouseClicked="#cambiarAIngles" pickOnBounds="true" preserveRatio="true" translateX="-250.0">
+            <image>
+               <Image url="@../../../Recursos_Gráficos/Imagenes/Recursos/uk-flag.442x512.png" />
+            </image></ImageView>
+         <ImageView fitHeight="45.0" fitWidth="35.0" layoutX="61.0" layoutY="512.0" onMouseClicked="#cambiarAEspanol" pickOnBounds="true" preserveRatio="true" translateX="-200.0" translateY="-60.0">
+            <image>
+               <Image url="@../../../Recursos_Gráficos/Imagenes/Recursos/uk-flag.442x512.png" />
+            </image>
+         </ImageView>
+         <Label fx:id="welcomeLabel" text="¡Hola!" translateY="-65.0">
             <font>
                <Font name="Segoe Script" size="25.0" />
             </font>
@@ -38,72 +49,72 @@
             </rowConstraints>
 
             <!-- Bebidas -->
-            <ImageView fitHeight="153.0" fitWidth="135.0" onMouseClicked="#bebidas_clic" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <ImageView fitHeight="153.0" fitWidth="135.0" onMouseClicked="#bebidas_clic" pickOnBounds="true" preserveRatio="true" translateY="-65.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
                <image>
                   <Image url="@../../../Recursos_Gráficos/Imagenes/Bebidas/EditadasBrandy.png" />
                </image>
             </ImageView>
-            <Label text="Bebidas" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <Label fx:id="bebidasLabel" text="Bebidas" translateY="-65.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
                <font>
                   <Font name="Segoe Script Bold" size="14.0" />
                </font>
             </Label>
 
             <!-- Tapas -->
-            <ImageView fitHeight="115.0" fitWidth="120.0" onMouseClicked="#tapas_clic" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <ImageView fitHeight="124.0" fitWidth="137.0" onMouseClicked="#tapas_clic" pickOnBounds="true" preserveRatio="true" translateY="-65.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
                <image>
                   <Image url="@../../../Recursos_Gráficos/Imagenes/Alimentos/Sanwi.png" />
                </image>
             </ImageView>
-            <Label text="Tapas" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Label fx:id="tapasLabel" text="Tapas" translateY="-65.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font name="Segoe Script Bold" size="14.0" />
                </font>
             </Label>
 
             <!-- Primer Plato -->
-            <ImageView fitHeight="134.0" fitWidth="99.0" onMouseClicked="#primero_clic" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="0">
+            <ImageView fitHeight="128.0" fitWidth="115.0" onMouseClicked="#primero_clic" pickOnBounds="true" preserveRatio="true" translateY="-65.0" GridPane.columnIndex="2" GridPane.rowIndex="0">
                <image>
                   <Image url="@../../../Recursos_Gráficos/Imagenes/Alimentos/Ensalada.png" />
                </image>
             </ImageView>
-            <Label text="Primer Plato" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Label fx:id="primerosLabel" text="Primer Plato" translateY="-65.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <font>
                   <Font name="Segoe Script Bold" size="14.0" />
                </font>
             </Label>
 
             <!-- Segundo Plato -->
-            <ImageView fitHeight="130.0" fitWidth="94.0" onMouseClicked="#segundo_clic" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <ImageView fitHeight="130.0" fitWidth="94.0" onMouseClicked="#segundo_clic" pickOnBounds="true" preserveRatio="true" translateY="-65.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
                <image>
                   <Image url="@../../../Recursos_Gráficos/Imagenes/Alimentos/Burger.png" />
                </image>
             </ImageView>
-            <Label text="Segundo Plato" GridPane.columnIndex="0" GridPane.rowIndex="3">
+            <Label fx:id="segundosLabel" text="Segundo Plato" translateY="-65.0" GridPane.columnIndex="0" GridPane.rowIndex="3">
                <font>
                   <Font name="Segoe Script Bold" size="14.0" />
                </font>
             </Label>
 
             <!-- Postres -->
-            <ImageView fitHeight="150.0" fitWidth="114.0" onMouseClicked="#postres_clic" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <ImageView fitHeight="150.0" fitWidth="114.0" onMouseClicked="#postres_clic" pickOnBounds="true" preserveRatio="true" translateY="-65.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <image>
                   <Image url="@../../../Recursos_Gráficos/Imagenes/Alimentos/Sanwi02.png" />
                </image>
             </ImageView>
-            <Label text="Postres" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Label fx:id="postresLabel" text="Postres" translateY="-65.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
                   <Font name="Segoe Script Bold" size="14.0" />
                </font>
             </Label>
 
             <!-- Especial -->
-            <ImageView fitHeight="99.0" fitWidth="130.0" onMouseClicked="#especial_clic" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <ImageView fitHeight="99.0" fitWidth="130.0" onMouseClicked="#especial_clic" pickOnBounds="true" preserveRatio="true" translateY="-65.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <image>
                   <Image url="@../../../Recursos_Gráficos/Imagenes/Alimentos/Ensalada02.png" />
                </image>
             </ImageView>
-            <Label text="Especial de la casa" GridPane.columnIndex="2" GridPane.rowIndex="3">
+            <Label fx:id="especialesLabel" text="Especial de la casa" translateY="-65.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
                <font>
                   <Font name="Segoe Script Bold" size="14.0" />
                </font>

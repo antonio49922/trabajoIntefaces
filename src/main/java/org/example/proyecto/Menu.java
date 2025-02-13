@@ -4,8 +4,11 @@ import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
+import javafx.scene.control.*;
 
 public class Menu {
 
@@ -44,16 +47,63 @@ public class Menu {
     }
 
     @FXML
-    public void volverMenu(MouseEvent event) throws IOException {
-        Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-        CambioPantalla.switchScene(currentStage, "Menu.fxml", "Registrate");
+    private Label welcomeLabel;
+    @FXML
+    private Label bebidasLabel;
+    @FXML
+    private Label tapasLabel;
+    @FXML
+    private Label primerosLabel;
+    @FXML
+    private Label segundosLabel;
+    @FXML
+    private Label postresLabel;
+    @FXML
+    private Label especialesLabel;
+
+
+    private Properties mensaje;
+
+    @FXML
+    private void cambiarAIngles() {
+        String selectedLanguage = "ingles_en.properties";
+        loadLanguage(selectedLanguage);
+        updateTexts();
     }
 
     @FXML
-    public void iniciarSesion(MouseEvent event) throws IOException {
-        Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-        CambioPantalla.switchScene(currentStage, "InicioSesion.fxml", "Registrate");
+    private void cambiarAEspanol() {
+        String selectedLanguage = "espanol_es.properties";
+        loadLanguage(selectedLanguage);
+        updateTexts();
     }
+
+    private void loadLanguage(String lang) {
+        String fileName = lang;
+        try (InputStream input = getClass().getClassLoader().getResourceAsStream(fileName)) {
+            if (input == null) {
+                System.out.println("Lo siento, no se pudo encontrar el archivo: " + fileName);
+                return;
+            }
+            mensaje.load(input);
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    private void updateTexts() {
+        welcomeLabel.setText(mensaje.getProperty("label.welcome", "¡Hola!"));
+        bebidasLabel.setText(mensaje.getProperty("label.bebidas", "Bebidas"));
+        tapasLabel.setText(mensaje.getProperty("label.tapas", "Tapas"));
+        primerosLabel.setText(mensaje.getProperty("label.primeros", "Primer Plato"));
+        segundosLabel.setText(mensaje.getProperty("label.segundos", "Segundo Plato"));
+        postresLabel.setText(mensaje.getProperty("label.postres", "Postres"));
+        especialesLabel.setText(mensaje.getProperty("label.especiales", "Especial de la casa"));
+    }
+
+
+
 
 
 }

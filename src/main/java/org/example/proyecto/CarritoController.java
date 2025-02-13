@@ -95,6 +95,12 @@ public class CarritoController {
     }
 
 
+    @FXML
+    private Label TituloResumen;
+    @FXML
+    private Button btnSeguirComprando;
+
+
 
 
 
@@ -129,16 +135,8 @@ public class CarritoController {
     }
 
     private void updateTexts() {
-        TituloEspeciales.setText(mensaje.getProperty("label.especiales2", "Especiales"));
-        ChampinonesLabel.setText(mensaje.getProperty("label.champinones", "Champiñones al ajillo"));
-        BerenjenasLabel.setText(mensaje.getProperty("label.berenjenas", "Berenjenas fritas con \nmiel"));
-        BoqueronesLabel.setText(mensaje.getProperty("label.boquerones", "Boquerones en vinagre"));
-        RabasLabel.setText(mensaje.getProperty("label.rabas", "Rabas de calamar"));
-        BebidasLink.setText(mensaje.getProperty("label.bebidas", "Bebidas"));
-        TapasLink.setText(mensaje.getProperty("label.tapas", "Tapas"));
-        PrimerosLink.setText(mensaje.getProperty("label.primeros2", "Primeros"));
-        SegundosLink.setText(mensaje.getProperty("label.segundos2", "Segundos"));
-        PostresLink.setText(mensaje.getProperty("label.postres", "Postres"));
-        btnAñadirCesta.setText(mensaje.getProperty("button.login", "A la Cesta"));
+        TituloResumen.setText(mensaje.getProperty("label.resumen", "Resumen del Pedido"));
+        btnSeguirComprando.setText(mensaje.getProperty("label.seguirCompra", "Seguir Comprando"));
+        confirmarPedido.setText(mensaje.getProperty("label.finCompra", "Confirmar Pedido"));
     }
 }

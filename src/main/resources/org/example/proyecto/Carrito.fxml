@@ -20,7 +20,7 @@
                 <Insets bottom="20" left="20" right="20" top="20" />
             </padding>
 
-            <Label fx:id="TituloResumen" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #5c4da8;" text="Resumen del Pedido">
+            <Label fx:id="TituloResumen" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #5c4da8; -fx-font-family: Segoe Script;" text="Resumen del Pedido">
                 <font>
                     <Font name="Segoe Script Bold" size="18.0" />
                 </font>
