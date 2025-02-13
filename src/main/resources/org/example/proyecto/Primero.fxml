@@ -11,32 +11,32 @@
     <!-- Menú lateral para categorías -->
     <left>
         <VBox alignment="CENTER" prefHeight="675.0" prefWidth="127.0" spacing="10.0" style="-fx-border-color: #5c4da8; -fx-border-width: 2px; -fx-padding: 10px;">
-            <ImageView fitHeight="105.0" fitWidth="113.0" opacity="0.86" pickOnBounds="true" preserveRatio="true" translateY="-145.0">
+            <ImageView fitHeight="105.0" fitWidth="113.0" opacity="0.86" pickOnBounds="true" preserveRatio="true" translateY="-100.0">
                 <image>
                     <Image url="@../../../Recursos_Gráficos/Fuentes/Ejemplo_Logo-removebg-cuadrado.png" />
                 </image>
             </ImageView>
-            <Hyperlink onAction="#cambiarABebidas" style="-fx-text-fill: #5c4da8;" text="Bebidas" translateY="-75.0">
+            <Hyperlink fx:id="BebidasLink" onAction="#cambiarABebidas" style="-fx-text-fill: #5c4da8;" text="Bebidas" translateY="-75.0">
                 <font>
                     <Font name="Segoe Script Bold" size="14.0" />
                 </font>
             </Hyperlink>
-            <Hyperlink onAction="#cambiarATapas" style="-fx-text-fill: #5c4da8;" text="Tapas" translateY="-75.0">
+            <Hyperlink fx:id="TapasLink" onAction="#cambiarATapas" style="-fx-text-fill: #5c4da8;" text="Tapas" translateY="-75.0">
                 <font>
                     <Font name="Segoe Script Bold" size="14.0" />
                 </font>
             </Hyperlink>
-            <Hyperlink onAction="#cambiarASegundos" style="-fx-text-fill: #5c4da8;" text="Segundos" translateY="-75.0">
+            <Hyperlink fx:id="SegundosLink" onAction="#cambiarASegundos" style="-fx-text-fill: #5c4da8;" text="Segundos" translateY="-75.0">
                 <font>
                     <Font name="Segoe Script Bold" size="14.0" />
                 </font>
             </Hyperlink>
-            <Hyperlink onAction="#cambiarAEspeciales" style="-fx-text-fill: #5c4da8;" text="Especiales" translateY="-75.0">
+            <Hyperlink fx:id="EspecialesLink" onAction="#cambiarAEspeciales" style="-fx-text-fill: #5c4da8;" text="Especiales" translateY="-75.0">
                 <font>
                     <Font name="Segoe Script Bold" size="14.0" />
                 </font>
             </Hyperlink>
-            <Hyperlink onAction="#cambiarAPostres" style="-fx-text-fill: #5c4da8;" text="Postres" translateY="-75.0">
+            <Hyperlink fx:id="PostresLink" onAction="#cambiarAPostres" style="-fx-text-fill: #5c4da8;" text="Postres" translateY="-75.0">
                 <font>
                     <Font name="Segoe Script Bold" size="14.0" />
                 </font>
@@ -46,6 +46,15 @@
                     <Font name="Segoe Script Bold" size="14.0" />
                 </font>
             </Button>
+            <ImageView fitHeight="45.0" fitWidth="35.0" onMouseClicked="#cambiarAIngles" pickOnBounds="true" preserveRatio="true" translateX="-25.0" translateY="110.0">
+                <image>
+                    <Image url="@../../../Recursos_Gráficos/Imagenes/Recursos/uk-flag.442x512.png" />
+                </image></ImageView>
+            <ImageView fitHeight="45.0" fitWidth="35.0" layoutX="61.0" layoutY="512.0" onMouseClicked="#cambiarAEspanol" pickOnBounds="true" preserveRatio="true" translateX="26.0" translateY="58.0">
+                <image>
+                    <Image url="@../../../Recursos_Gráficos/Imagenes/Recursos/uk-flag.442x512.png" />
+                </image>
+            </ImageView>
         </VBox>
     </left>
 
@@ -57,7 +66,7 @@
                     <padding>
                         <Insets bottom="10" left="10" right="10" top="10" />
                     </padding>
-                    <Label text="Primeros" textFill="#5c4da8">
+                    <Label fx:id="TituloPrimeros" text="Primeros" textFill="#5c4da8">
                         <font>
                             <Font name="Segoe Script" size="25.0" />
                         </font>

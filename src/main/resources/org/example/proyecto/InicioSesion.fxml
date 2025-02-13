@@ -52,7 +52,7 @@
                   </Label>
                   <PasswordField id="passwordField" fx:id="passwordField" layoutX="316.0" layoutY="115.0">
                      <tooltip>
-                        <Tooltip text="(Debe tener mín 8 carácteres, una mayús y un número)" />
+                        <Tooltip text="(Debe tener mín 8 carácteres, una mayús y un número)" fx:id="toolPass"/>
                      </tooltip>
                      <font>
                         <Font name="Segoe Script" size="14.0" />

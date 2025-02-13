@@ -156,6 +156,8 @@ public class UsuarioController {
     private Label password;
     @FXML
     private Label rol;
+    @FXML
+    private Tooltip toolPass;
 
     private Properties mensaje;
 
@@ -195,5 +197,6 @@ public class UsuarioController {
         password.setText(mensaje.getProperty("label.password", "Contraseña"));
         rol.setText(mensaje.getProperty("label.rol", "Rol"));
         sentForm.setText(mensaje.getProperty("button.login", "Accede al Menu"));
+        toolPass.setText(mensaje.getProperty("tooltip.toolPass", "Debe tener mín 8 carácteres, una mayús y un número"));
     }
 }
