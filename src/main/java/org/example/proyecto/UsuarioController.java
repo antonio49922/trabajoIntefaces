@@ -143,6 +143,7 @@ public class UsuarioController {
         return null;
     }
 
+    // Properties for internationalization
     @FXML
     private Label titulo_inicio;
     @FXML

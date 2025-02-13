@@ -6,6 +6,7 @@ public class DAOUsuarios {
 
     private Connection connection;
 
+    // Metodo Conexion
     public Connection getConnection() {
         return connection;
     }
