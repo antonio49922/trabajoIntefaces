@@ -7,6 +7,12 @@ public class DAOUsuarios {
     private Connection connection;
 
     /**
+     *
+     * @author emily-antonio
+     * @version 1.0
+     * @since 10/02/2025
+     */
+    /**
      * Clase para hacer modificacion en usuarios
      *
      */

@@ -16,11 +16,16 @@ import java.io.InputStream;
 import java.util.Properties;
 import javafx.scene.control.*;
 
+/**
+ * Clase para Controlador para la interfaz grafica
+ */
 public class SegundoController {
 
     @FXML private TextField txtCantidadFilete, txtCantidadPescado, txtCantidadPollo, txtCantidadHamburguesa;
     @FXML private Pane paneSegundo1, paneSegundo2, paneSegundo3;
-
+    /**
+     * Inicializa los componentes de la vista y los cierra al cambiarse
+     */
     @FXML
     public void initialize() {
         paneSegundo1.setVisible(false);
@@ -29,6 +34,10 @@ public class SegundoController {
         mensaje = new Properties();
     }
 
+    /**
+     * Aumenta la cantidad de los platos
+     * @param event El evento que se genera al hacer click en el boton correspondiente
+     */
     @FXML
     private void incrementarCantidad(ActionEvent event) {
         Button btn = (Button) event.getSource();
@@ -39,6 +48,10 @@ public class SegundoController {
             case "btnMasHamburguesa" -> txtCantidadHamburguesa.setText(aumentarCantidad(txtCantidadHamburguesa));
         }
     }
+    /**
+     * Decrementa la cantidad de los platos
+     * @param event El evento que se genera al hacer click en el boton correspondiente
+     */
 
     @FXML
     private void decrementarCantidad(ActionEvent event) {
@@ -50,18 +63,33 @@ public class SegundoController {
             case "btnMenosHamburguesa" -> txtCantidadHamburguesa.setText(disminuirCantidad(txtCantidadHamburguesa));
         }
     }
+    /**
+     * Incrementa en uno el valor mostrado en el textfield
+     * @param textField el campo de texto que tiene la cantidad de platos
+     * @return el textfield incrementado
+     */
 
     private String aumentarCantidad(TextField textField) {
         if (textField == null || textField.getText().isEmpty()) return "1";
         return String.valueOf(Integer.parseInt(textField.getText()) + 1);
     }
 
+    /**
+     * Decrementa en uno el valor mostrado en el texfield
+     * @param textField Campo de texto que tiene la cantidad de platos
+     * @return El textfield decrementado en 1,  no puede ser inferior a 0
+     */
     private String disminuirCantidad(TextField textField) {
         if (textField == null || textField.getText().isEmpty()) return "0";
         int cantidad = Integer.parseInt(textField.getText());
         return cantidad > 0 ? String.valueOf(cantidad - 1) : "0";
     }
 
+    /**
+     * Funciones para volver a las escenas anteriores
+     * @param event Evento que se generara
+     * @throws IOException si ocurre un error al cargar la escena
+     */
     @FXML private void volverMenu(ActionEvent event) throws IOException { cambiarEscena(event, "Menu.fxml"); }
     @FXML private void cambiarAPrimeros(ActionEvent event) throws IOException { cambiarEscena(event, "Primero.fxml"); }
     @FXML private void cambiarASegundos(ActionEvent event) throws IOException { cambiarEscena(event, "Segundo.fxml"); }
@@ -70,6 +98,11 @@ public class SegundoController {
     @FXML private void cambiarABebidas(ActionEvent event) throws IOException { cambiarEscena(event, "Bebidas.fxml"); }
     @FXML private void cambiarAEspeciales(ActionEvent event) throws IOException { cambiarEscena(event, "especial.fxml"); }
 
+    /**
+     * Añade productos al carrito dependiendo de cual sea la eleccion del cliente
+     * @param event Evento que desencadena una accion
+     * @throws IOException si al ejecutarse la escena salta un error
+     */
     private void cambiarEscena(ActionEvent event, String fxml) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/org/example/proyecto/" + fxml));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -98,7 +131,12 @@ public class SegundoController {
         stage.setScene(new Scene(root));
         stage.show();
     }
-
+    /**
+     * si existe el segundo añade una nueva cantidad
+     * @param textField cantidad de el postre
+     * @param nombre nombre de el postre
+     * @param precio precio de el postre
+     */
     private void agregarSegundoSiExiste(TextField textField, String nombre, double precio) {
         if (textField != null && !textField.getText().isEmpty()) {
             int cantidad = Integer.parseInt(textField.getText());

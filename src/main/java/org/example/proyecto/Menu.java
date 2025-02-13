@@ -10,42 +10,81 @@ import java.util.Properties;
 
 import javafx.scene.control.*;
 
+
+/**
+ * Clase en la cual se gestionan el menu principal de la aplicacion
+ */
 public class Menu {
 
     @FXML
     private ImageView img;
 
+    /**
+     * Cambia a la opcion de bebidas al pulsar encima de el nombre
+     * @param event evento al pulsar por encima del nombre
+     * @throws IOException si ocurre algun error al momento de cargar la escena
+     */
     @FXML
     public void bebidas_clic(MouseEvent event) throws IOException {
         Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         CambioPantalla.switchScene(currentStage, "bebidas.fxml", "Bebidas");
     }
+    /**
+     * Cambia a la opcion de tapas al pulsar encima de el nombre
+     * @param event evento al pulsar por encima del nombre
+     * @throws IOException si ocurre algun error al momento de cargar la escena
+     */
     @FXML
     public void tapas_clic(MouseEvent event) throws IOException {
         Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         CambioPantalla.switchScene(currentStage, "Tapas.fxml", "Registrate");
     }
+    /**
+     * Cambia a la opcion de primeros al pulsar encima de el nombre
+     * @param event evento al pulsar por encima del nombre
+     * @throws IOException si ocurre algun error al momento de cargar la escena
+     */
     @FXML
     public void primero_clic(MouseEvent event) throws IOException {
         Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         CambioPantalla.switchScene(currentStage, "Primero.fxml", "Registrate");
     }
+    /**
+     * Cambia a la opcion de segundos al pulsar encima de el nombre
+     * @param event evento al pulsar por encima del nombre
+     * @throws IOException si ocurre algun error al momento de cargar la escena
+     */
     @FXML
     public void segundo_clic(MouseEvent event) throws IOException {
         Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         CambioPantalla.switchScene(currentStage, "Segundo.fxml", "Registrate");
     }
+    /**
+     * Cambia a la opcion de postres al pulsar encima de el nombre
+     * @param event evento al pulsar por encima del nombre
+     * @throws IOException si ocurre algun error al momento de cargar la escena
+     */
     @FXML
     public void postres_clic(MouseEvent event) throws IOException {
         Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         CambioPantalla.switchScene(currentStage, "postre.fxml", "Registrate");
     }
+    /**
+     * Cambia a la opcion de especiales al pulsar encima de el nombre
+     * @param event evento al pulsar por encima del nombre
+     * @throws IOException si ocurre algun error al momento de cargar la escena
+     */
     @FXML
     public void especial_clic(MouseEvent event) throws IOException {
         Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         CambioPantalla.switchScene(currentStage, "especial.fxml", "Registrate");
     }
 
+    /**
+     * Muestra un mensaje de bienvenido al entrar
+     * @param nombre nombre de el cliente
+     * @param apellido apellido de el cliente
+     */
     @FXML
     private Label welcomeLabel;
     @FXML
