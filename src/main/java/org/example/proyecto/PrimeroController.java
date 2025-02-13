@@ -6,12 +6,16 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 
 public class PrimeroController {
 
@@ -23,6 +27,7 @@ public class PrimeroController {
         panePlato1.setVisible(false);
         panePlato2.setVisible(false);
         panePlato3.setVisible(false);
+        mensaje = new Properties();
     }
 
     @FXML
@@ -105,10 +110,73 @@ public class PrimeroController {
     }
 
     @FXML
-    private void seguirComprando(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/org/example/proyecto/Menu.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.show();
+    private Label TituloPrimeros;
+    @FXML
+    private Label CesarLabel;
+    @FXML
+    private Label MixtaLabel;
+    @FXML
+    private Label WrapLabel;
+    @FXML
+    private Label SandwichLabel;
+    @FXML
+    private Hyperlink BebidasLink;
+    @FXML
+    private Hyperlink TapasLink;
+    @FXML
+    private Hyperlink SegundosLink;
+    @FXML
+    private Hyperlink EspecialesLink;
+    @FXML
+    private Hyperlink PostresLink;
+    @FXML
+    private Button btnAñadirCesta;
+
+
+    private Properties mensaje;
+
+    @FXML
+    private void cambiarAIngles() {
+        String selectedLanguage = "ingles_en.properties";
+        loadLanguage(selectedLanguage);
+        updateTexts();
     }
+
+    @FXML
+    private void cambiarAEspanol() {
+        String selectedLanguage = "espanol_es.properties";
+        loadLanguage(selectedLanguage);
+        updateTexts();
+    }
+
+    private void loadLanguage(String lang) {
+        String fileName = lang;
+        try (InputStream input = getClass().getClassLoader().getResourceAsStream(fileName)) {
+            if (input == null) {
+                System.out.println("Lo siento, no se pudo encontrar el archivo: " + fileName);
+                return;
+            }
+            mensaje.load(input);
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    private void updateTexts() {
+        TituloPrimeros.setText(mensaje.getProperty("label.segundos2", "Primeros"));
+        CesarLabel.setText(mensaje.getProperty("label.cesar", "Ensalada César"));
+        MixtaLabel.setText(mensaje.getProperty("label.mixta", "Ensalada Mixta"));
+        WrapLabel.setText(mensaje.getProperty("label.wrap", "Wrap de Pollo"));
+        SandwichLabel.setText(mensaje.getProperty("label.sandwich", "Sándwich Club"));
+        BebidasLink.setText(mensaje.getProperty("label.bebidas", "Bebidas"));
+        TapasLink.setText(mensaje.getProperty("label.tapas", "Tapas"));
+        SegundosLink.setText(mensaje.getProperty("label.segundos2", "Segundos"));
+        EspecialesLink.setText(mensaje.getProperty("label.especiales2", "Especiales"));
+        PostresLink.setText(mensaje.getProperty("label.postres", "Postres"));
+        btnAñadirCesta.setText(mensaje.getProperty("button.login", "A la Cesta"));
+    }
+
+
+
 }

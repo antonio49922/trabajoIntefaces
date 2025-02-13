@@ -2,6 +2,7 @@ package org.example.proyecto;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -12,6 +13,11 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
+import javafx.scene.control.*;
+
 
 /**
  * @author Antonio-- Alberto
@@ -29,12 +35,14 @@ public class BebidasController {
     @FXML private TextField txtCantidadCesar, txtCantidadCesar1, txtCantidadMixta, txtCantidadMixta1, txtCantidadMixta2, txtCantidadMixta11, txtCantidadMixta21, txtCantidadMixta111;
     @FXML private Pane ron, vodka, gin, tequila;
 
+
     @FXML
     public void initialize() {
         ron.setVisible(false);
         vodka.setVisible(false);
         gin.setVisible(false);
         tequila.setVisible(false);
+        mensaje = new Properties();
     }
 
     /**
@@ -183,4 +191,108 @@ public class BebidasController {
         stage.setScene(new Scene(root));
         stage.show();
     }
+
+
+    @FXML
+    private Label tituloBebidas;
+    @FXML
+    private Label RonLabel;
+    @FXML
+    private Label mojito;
+    @FXML
+    private Label Daikiri;
+    @FXML
+    private Label vodkaLabel;
+    @FXML
+    private Label Cosmopolitan;
+    @FXML
+    private Label longIsland;
+    @FXML
+    private Label ginLabel;
+    @FXML
+    private Label ginFizz;
+    @FXML
+    private Label LecheBantha;
+    @FXML
+    private Label tequilaLabel;
+    @FXML
+    private Label tequilaSunrise;
+    @FXML
+    private Label Margarita;
+    @FXML
+    private Hyperlink TapasLink;
+    @FXML
+    private Hyperlink PrimerosLink;
+    @FXML
+    private Hyperlink SegundosLink;
+    @FXML
+    private Hyperlink EspecialesLink;
+    @FXML
+    private Hyperlink PostresLink;
+    @FXML
+    private Button btnAñadirCesta;
+
+
+    private Properties mensaje;
+
+    @FXML
+    private void cambiarAIngles() {
+        String selectedLanguage = "ingles_en.properties";
+        loadLanguage(selectedLanguage);
+        updateTexts();
+    }
+
+    @FXML
+    private void cambiarAEspanol() {
+        String selectedLanguage = "espanol_es.properties";
+        loadLanguage(selectedLanguage);
+        updateTexts();
+    }
+
+    private void loadLanguage(String lang) {
+        String fileName = lang;
+        try (InputStream input = getClass().getClassLoader().getResourceAsStream(fileName)) {
+            if (input == null) {
+                System.out.println("Lo siento, no se pudo encontrar el archivo: " + fileName);
+                return;
+            }
+            mensaje.load(input);
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    private void updateTexts() {
+        tituloBebidas.setText(mensaje.getProperty("label.bebidas", "Bebidas"));
+        RonLabel.setText(mensaje.getProperty("label.ron", "Ron ▾"));
+        mojito.setText(mensaje.getProperty("label.mojito", "Mojito"));
+        Daikiri.setText(mensaje.getProperty("label.daikiri", "Daikiri Bosque"));
+        vodkaLabel.setText(mensaje.getProperty("label.vodka", "Vodka ▾"));
+        Cosmopolitan.setText(mensaje.getProperty("label.cosmopolitan", "Cosmopolitan"));
+        longIsland.setText(mensaje.getProperty("label.longIsland", "Long Island Ice Tea"));
+        ginLabel.setText(mensaje.getProperty("label.gin", "Ginebra ▾"));
+        ginFizz.setText(mensaje.getProperty("label.ginFizz", "Gin Fizz"));
+        LecheBantha.setText(mensaje.getProperty("label.lecheBantha", "Leche de Bantha"));
+        tequilaLabel.setText(mensaje.getProperty("label.tequila", "Tequila ▾"));
+        tequilaSunrise.setText(mensaje.getProperty("label.tequilaSunrise", "Tequila Sunrise"));
+        Margarita.setText(mensaje.getProperty("label.margarita", "Margarita"));
+        TapasLink.setText(mensaje.getProperty("label.tapas", "Tapas"));
+        PrimerosLink.setText(mensaje.getProperty("label.primeros2", "Primeros"));
+        SegundosLink.setText(mensaje.getProperty("label.segundos2", "Segundos"));
+        EspecialesLink.setText(mensaje.getProperty("label.especiales2", "Especiales"));
+        PostresLink.setText(mensaje.getProperty("label.postres", "Postres"));
+        btnAñadirCesta.setText(mensaje.getProperty("button.login", "A la Cesta"));
+
+    }
+
+
+
+
+
+
+
+
+
+
 }

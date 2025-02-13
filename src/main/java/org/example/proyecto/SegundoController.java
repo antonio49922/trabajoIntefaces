@@ -12,6 +12,9 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+import javafx.scene.control.*;
 
 public class SegundoController {
 
@@ -23,6 +26,7 @@ public class SegundoController {
         paneSegundo1.setVisible(false);
         paneSegundo2.setVisible(false);
         paneSegundo3.setVisible(false);
+        mensaje = new Properties();
     }
 
     @FXML
@@ -105,10 +109,72 @@ public class SegundoController {
     }
 
     @FXML
-    private void seguirComprando(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/org/example/proyecto/Menu.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.show();
+    private Label SegundosTitulo;
+    @FXML
+    private Label FileteLabel;
+    @FXML
+    private Label PescadoLabel;
+    @FXML
+    private Label PolloLabel;
+    @FXML
+    private Label HamburguesaLabel;
+    @FXML
+    private Hyperlink BebidasLink;
+    @FXML
+    private Hyperlink TapasLink;
+    @FXML
+    private Hyperlink PrimerosLink;
+    @FXML
+    private Hyperlink EspecialesLink;
+    @FXML
+    private Hyperlink PostresLink;
+    @FXML
+    private Button btnAñadirCesta;
+
+
+    private Properties mensaje;
+
+    @FXML
+    private void cambiarAIngles() {
+        String selectedLanguage = "ingles_en.properties";
+        loadLanguage(selectedLanguage);
+        updateTexts();
     }
+
+    @FXML
+    private void cambiarAEspanol() {
+        String selectedLanguage = "espanol_es.properties";
+        loadLanguage(selectedLanguage);
+        updateTexts();
+    }
+
+    private void loadLanguage(String lang) {
+        String fileName = lang;
+        try (InputStream input = getClass().getClassLoader().getResourceAsStream(fileName)) {
+            if (input == null) {
+                System.out.println("Lo siento, no se pudo encontrar el archivo: " + fileName);
+                return;
+            }
+            mensaje.load(input);
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    private void updateTexts() {
+        SegundosTitulo.setText(mensaje.getProperty("label.segundos2", "Segundos"));
+        FileteLabel.setText(mensaje.getProperty("label.filete", "Filete de Ternera"));
+        PescadoLabel.setText(mensaje.getProperty("label.pescado", "Pescado a la Plancha"));
+        PolloLabel.setText(mensaje.getProperty("label.pollo", "Pollo Asado"));
+        HamburguesaLabel.setText(mensaje.getProperty("label.hamburguesa", "Hamburguesa Completa"));
+        BebidasLink.setText(mensaje.getProperty("label.bebidas", "Bebidas"));
+        TapasLink.setText(mensaje.getProperty("label.tapas", "Tapas"));
+        PrimerosLink.setText(mensaje.getProperty("label.primeros2", "Primeros"));
+        EspecialesLink.setText(mensaje.getProperty("label.especiales2", "Especiales"));
+        PostresLink.setText(mensaje.getProperty("label.postres", "Postres"));
+        btnAñadirCesta.setText(mensaje.getProperty("button.login", "A la Cesta"));
+    }
+
+
 }

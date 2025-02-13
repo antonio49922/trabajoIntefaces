@@ -1,7 +1,6 @@
 package org.example.proyecto;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -45,11 +44,16 @@ public class Menu {
     }
 
     @FXML
-    private Label welcomeLabel;
+    public void volverMenu(MouseEvent event) throws IOException {
+        Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        CambioPantalla.switchScene(currentStage, "Menu.fxml", "Registrate");
+    }
 
     @FXML
-    public void setWelcomeMessage(String nombre, String apellido) {
-        // Suponiendo que tienes un Label llamado welcomeLabel en tu FXML
-        welcomeLabel.setText("Bienvenido/a " + nombre + " " + apellido);
+    public void iniciarSesion(MouseEvent event) throws IOException {
+        Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        CambioPantalla.switchScene(currentStage, "InicioSesion.fxml", "Registrate");
     }
+
+
 }

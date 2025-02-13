@@ -20,7 +20,7 @@
                 <Insets bottom="20" left="20" right="20" top="20" />
             </padding>
 
-            <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #5c4da8;" text="Resumen del Pedido">
+            <Label fx:id="TituloResumen" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #5c4da8;" text="Resumen del Pedido">
                 <font>
                     <Font name="Segoe Script Bold" size="18.0" />
                 </font>
@@ -44,13 +44,22 @@
     <!-- Botones de Confirmar y Seguir Comprando -->
     <bottom>
         <HBox alignment="CENTER" prefHeight="112.0" prefWidth="578.0" spacing="20" BorderPane.alignment="CENTER">
-            <Button fx:id="btnSeguirComprando" onAction="#seguirComprando" style="-fx-background-color: #FFA500; -fx-text-fill: white; -fx-font-size: 14px;" text="Seguir Comprando">
+            <ImageView fitHeight="45.0" fitWidth="35.0" onMouseClicked="#cambiarAIngles" pickOnBounds="true" preserveRatio="true" translateX="-80.0" translateY="30.0">
+                <image>
+                    <Image url="@../../../Recursos_Gráficos/Imagenes/Recursos/uk-flag.442x512.png" />
+                </image></ImageView>
+            <ImageView fitHeight="45.0" fitWidth="35.0" layoutX="61.0" layoutY="512.0" onMouseClicked="#cambiarAEspanol" pickOnBounds="true" preserveRatio="true" translateX="-80.0" translateY="30.0">
+                <image>
+                    <Image url="@../../../Recursos_Gráficos/Imagenes/Recursos/uk-flag.442x512.png" />
+                </image>
+            </ImageView>
+            <Button fx:id="btnSeguirComprando" onAction="#seguirComprando" style="-fx-background-color: transparent; -fx-text-fill: #5c4da8; -fx-font-size: 14px; -fx-font-weight: bold;" text="Seguir Comprando" translateX="-65.0">
                 <font>
                     <Font name="Segoe Script Bold" size="14.0" />
                 </font>
             </Button>
 
-            <Button fx:id="confirmarPedido" onAction="#confirmarPedido" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 14px;" text="Confirmar Pedido">
+            <Button fx:id="confirmarPedido" onAction="#confirmarPedido" style="-fx-text-fill: white; -fx-background-color: #5c4da8; -fx-font-size: 14px;" text="Confirmar Pedido" translateX="-65.0">
                 <font>
                     <Font name="Segoe Script Bold" size="14.0" />
                 </font>

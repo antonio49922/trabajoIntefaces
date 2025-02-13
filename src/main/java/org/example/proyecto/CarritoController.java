@@ -13,7 +13,10 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Map;
+import java.util.Properties;
+
 import javafx.event.ActionEvent;
 
 /**
@@ -42,6 +45,7 @@ public class CarritoController {
     @FXML
     public void initialize() {
         actualizarResumen();
+        mensaje = new Properties();
     }
 
     /**
@@ -88,5 +92,53 @@ public class CarritoController {
         alert.setHeaderText(null);
         alert.setContentText("Pedido aceptado");
         alert.showAndWait();
+    }
+
+
+
+
+
+    private Properties mensaje;
+
+    @FXML
+    private void cambiarAIngles() {
+        String selectedLanguage = "ingles_en.properties";
+        loadLanguage(selectedLanguage);
+        updateTexts();
+    }
+
+    @FXML
+    private void cambiarAEspanol() {
+        String selectedLanguage = "espanol_es.properties";
+        loadLanguage(selectedLanguage);
+        updateTexts();
+    }
+
+    private void loadLanguage(String lang) {
+        String fileName = lang;
+        try (InputStream input = getClass().getClassLoader().getResourceAsStream(fileName)) {
+            if (input == null) {
+                System.out.println("Lo siento, no se pudo encontrar el archivo: " + fileName);
+                return;
+            }
+            mensaje.load(input);
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    private void updateTexts() {
+        TituloEspeciales.setText(mensaje.getProperty("label.especiales2", "Especiales"));
+        ChampinonesLabel.setText(mensaje.getProperty("label.champinones", "Champiñones al ajillo"));
+        BerenjenasLabel.setText(mensaje.getProperty("label.berenjenas", "Berenjenas fritas con \nmiel"));
+        BoqueronesLabel.setText(mensaje.getProperty("label.boquerones", "Boquerones en vinagre"));
+        RabasLabel.setText(mensaje.getProperty("label.rabas", "Rabas de calamar"));
+        BebidasLink.setText(mensaje.getProperty("label.bebidas", "Bebidas"));
+        TapasLink.setText(mensaje.getProperty("label.tapas", "Tapas"));
+        PrimerosLink.setText(mensaje.getProperty("label.primeros2", "Primeros"));
+        SegundosLink.setText(mensaje.getProperty("label.segundos2", "Segundos"));
+        PostresLink.setText(mensaje.getProperty("label.postres", "Postres"));
+        btnAñadirCesta.setText(mensaje.getProperty("button.login", "A la Cesta"));
     }
 }
