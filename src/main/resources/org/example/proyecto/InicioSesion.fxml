@@ -85,7 +85,7 @@
                </children>
             </Pane>
             <!-- Hipervínculo para abrir el PDF -->
-            <Hyperlink fx:id="verDescripcion" layoutX="220.0" layoutY="300.0" onAction="#abrirDescripcionPDF" style="-fx-text-fill: #5c4da8;" text="📖 Guía de Usuario" translateX="10.0" />
+            <!--<Hyperlink fx:id="verDescripcion" layoutX="220.0" layoutY="300.0" onAction="#abrirDescripcionPDF" style="-fx-text-fill: #5c4da8;" text="📖 Guía de Usuario" translateX="10.0" /> -->
          </children>
       </VBox>
    </center>

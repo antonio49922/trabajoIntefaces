@@ -124,14 +124,8 @@
                         </font></Label>
                             <TextField fx:id="txtCantidadCesar" alignment="CENTER" editable="false" layoutX="215.0" layoutY="5.0" prefWidth="40" text="0" />
                             <Button fx:id="btnMasCesar" layoutX="257.0" layoutY="5.0" onAction="#incrementarCantidad" text="+">
-                                <tooltip>
-                                    <Tooltip text="Añadir 1" />
-                                </tooltip>
                             </Button>
                             <Button fx:id="btnMenosCesar" layoutX="194.0" layoutY="5.0" onAction="#decrementarCantidad" text="-">
-                                <tooltip>
-                                    <Tooltip text="Quitar 1" />
-                                </tooltip>
                             </Button>
                      <Label fx:id="Daikiri" layoutX="53.0" layoutY="45.0" text="Daikiri Bosque">
                         <font>
@@ -143,14 +137,8 @@
                         </font></Label>
                      <TextField fx:id="txtCantidadCesar1" alignment="CENTER" editable="false" layoutX="215.0" layoutY="41.0" prefWidth="40" text="0" />
                      <Button fx:id="btnMasCesar1" layoutX="257.0" layoutY="41.0" onAction="#incrementarCantidad" text="+">
-                         <tooltip>
-                             <Tooltip text="Añadir 1" />
-                         </tooltip>
                      </Button>
                      <Button fx:id="btnMenosCesar1" layoutX="194.0" layoutY="41.0" onAction="#decrementarCantidad" text="-">
-                         <tooltip>
-                             <Tooltip text="Quitar 1" />
-                         </tooltip>
                      </Button>
                       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-33.0" layoutY="-45.0" pickOnBounds="true" preserveRatio="true" rotate="48.8">
                           <image>
@@ -173,15 +161,9 @@
                <Pane fx:id="vodka" prefHeight="78.0" prefWidth="372.0">
                   <children>
                             <Button fx:id="btnMenosMixta" layoutX="201.0" layoutY="1.0" onAction="#decrementarCantidad" text="-">
-                                <tooltip>
-                                    <Tooltip text="Quitar 1" />
-                                </tooltip>
                             </Button>
                             <TextField fx:id="txtCantidadMixta" alignment="CENTER" editable="false" layoutX="227.0" layoutY="1.0" prefWidth="40" text="0" />
                             <Button fx:id="btnMasMixta" layoutX="271.0" layoutY="1.0" onAction="#incrementarCantidad" text="+">
-                                <tooltip>
-                                    <Tooltip text="Añadir 1" />
-                                </tooltip>
                             </Button>
                      <Label fx:id="Cosmopolitan" layoutX="73.0" layoutY="5.0" text="Cosmopolitan">
                         <font>
@@ -192,15 +174,9 @@
                            <Font name="Segoe Script" size="12.0" />
                         </font></Label>
                      <Button fx:id="btnMenosMixta1" layoutX="201.0" layoutY="36.0" onAction="#decrementarCantidad" text="-">
-                         <tooltip>
-                             <Tooltip text="Quitar 1" />
-                         </tooltip>
                      </Button>
                      <TextField fx:id="txtCantidadMixta1" alignment="CENTER" editable="false" layoutX="227.0" layoutY="36.0" prefWidth="40" text="0" />
                      <Button fx:id="btnMasMixta1" layoutX="271.0" layoutY="36.0" onAction="#incrementarCantidad" text="+">
-                         <tooltip>
-                             <Tooltip text="Añadir 1" />
-                         </tooltip>
                      </Button>
                      <Label fx:id="longIsland" layoutX="35.0" layoutY="40.0" text="Long Island Ice Tea">
                         <font>
@@ -230,15 +206,9 @@
                <Pane fx:id="gin" prefHeight="83.0" prefWidth="372.0">
                   <children>
                      <Button fx:id="btnMenosMixta2" layoutX="196.0" layoutY="1.0" onAction="#decrementarCantidad" text="-">
-                         <tooltip>
-                             <Tooltip text="Quitar 1" />
-                         </tooltip>
                      </Button>
                      <TextField fx:id="txtCantidadMixta2" alignment="CENTER" editable="false" layoutX="222.0" layoutY="1.0" prefWidth="40" text="0" />
                      <Button fx:id="btnMasMixta2" layoutX="266.0" layoutY="1.0" onAction="#incrementarCantidad" text="+">
-                         <tooltip>
-                             <Tooltip text="Añadir 1" />
-                         </tooltip>
                      </Button>
                      <Label fx:id="ginFizz" layoutX="100.0" layoutY="5.0" text="Gin Fizz">
                         <font>
@@ -249,15 +219,10 @@
                            <Font name="Segoe Script" size="12.0" />
                         </font></Label>
                      <Button fx:id="btnMenosMixta11" layoutX="196.0" layoutY="36.0" onAction="#decrementarCantidad" text="-">
-                         <tooltip>
-                             <Tooltip text="Quitar 1" />
-                         </tooltip>
                      </Button>
                      <TextField fx:id="txtCantidadMixta11" alignment="CENTER" editable="false" layoutX="222.0" layoutY="36.0" prefWidth="40" text="0" />
                      <Button fx:id="btnMasMixta11" layoutX="266.0" layoutY="36.0" onAction="#incrementarCantidad" text="+">
-                         <tooltip>
-                             <Tooltip text="Añadir 1" />
-                         </tooltip>
+
                      </Button>
                      <Label fx:id="LecheBantha" layoutX="47.0" layoutY="40.0" text="Leche de Bantha">
                         <font>
@@ -287,15 +252,9 @@
                <Pane fx:id="tequila" layoutX="20.0" layoutY="318.0" prefHeight="71.0" prefWidth="372.0">
                   <children>
                      <Button fx:id="btnMenosMixta21" layoutX="196.0" layoutY="5.0" onAction="#decrementarCantidad" text="-">
-                         <tooltip>
-                             <Tooltip text="Quitar 1" />
-                         </tooltip>
                      </Button>
                      <TextField fx:id="txtCantidadMixta21" alignment="CENTER" editable="false" layoutX="222.0" layoutY="5.0" prefWidth="40" text="0" />
                      <Button fx:id="btnMasMixta21" layoutX="266.0" layoutY="5.0" onAction="#incrementarCantidad" text="+">
-                         <tooltip>
-                             <Tooltip text="Añadir 1" />
-                         </tooltip>
                      </Button>
                      <Label fx:id="tequilaSunrise" layoutX="55.0" layoutY="9.0" text="Tequila Sunrise">
                         <font>
@@ -306,15 +265,9 @@
                            <Font name="Segoe Script" size="12.0" />
                         </font></Label>
                      <Button fx:id="btnMenosMixta111" layoutX="196.0" layoutY="40.0" onAction="#decrementarCantidad" text="-">
-                         <tooltip>
-                             <Tooltip text="Quitar 1" />
-                         </tooltip>
                      </Button>
                      <TextField fx:id="txtCantidadMixta111" alignment="CENTER" editable="false" layoutX="222.0" layoutY="40.0" prefWidth="40" text="0" />
                      <Button fx:id="btnMasMixta111" layoutX="266.0" layoutY="40.0" onAction="#incrementarCantidad" text="+">
-                         <tooltip>
-                             <Tooltip text="Añadir 1" />
-                         </tooltip>
                      </Button>
                      <Label fx:id="Margarita" layoutX="93.0" layoutY="44.0" text="Margarita">
                         <font>
