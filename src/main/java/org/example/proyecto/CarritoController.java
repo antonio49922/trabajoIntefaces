@@ -83,9 +83,9 @@ public class CarritoController {
         String nombreCompleto = usuario.getNombreCompleto();
 
         if (nombreCompleto == null || nombreCompleto.trim().isEmpty()) {
-            usuarioLabel.setText("Usuario: No identificado");
+            usuarioLabel.setText("Usuario invitado");
         } else {
-            usuarioLabel.setText("Usuario: " + nombreCompleto);
+            usuarioLabel.setText("Pedido de " + nombreCompleto);
         }
     }
 

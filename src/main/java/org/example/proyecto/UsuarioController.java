@@ -60,8 +60,8 @@ public class UsuarioController {
     }
 
     /**
-     * Método para abrir el archivo PDF de la descripción.
-     */
+     * Método para abrir el archivo PDF de la descripción. En el ejecutable no funciona asi que se ocultará.
+
     @FXML
     private void abrirDescripcionPDF() {
         try {
@@ -74,7 +74,7 @@ public class UsuarioController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
     /**
      * Registra un nuevo usuario o lo redirige si ya existe.

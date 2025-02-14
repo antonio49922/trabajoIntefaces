@@ -16,7 +16,7 @@
    <!-- Contenido central -->
    <center>
 
-      <VBox alignment="CENTER" prefHeight="615.0" prefWidth="578.0" spacing="20.0" style="-fx-border-color: #5c4da8; -fx-border-width: 2px; -fx-padding: 10px;">
+      <VBox alignment="CENTER" prefHeight="615.0" prefWidth="578.0" spacing="20.0" style="-fx-border-color: #5c4da8; -fx-border-width: 2px; -fx-padding: 10px; -fx-border-radius: 10px;">
          <padding>
             <Insets bottom="20" left="20" right="20" top="20" />
          </padding>

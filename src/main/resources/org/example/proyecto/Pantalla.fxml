@@ -6,16 +6,12 @@
 
 <!--  -->
 
-<Pane prefHeight="233.0" prefWidth="402.0" style="-fx-background-color: white;"
-      xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="org.example.proyecto.ScreenP" stylesheets="@../../../styles.css">
+<Pane prefHeight="233.0" prefWidth="402.0" style="-fx-background-color: white;" stylesheets="@../../../styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.proyecto.ScreenP">
    <children>
-      <ProgressBar fx:id="progress" layoutX="99.0" layoutY="209.0"
-                   prefHeight="20.0" prefWidth="200.0" progress="0.0"/>
-      <ImageView fitHeight="159.0" fitWidth="416.0" layoutX="5.0" layoutY="23.0"
-                 pickOnBounds="true" preserveRatio="true">
+      <ProgressBar fx:id="progress" layoutX="99.0" layoutY="209.0" prefHeight="20.0" prefWidth="200.0" progress="0.0" />
+      <ImageView fitHeight="159.0" fitWidth="416.0" layoutX="5.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../Recursos_Gráficos/Imagenes/Recursos/rural-landscape-village-sketch-f.png"/>
+            <Image url="@../../../Recursos_Gráficos/Imagenes/Recursos/rural-landscape-village-sketch-f.png" />
          </image>
       </ImageView>
    </children>
