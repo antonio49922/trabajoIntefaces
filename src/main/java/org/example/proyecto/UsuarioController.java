@@ -7,8 +7,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
-import java.awt.Desktop;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.PreparedStatement;
@@ -20,10 +18,7 @@ import java.util.regex.Pattern;
 /**
  * Controlador para la gestión de usuarios en la aplicación.
  * Permite el registro y validación de usuarios antes de acceder al sistema.
- *
- * @author Emily
- * @version 1.0
- * @since 13/02/2025
+ * También maneja la redirección al menú principal y la carga de datos del usuario.
  */
 public class UsuarioController {
 
@@ -45,40 +40,16 @@ public class UsuarioController {
     @FXML
     private Button sentForm;
 
-    @FXML
-    private Hyperlink verDescripcion; // Hyperlink agregado para abrir el PDF
-
     private DAOUsuarios daoUsuarios = new DAOUsuarios();
+    private String selectedLanguage = "espanol_es.properties"; // Default language
 
-    /**
-     * Inicializa el controlador y configura los eventos del formulario.
-     */
     @FXML
     private void initialize() {
         sentForm.setOnAction(event -> addUser());
-        mensaje = new Properties();
+        mensaje = new Properties(); // Initialize the mensaje property
     }
 
-    /**
-     * Método para abrir el archivo PDF de la descripción. En el ejecutable no funciona asi que se ocultará.
-
     @FXML
-    private void abrirDescripcionPDF() {
-        try {
-            File pdfFile = new File("Javadoc/DESCRIPCION.pdf"); // Ruta del archivo PDF
-            if (pdfFile.exists() && Desktop.isDesktopSupported()) {
-                Desktop.getDesktop().open(pdfFile);
-            } else {
-                System.out.println("El archivo PDF no se encontró.");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }*/
-
-    /**
-     * Registra un nuevo usuario o lo redirige si ya existe.
-     */
     private void addUser() {
         String name = nameField.getText().trim();
         String surname = surnameField.getText().trim();
@@ -86,26 +57,41 @@ public class UsuarioController {
         String password = passwordField.getText().trim();
         String rol = rolField.getText().trim();
 
+        // Validar email
         if (!validateEmail(email)) {
-            showAlert("ERROR", "Verifica el correo", "El correo debe tener el formato texto@texto.texto.");
+            showAlert("ERROR", "Verifica el correo",
+                    "El correo debe tener el formato texto@texto.texto.");
             return;
         }
 
+        // Validar contraseña
         if (!validatePassword(password)) {
             showAlert("ERROR", "Verifica la contraseña",
-                    "La contraseña debe tener al menos 8 caracteres, con mayúscula, minúscula y un número.");
+                    "La contraseña debe tener al menos 8 carácteres, de los cuales debe haber una mayúscula, una minúscula y un número.");
             return;
         }
 
+        // Verificar el rol
         Rol rolUser = rol.equals("losDeAtras-25") ? Rol.ADMIN : Rol.USUARIO;
 
+        // Verificar si el usuario ya existe
         if (daoUsuarios.userExists(email)) {
-            showAlert("¡ATENCIÓN!", "El usuario ya existe", "Ya existe un usuario con ese correo.");
+            showAlert(
+                    mensaje.getProperty("alert.attention", "!ATENCIÓN¡"),
+                    mensaje.getProperty("alert.userExists", "El usuario ya existe"),
+                    mensaje.getProperty("alert.userExistsMessage", "Ya existe un usuario con ese correo.")
+            );
             redirectMenu(email);
         } else {
+            // Crear y registrar el usuario
             Usuario usuario = new Usuario(name, surname, email, password, rolUser);
             daoUsuarios.addUser(usuario);
-            showAlert("¡ÉXITO!", "Usuario registrado correctamente", "Bienvenido/a " + name);
+
+            showAlert(
+                    mensaje.getProperty("alert.success", "¡ÉXITO!"),
+                    mensaje.getProperty("alert.userRegistered", "Usuario registrado correctamente"),
+                    mensaje.getProperty("alert.welcome", "Bienvenido/a ") + name
+            );
             redirectMenu(email);
         }
     }
@@ -122,61 +108,57 @@ public class UsuarioController {
 
     private void showAlert(String title, String header, String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(title);
         alert.setHeaderText(header);
         alert.setContentText(message);
         alert.showAndWait();
     }
 
-    /**
-     * Redirige al usuario al menú y actualiza `UsuarioModel` con su información.
-     *
-     * @param email Correo del usuario autenticado.
-     */
     private void redirectMenu(String email) {
         try {
-            // Obtener datos del usuario y guardarlos en UsuarioModel
-            String[] userData = getUserDataFromDB(email);
-            if (userData != null) {
-                UsuarioModel.getInstance().cargarUsuarioDesdeDB(email);
-                System.out.println("Usuario cargado en UsuarioModel: " + UsuarioModel.getInstance().getNombreCompleto());
-            }
-
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Menu.fxml"));
             Parent root = fxmlLoader.load();
 
-            Menu menu = fxmlLoader.getController();
+            // Obtener el controlador del menú
+            Menu menuController = fxmlLoader.getController();
+
+            // Obtener datos del usuario desde la base de datos
+            String[] userData = getUserDataFromDB(email);
             if (userData != null) {
-                menu.setWelcomeMessage(userData[0], userData[1]);
+                // Establecer mensaje de bienvenida
+                menuController.setWelcomeMessage(userData[0], userData[1]);
+                // Establecer el idioma
+                menuController.setLanguage(selectedLanguage);
             }
 
+            // Mostrar alerta de éxito en el idioma seleccionado
+            if (selectedLanguage.contains("ingles")) {
+                showAlert("SUCCESS!", "Login successful", "Welcome " + userData[0]);
+            } else {
+                showAlert("¡ÉXITO!", "Inicio de sesión correcto", "Bienvenido/a " + userData[0]);
+            }
+
+            // Mostrar la nueva ventana
             Stage stage = new Stage();
-            stage.setTitle("Menú");
-            stage.setScene(new Scene(root, 577, 680));
-            stage.setResizable(false);
+            stage.setScene(new Scene(root));
             stage.show();
 
+            // Cerrar la ventana actual
             Stage currentStage = (Stage) passwordField.getScene().getWindow();
             currentStage.close();
-
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    /**
-     * Obtiene los datos del usuario desde la base de datos basado en su correo electrónico.
-     *
-     * @param email Correo del usuario.
-     * @return Un array con el nombre y apellido del usuario, o `null` si no existe.
-     */
     private String[] getUserDataFromDB(String email) {
         String query = "SELECT nombre, apellido FROM usuarios WHERE email = ?";
         try (PreparedStatement statement = daoUsuarios.getConnection().prepareStatement(query)) {
             statement.setString(1, email);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                return new String[]{resultSet.getString("nombre"), resultSet.getString("apellido")};
+                String nombre = resultSet.getString("nombre");
+                String apellido = resultSet.getString("apellido");
+                return new String[]{nombre, apellido};
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -201,14 +183,14 @@ public class UsuarioController {
 
     @FXML
     private void cambiarAIngles() {
-        String selectedLanguage = "ingles_en.properties";
+        selectedLanguage = "ingles_en.properties";
         loadLanguage(selectedLanguage);
         updateTexts();
     }
 
     @FXML
     private void cambiarAEspanol() {
-        String selectedLanguage = "espanol_es.properties";
+        selectedLanguage = "espanol_es.properties";
         loadLanguage(selectedLanguage);
         updateTexts();
     }
@@ -235,5 +217,12 @@ public class UsuarioController {
         password.setText(mensaje.getProperty("label.password", "Contraseña"));
         rol.setText(mensaje.getProperty("label.rol", "Rol"));
         sentForm.setText(mensaje.getProperty("button.login", "Accede al Menu"));
+
+        // Actualizar tooltip de password
+        Tooltip passwordTooltip = new Tooltip(mensaje.getProperty("tooltip.toolPass", "(Debe tener mín 8 carácteres, una mayús y un número)"));
+        passwordField.setTooltip(passwordTooltip);
+
+        // Actualizar promptText de rol
+        rolField.setPromptText(mensaje.getProperty("textField.prompt", "Usuario"));
     }
 }

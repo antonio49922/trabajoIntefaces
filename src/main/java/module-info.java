@@ -4,6 +4,7 @@ module org.example.proyecto {
     requires javafx.graphics;
     requires java.sql;
     requires java.desktop;
+    requires net.sf.jasperreports.core;
 
 
     opens org.example.proyecto to javafx.fxml;

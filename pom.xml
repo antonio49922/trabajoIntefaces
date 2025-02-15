@@ -33,6 +33,20 @@
             <version>21.0.5</version>
         </dependency>
 
+        <!-- JasperReports para reportes -->
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports</artifactId>
+            <version>7.0.1</version>
+        </dependency>
+
+        <!-- iText para generar el PDF -->
+        <dependency>
+            <groupId>com.lowagie</groupId>
+            <artifactId>itext</artifactId>
+            <version>4.2.2</version>
+        </dependency>
+
         <!-- JUnit para pruebas -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
