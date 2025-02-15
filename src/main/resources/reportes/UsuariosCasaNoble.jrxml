@@ -1,0 +1,140 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="UsuariosCasaNoble" language="java" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c368610e-5bee-4e75-8f1e-ecda64380534">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="47"/>
+	<property name="ireport.y" value="451"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapterCasaNoble.jrdax"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50.0" bold="false"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18.0" bold="false"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14.0" bold="true"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle mode="Opaque" backcolor="#F0EFEF">
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<dataset name="PieChartDataset" uuid="21b70311-b650-4678-a39c-887917366bf0"/>
+	<query language="sql"><![CDATA[SELECT * FROM usuarios]]></query>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="usuarios"/>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="usuarios"/>
+	</field>
+	<field name="apellido" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="apellido"/>
+		<property name="com.jaspersoft.studio.field.label" value="apellido"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="usuarios"/>
+	</field>
+	<field name="email" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="email"/>
+		<property name="com.jaspersoft.studio.field.label" value="email"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="usuarios"/>
+	</field>
+	<field name="contraseña" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="contraseña"/>
+		<property name="com.jaspersoft.studio.field.label" value="contraseña"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="usuarios"/>
+	</field>
+	<field name="rol" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="rol"/>
+		<property name="com.jaspersoft.studio.field.label" value="rol"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="usuarios"/>
+	</field>
+	<background height="555" splitType="Stretch">
+		<element kind="image" uuid="20bb2440-c413-4a05-a706-a10d8c847aba" x="-20" y="65" width="229" height="250">
+			<printWhenExpression><![CDATA[$V{PAGE_NUMBER} == 1]]></printWhenExpression>
+			<expression><![CDATA["Imagen_Inicio_Sesión.png"]]></expression>
+		</element>
+	</background>
+	<title height="117" splitType="Stretch">
+		<element kind="staticText" uuid="0dae0af3-dd1d-4b42-b346-386af21f0689" x="217" y="79" width="230" height="35" forecolor="#030303" fontName="Segoe Script" fontSize="21.0" bold="true" hTextAlign="Right" style="SubTitle">
+			<text><![CDATA[Usuarios registrados]]></text>
+			<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.y" value="px"/>
+		</element>
+		<element kind="frame" uuid="83f5e806-cc04-4161-87a9-07633f604bc1" mode="Opaque" x="-20" y="0" width="822" height="65" forecolor="#AF89FF" backcolor="#956ABF">
+			<element kind="staticText" uuid="f5cd9ee0-5caa-4e48-8946-c7e84d82a845" x="0" y="2" width="300" height="65" fontName="Segoe Print" fontSize="35.0" bold="false" hTextAlign="Right" style="Title">
+				<text><![CDATA[]]></text>
+			</element>
+			<element kind="image" uuid="79d44a0e-d4b7-45ac-b45c-297af9733f62" x="560" y="-3" width="261" height="70">
+				<expression><![CDATA["Ejemplo_Logo-removebg-preview.png"]]></expression>
+			</element>
+		</element>
+	</title>
+	<pageHeader splitType="Stretch"/>
+	<columnHeader height="14" splitType="Stretch">
+		<element kind="frame" uuid="2a3d298d-90eb-4db1-919a-c9b2ed28c222" x="227" y="0" width="575" height="14">
+			<element kind="staticText" uuid="35ef0e42-1602-4de8-9717-053af3279eaa" x="-1" y="0" width="114" height="27" fontName="Segoe Script" fontSize="16.0" bold="true">
+				<text><![CDATA[ID]]></text>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a3e8d73b-fcd0-404f-8122-fa5fe7dff509"/>
+			</element>
+			<element kind="staticText" uuid="67867ace-e06e-47cf-8a56-00280368a38b" x="60" y="0" width="79" height="26" fontName="Segoe Script" fontSize="16.0" bold="true">
+				<text><![CDATA[Nombre]]></text>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6dc3a916-63a8-4330-9601-f666d210f81f"/>
+			</element>
+			<element kind="staticText" uuid="03a6b0df-85b3-45ce-9309-9c665c30b8ba" x="160" y="0" width="80" height="26" fontName="Segoe Script" fontSize="16.0" bold="true">
+				<text><![CDATA[Apellido]]></text>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b35d3bfe-09b3-4835-bcd5-2cdbd8a2d97e"/>
+			</element>
+			<element kind="staticText" uuid="4dc91818-d4ac-4d0e-ad09-8bf24b53f909" x="303" y="0" width="63" height="27" fontName="Segoe Script" fontSize="16.0" bold="true">
+				<text><![CDATA[Email]]></text>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a87e31f5-3b71-43c8-8d38-0cca3207f50f"/>
+			</element>
+			<element kind="staticText" uuid="31fdfa4a-75fc-4662-b3fe-8f23250a8b6f" x="500" y="0" width="50" height="26" fontName="Segoe Script" fontSize="16.0" bold="true">
+				<text><![CDATA[Rol]]></text>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="82e66c39-f2ca-4711-8efd-d98a1d897e24"/>
+			</element>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="50" splitType="Stretch">
+			<element kind="line" uuid="ad4e998c-7071-4467-b7fa-4441cc53d3f6" positionType="FixRelativeToBottom" x="227" y="14" width="575" height="1"/>
+			<element kind="frame" uuid="822bafe9-34ee-4b4f-aa76-3eae029c4911" x="227" y="0" width="575" height="14"/>
+			<element kind="textField" uuid="a68a8697-6ff0-4793-8dab-0c4f3d779872" x="227" y="20" width="63" height="30" fontName="Segoe Script" fontSize="16.0">
+				<expression><![CDATA[$F{id}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a3e8d73b-fcd0-404f-8122-fa5fe7dff509"/>
+			</element>
+			<element kind="textField" uuid="22807513-b42e-4467-8193-428c3ea292bd" x="287" y="20" width="113" height="30" fontName="Segoe Script" fontSize="16.0">
+				<expression><![CDATA[$F{nombre}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6dc3a916-63a8-4330-9601-f666d210f81f"/>
+			</element>
+			<element kind="textField" uuid="2f99c801-72d8-49a3-97cd-ca00dfef9b20" x="387" y="20" width="120" height="30" fontName="Segoe Script" fontSize="16.0">
+				<expression><![CDATA[$F{apellido}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b35d3bfe-09b3-4835-bcd5-2cdbd8a2d97e"/>
+			</element>
+			<element kind="textField" uuid="38fadbc3-ba9c-4bca-8d6b-81e6e23ec22a" x="530" y="20" width="197" height="30" fontName="Segoe Script" fontSize="16.0">
+				<expression><![CDATA[$F{email}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a87e31f5-3b71-43c8-8d38-0cca3207f50f"/>
+			</element>
+			<element kind="textField" uuid="2a551e09-b535-4f04-9a9d-71865a5e2483" x="727" y="20" width="70" height="30" fontName="Segoe Script" fontSize="16.0">
+				<expression><![CDATA[$F{rol}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="82e66c39-f2ca-4711-8efd-d98a1d897e24"/>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="7" splitType="Stretch">
+		<element kind="line" uuid="c23ffbf7-1928-41f8-ade3-5930d9a4871d" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1">
+			<pen lineWidth="0.5" lineColor="#999999"/>
+		</element>
+	</columnFooter>
+	<pageFooter height="16" splitType="Stretch">
+		<element kind="frame" uuid="6f4fe8ef-88ca-4d5d-b46a-054826bb7893" mode="Opaque" x="2" y="0" width="800" height="16" forecolor="#956ABF" backcolor="#AF89FF">
+			<element kind="textField" uuid="970781d6-87a0-4d3d-a07b-5ae173a1317a" x="753" y="0" width="40" height="16" forecolor="#FFFFFF" fontName="Arial" fontSize="12.0" evaluationTime="Report" bold="false" vTextAlign="Middle" style="Column header">
+				<expression><![CDATA[" " + $V{PAGE_NUMBER}]]></expression>
+			</element>
+			<element kind="textField" uuid="42664b34-c87b-42f8-911b-bd9c2ab9111e" x="673" y="0" width="80" height="16" forecolor="#FFFFFF" fontName="Arial" fontSize="12.0" bold="false" hTextAlign="Right" vTextAlign="Middle" style="Column header">
+				<expression><![CDATA["Página "+$V{PAGE_NUMBER}+" de "]]></expression>
+			</element>
+			<element kind="textField" uuid="06b3d6e8-b4a5-4251-b1fb-f640689933e8" x="2" y="0" width="197" height="16" forecolor="#FFFFFF" fontName="Arial" fontSize="12.0" pattern="EEEEE dd MMMMM yyyy" bold="false" vTextAlign="Middle" style="Column header">
+				<expression><![CDATA[new java.util.Date()]]></expression>
+			</element>
+		</element>
+	</pageFooter>
+	<summary splitType="Stretch"/>
+</jasperReport>

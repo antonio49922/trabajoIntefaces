@@ -82,6 +82,11 @@
                         <Image url="@../../../Recursos_Gráficos/Imagenes/Recursos/es-flag.442x512.png" />
                      </image>
                   </ImageView>
+                  <ImageView fitHeight="46.0" fitWidth="47.0" onMouseClicked="#generateUsersReports" layoutX="516.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Recursos_Gráficos/Imagenes/Recursos/paper-removebg-preview.png" />
+                     </image>
+                  </ImageView>
                </children>
             </Pane>
             <!-- Hipervínculo para abrir el PDF -->

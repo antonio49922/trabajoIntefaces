@@ -5,6 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -224,5 +226,86 @@ public class UsuarioController {
 
         // Actualizar promptText de rol
         rolField.setPromptText(mensaje.getProperty("textField.prompt", "Usuario"));
+    }
+
+    // Método para generar informes y solicitar contraseña
+    @FXML
+    public void generateUsersReports(MouseEvent mouseEvent) {
+        // Crear un cuadro de diálogo para ingresar la contraseña
+        PasswordDialog passwordDialog = new PasswordDialog();
+        passwordDialog.showAndWait();
+    }
+
+    // Clase para la ventana de contraseña
+    class PasswordDialog {
+
+        public void showAndWait() {
+            // Crear un cuadro de diálogo con una caja de texto para la contraseña
+            Stage stage = new Stage();
+            VBox vbox = new VBox();
+
+            Label label = new Label("Ingrese la contraseña para acceder a los informes:");
+            PasswordField passwordField = new PasswordField();
+
+            Button submitButton = new Button("Aceptar");
+
+            // Acción del botón Aceptar
+            submitButton.setOnAction(e -> {
+                String enteredPassword = passwordField.getText();
+                if ("losDeAtras-25".equals(enteredPassword)) {
+                    // Contraseña correcta, redirigir a los informes
+                    redirectToReports(stage);
+                } else {
+                    // Contraseña incorrecta, mostrar error
+                    showError("Contraseña incorrecta", "La contraseña proporcionada no es válida.");
+                    stage.close();  // Cerrar la ventana
+                    redirectToLogin();  // Redirigir al inicio de sesión
+                }
+            });
+
+            // Agregar los controles al VBox
+            vbox.getChildren().addAll(label, passwordField, submitButton);
+            Scene scene = new Scene(vbox);
+            stage.setScene(scene);
+            stage.setTitle("Ingresar Contraseña");
+            stage.show();
+        }
+
+        private void showError(String title, String message) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle(title);
+            alert.setHeaderText(null);
+            alert.setContentText(message);
+            alert.showAndWait();
+        }
+
+        private void redirectToReports(Stage currentStage) {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("informes.fxml"));
+                Parent root = loader.load();
+
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root));
+                stage.show();
+
+                // Cerrar la ventana actual
+                currentStage.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        private void redirectToLogin() {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("inicioSesion.fxml"));
+                Parent root = loader.load();
+
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root));
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
