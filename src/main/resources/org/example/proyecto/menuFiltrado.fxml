@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="386.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.proyecto.MenuFiltradoController">
+    <children>
+        <ImageView fitHeight="244.0" fitWidth="600.0" layoutX="6.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../Recursos_Gráficos/Imagenes/Recursos/rural-landscape-village-sketch-f.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="200.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../Ejemplo_Logo-removebg-preview.png" />
+            </image>
+        </ImageView>
+        <Pane layoutX="14.0" layoutY="136.0" prefHeight="249.0" prefWidth="572.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 25px;">
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="195.0" prefWidth="572.0">
+                <children>
+                    <ImageView fitHeight="75.0" fitWidth="98.0" layoutX="240.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../../../Recursos_Gráficos/Imagenes/Alimentos/plate.jpeg" />
+                        </image>
+                    </ImageView>
+                    <ComboBox fx:id="tableName" layoutX="200.0" layoutY="120.0" />
+                    <TextField fx:id="userInput" promptText="Ej: Pollo" layoutX="260.0" layoutY="120.0"/>
+                    <Button fx:id="buttonAllUsers" layoutX="228.0" layoutY="180.0" mnemonicParsing="false" text="Todos los registros" />
+                </children></AnchorPane>
+        </Pane>
+    </children>
+</AnchorPane>

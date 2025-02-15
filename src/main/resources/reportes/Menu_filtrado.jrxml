@@ -1,0 +1,115 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="Menu_filtrado" language="java" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5021b7ab-4d36-456c-9e0a-66c9724f9ebb">
+	<property name="template.engine" value="tabular_template"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="687"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapterCasaNoble.jrdax"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50.0" bold="false"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18.0" bold="false"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14.0" bold="true"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle mode="Opaque" backcolor="#F0EFEF">
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<style name="Table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<leftPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+			<rightPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<dataset name="PieChartDataset" uuid="33d77d72-cefc-44b5-96f2-92f62ab217b3"/>
+	<dataset name="tableDataset" uuid="f550479b-96eb-43ff-b376-ba9f3326b998">
+		<query language="sql"><![CDATA[]]></query>
+	</dataset>
+	<query language="sql"><![CDATA[SELECT * FROM + $P{tableName} WHERE descripcion LIKE '%' + $P{userInput} + '%']]></query>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="platos"/>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="platos"/>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="descripcion"/>
+		<property name="com.jaspersoft.studio.field.label" value="descripcion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="platos"/>
+	</field>
+	<field name="precio" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="precio"/>
+		<property name="com.jaspersoft.studio.field.label" value="precio"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="platos"/>
+	</field>
+	<background height="710" splitType="Stretch">
+		<element kind="image" uuid="3cbc6484-fab3-46ec-a0be-f32dbea856e9" x="-20" y="90" width="577" height="620" backcolor="#FFFFFF">
+			<printWhenExpression><![CDATA[$V{PAGE_NUMBER} == 1]]></printWhenExpression>
+			<expression><![CDATA["left_side-removebg-preview.png"]]></expression>
+		</element>
+		<element kind="image" uuid="2607d6db-ab4b-4bec-b9f6-7e1b041b72ee" x="474" y="90" width="780" height="620" backcolor="#FFFFFF">
+			<expression><![CDATA["right_side-removebg-preview.png"]]></expression>
+			<property name="com.jaspersoft.studio.unit.x" value="px"/>
+		</element>
+	</background>
+	<title height="100" splitType="Stretch">
+		<element kind="staticText" uuid="649287ac-fc0c-4d2a-b452-b8614b1d7b48" x="390" y="65" width="163" height="35" forecolor="#000000" fontName="Segoe Script" fontSize="21.0" bold="true" hTextAlign="Right" style="SubTitle">
+			<text><![CDATA[Menu filtrado]]></text>
+		</element>
+		<element kind="frame" uuid="184ed0d3-9801-4c46-ba21-3cc37a3a18f0" mode="Opaque" x="-20" y="0" width="597" height="65" forecolor="#006699" backcolor="#000000">
+			<element kind="staticText" uuid="745f25f7-7025-4153-981e-c7b55b127c2d" x="367" y="0" width="210" height="65" forecolor="#FFFFFF" backcolor="#000000" fontName="Segoe Script" fontSize="37.0" bold="true" italic="true" hTextAlign="Right" style="Title">
+				<text><![CDATA[Casa Noble]]></text>
+			</element>
+		</element>
+	</title>
+	<columnHeader height="30">
+		<element kind="staticText" uuid="4a4a34f2-b986-4acc-9a91-a91c87d2aac1" x="70" y="0" width="90" height="30" fontName="Segoe Script" fontSize="16.0" bold="true">
+			<text><![CDATA[Nombre]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="748937b8-064f-4553-8242-11bebd33f35a"/>
+		</element>
+		<element kind="staticText" uuid="bd2a8fe7-5d4f-4dd4-b18e-e8f72043438a" x="190" y="0" width="187" height="30" fontName="Segoe Script" fontSize="16.0" bold="true">
+			<text><![CDATA[Descripción del plato]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c20e2958-9112-41f5-b8b9-730e831099e8"/>
+		</element>
+		<element kind="staticText" uuid="aeca54a8-0835-4101-9e44-e4f20ee594d5" x="420" y="0" width="60" height="30" fontName="Segoe Script" fontSize="16.0" bold="true">
+			<text><![CDATA[Precio]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a5842944-0704-4b9d-a993-c79d29938a47"/>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="125">
+			<element kind="textField" uuid="0a42075c-3992-4359-b827-83ebdb66ab5f" x="70" y="3" width="110" height="57" fontName="Segoe Script" fontSize="16.0">
+				<expression><![CDATA[$F{nombre}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="748937b8-064f-4553-8242-11bebd33f35a"/>
+			</element>
+			<element kind="textField" uuid="62713c45-c99a-4f6d-aef2-3bea0a955d56" x="187" y="3" width="190" height="117" fontName="Segoe Script" fontSize="16.0">
+				<expression><![CDATA[$F{descripcion}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c20e2958-9112-41f5-b8b9-730e831099e8"/>
+			</element>
+			<element kind="textField" uuid="1fa21aeb-c8ca-4457-be6f-c210cb8cbce6" x="422" y="3" width="100" height="30" fontName="Segoe Script" fontSize="16.0">
+				<expression><![CDATA[$F{precio}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a5842944-0704-4b9d-a993-c79d29938a47"/>
+			</element>
+		</band>
+	</detail>
+	<pageFooter height="13" splitType="Stretch">
+		<element kind="frame" uuid="38532e1d-6af6-4e2c-9e72-b46a93e345aa" mode="Opaque" x="2" y="0" width="555" height="13" forecolor="#D0B48E" backcolor="#000000">
+			<element kind="textField" uuid="0c354c8c-8e51-4e78-961f-18b288231268" x="510" y="0" width="40" height="13" forecolor="#FFFFFF" fontSize="10.0" evaluationTime="Report" bold="false" vTextAlign="Middle" style="Column header">
+				<expression><![CDATA[" " + $V{PAGE_NUMBER}]]></expression>
+			</element>
+			<element kind="textField" uuid="9fb2c5f1-8ad5-4a4b-be6c-eea548125c43" x="430" y="0" width="80" height="13" forecolor="#FFFFFF" fontSize="10.0" bold="false" hTextAlign="Right" vTextAlign="Middle" style="Column header">
+				<expression><![CDATA["Página "+$V{PAGE_NUMBER}+" de "]]></expression>
+			</element>
+			<element kind="textField" uuid="a011f8b7-ada3-40f2-b40a-324c1159d074" x="2" y="0" width="197" height="13" forecolor="#FFFFFF" fontSize="10.0" pattern="EEEEE dd MMMMM yyyy" bold="false" vTextAlign="Middle" style="Column header">
+				<expression><![CDATA[new java.util.Date()]]></expression>
+			</element>
+		</element>
+	</pageFooter>
+</jasperReport>

@@ -16,10 +16,7 @@
             <Image url="@../../../Ejemplo_Logo-removebg-preview.png" />
          </image>
       </ImageView>
-      <TabPane layoutX="14.0" layoutY="136.0" prefHeight="249.0" prefWidth="572.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 25px;" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab text="Informe Usuarios">
-            <content>
+      <Pane layoutX="14.0" layoutY="136.0" prefHeight="249.0" prefWidth="572.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 25px;">
               <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="195.0" prefWidth="572.0">
                      <children>
                         <ImageView fitHeight="73.0" fitWidth="63.0" layoutX="254.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
@@ -27,28 +24,10 @@
                               <Image url="@../../../Recursos_Gráficos/Imagenes/usuarioIcono.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="buttonUsers" layoutX="54.0" layoutY="119.0" mnemonicParsing="false" text="Registro de los usuarios" onAction="#generateUsersPDF" />
-                        <Button fx:id="buttonAllUsers" layoutX="228.0" layoutY="119.0" mnemonicParsing="false" text="Todos los registros" onAction="#generateAllUsersPDF" />
-                        <Button fx:id="buttonAdmins" layoutX="365.0" layoutY="119.0" mnemonicParsing="false" text="Registro de los administradores" onAction="#generateAdminsPDF" />
+                        <Button fx:id="buttonUsers" layoutX="54.0" layoutY="119.0" mnemonicParsing="false" onAction="#generateUsersPDF" text="Registro de los usuarios" />
+                        <Button fx:id="buttonAllUsers" layoutX="228.0" layoutY="119.0" mnemonicParsing="false" onAction="#generateAllUsersPDF" text="Todos los registros" />
+                        <Button fx:id="buttonAdmins" layoutX="365.0" layoutY="119.0" mnemonicParsing="false" onAction="#generateAdminsPDF" text="Registro de los administradores" />
                      </children></AnchorPane>
-            </content>
-          </Tab>
-          <Tab text="Informe Platos">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                    <children>
-                        <ImageView fitHeight="146.0" fitWidth="97.0" layoutX="220.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../../../Recursos_Gráficos/Imagenes/Alimentos/plate.jpeg" />
-                            </image>
-                        </ImageView>
-                        <Button layoutX="54.0" layoutY="119.0" mnemonicParsing="false" text="PLATO UNO" />
-                        <Button layoutX="228.0" layoutY="119.0" mnemonicParsing="false" text="PLATO DOS" />
-                        <Button layoutX="365.0" layoutY="119.0" mnemonicParsing="false" text="PLATO TRES" />
-                    </children></AnchorPane>
-            </content>
-          </Tab>
-        </tabs>
-      </TabPane>
+      </Pane>
    </children>
 </AnchorPane>
