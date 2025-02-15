@@ -10,6 +10,7 @@ import net.sf.jasperreports.view.JasperViewer;
 import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
@@ -24,34 +25,42 @@ public class MenuFiltradoController {
 
     @FXML
     private void initialize() {
+        // Inicializar el ComboBox con opciones
         tableName.getItems().addAll("platos");
         tableName.setValue("Selecciona una opción");
     }
 
+    // Método para generar el reporte con filtro
     @FXML
-    private void generateReport() {
-        String selectedTable = tableName.getValue();
-        String input = userInput.getText().trim();
-
-        if (input.isEmpty()) {
-            showAlert("Error", "Debe ingresar un alimento para la búsqueda.");
-            return;
-        }
-
+    private void generateFilteredReport() {
         try {
-            JasperReport report = JasperCompileManager.compileReport("src/main/resources/reports/Menu_filtrado.jrxml");
+            // Ruta del archivo JRXML compilado
+            String jasperPath = "src/main/resources/reportes/MenuFiltrado.jasper";
 
+            // Verificar que el archivo Jasper existe
+            File reportFile = new File(jasperPath);
+            if (!reportFile.exists()) {
+                throw new RuntimeException("El archivo del reporte no existe: " + jasperPath);
+            }
+
+            // Parámetros que se pasan al reporte
             Map<String, Object> parameters = new HashMap<>();
-            parameters.put("tableName", selectedTable);
-            parameters.put("userInput", input);
+            parameters.put("tableName", "platos");  // Aquí se pasa el nombre de la tabla (ajustar según el filtro)
+            parameters.put("userInput", userInput.getText()); // El texto del filtro de búsqueda
 
-            parameters.put("titulo", "¡Reporte generado!");
-            parameters.put("REPORT_DIR", "src/main/resources/");
-
+            // Establecer la conexión a la base de datos
             String url = "jdbc:mysql://localhost:3306/bar";
             String user = "root";
             String password = "";
             Connection connection = DriverManager.getConnection(url, user, password);
+
+            // Preparamos la sentencia SQL con parámetros
+            String sql = "SELECT * FROM platos WHERE descripcion LIKE CONCAT('%', ?, '%')";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, userInput.getText());
+
+            // Llenar el reporte con datos de la base de datos
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperPath, parameters, connection);
 
             // Crear el directorio si no existe
             File outputDir = new File("reportesExportados");
@@ -59,19 +68,24 @@ public class MenuFiltradoController {
                 outputDir.mkdirs();
             }
 
-            JasperPrint jasperPrint = JasperFillManager.fillReport(report, parameters, connection);
-            JasperExportManager.exportReportToPdfFile(jasperPrint, "MenuFiltrado.pdf");
+            // Exportar el reporte a PDF
+            String pdfPath = "reportesExportados/menu_filtrado_reporte.pdf";
+            JasperExportManager.exportReportToPdfFile(jasperPrint, pdfPath);
 
-            JasperViewer.viewReport(jasperPrint, false);
+            // Mostrar alerta de éxito
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Éxito");
+            alert.setHeaderText(null);
+            alert.setContentText("El reporte se ha generado correctamente en: " + pdfPath);
+            alert.showAndWait();
 
-            showAlert("Éxito", "Reporte generado correctamente.");
-
-        } catch (JRException e) {
+        } catch (Exception e) {
             e.printStackTrace();
-            showAlert("Error", "Ocurrió un error al generar el reporte.");
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("No se pudo generar el reporte");
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
         }
     }
 

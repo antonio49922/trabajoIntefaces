@@ -24,9 +24,9 @@
                             <Image url="@../../../Recursos_Gráficos/Imagenes/Alimentos/plate.jpeg" />
                         </image>
                     </ImageView>
-                    <ComboBox fx:id="tableName" layoutX="200.0" layoutY="120.0" />
-                    <TextField fx:id="userInput" promptText="Ej: Pollo" layoutX="260.0" layoutY="120.0"/>
-                    <Button fx:id="buttonAllUsers" layoutX="228.0" layoutY="180.0" mnemonicParsing="false" text="Todos los registros" />
+                    <ComboBox fx:id="tableName" layoutX="86.0" layoutY="118.0" prefHeight="26.0" prefWidth="193.0" />
+                    <TextField fx:id="userInput" layoutX="286.0" layoutY="119.0" promptText="Ej: Pollo" />
+                    <Button fx:id="buttonFilterPlates" layoutX="221.0" layoutY="181.0" mnemonicParsing="false" onAction="#generateFilteredReport" text="Obtener nuevo menú" />
                 </children></AnchorPane>
         </Pane>
     </children>

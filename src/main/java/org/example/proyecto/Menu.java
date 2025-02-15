@@ -193,4 +193,17 @@ public class Menu {
         postresLabel.setText(mensaje.getProperty("label.postres", "Postres"));
         especialesLabel.setText(mensaje.getProperty("label.especiales", "Especial de la casa"));
     }
+
+    public void mostrarMenuFiltrado(MouseEvent mouseEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/org/example/proyecto/menuFiltrado.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Menu Filtrado");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

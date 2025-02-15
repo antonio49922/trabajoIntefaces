@@ -33,7 +33,13 @@
             </image>
          </ImageView>
 
-         <Label fx:id="welcomeLabel" text="¡Bienvenido!" textFill="#5c4da8" translateY="-65.0">
+         <ImageView fitHeight="45.0" fitWidth="35.0" onMouseClicked="#mostrarMenuFiltrado" pickOnBounds="true" preserveRatio="true" translateX="250.0" translateY="-120.0">
+            <image>
+               <Image url="@../../../Recursos_Gráficos/Imagenes/Recursos/paper-removebg-preview.png" />
+            </image>
+         </ImageView>
+
+         <Label fx:id="welcomeLabel" text="¡Bienvenido!" textFill="#5c4da8" translateY="-100.0">
             <font>
                <Font name="Segoe Script" size="25.0" />
             </font>

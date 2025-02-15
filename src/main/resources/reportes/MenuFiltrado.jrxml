@@ -6,11 +6,12 @@
 	<property name="ireport.y" value="687"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapterCasaNoble.jrdax"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50.0" bold="false"/>
-	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18.0" bold="false"/>
-	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14.0" bold="true"/>
-	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
-	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+	<font name="Segoe Script" isPdfEmbedded="true" pdfFontName="Recursos_Gráficos/Fuentes/SegoeScript.ttf"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Segoe Script" fontSize="50.0" bold="false"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Segoe Script" fontSize="18.0" bold="false"/>
+	<style name="Column header" forecolor="#666666" fontName="Segoe Script" fontSize="16.0" bold="true"/>
+	<style name="Detail" mode="Transparent" fontName="Segoe Script"/>
+	<style name="Row" mode="Transparent" fontName="Segoe Script" pdfFontName="Recursos_Gráficos/Fuentes/SegoeScript.ttf">
 		<conditionalStyle mode="Opaque" backcolor="#F0EFEF">
 			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
 		</conditionalStyle>
@@ -26,9 +27,10 @@
 	</style>
 	<dataset name="PieChartDataset" uuid="33d77d72-cefc-44b5-96f2-92f62ab217b3"/>
 	<dataset name="tableDataset" uuid="f550479b-96eb-43ff-b376-ba9f3326b998">
-		<query language="sql"><![CDATA[]]></query>
+		<query language="sql"><![CDATA[SELECT * FROM $P{tableName} WHERE descripcion LIKE CONCAT('%', $P{userInput}, '%')
+]]></query>
 	</dataset>
-	<query language="sql"><![CDATA[SELECT * FROM + $P{tableName} WHERE descripcion LIKE '%' + $P{userInput} + '%']]></query>
+	<query language="sql"><![CDATA[SELECT * FROM platos WHERE descripcion LIKE '%pollo%']]></query>
 	<field name="id" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="id"/>
 		<property name="com.jaspersoft.studio.field.label" value="id"/>
@@ -70,32 +72,26 @@
 		</element>
 	</title>
 	<columnHeader height="30">
-		<element kind="staticText" uuid="4a4a34f2-b986-4acc-9a91-a91c87d2aac1" x="70" y="0" width="90" height="30" fontName="Segoe Script" fontSize="16.0" bold="true">
+		<element kind="staticText" uuid="4a4a34f2-b986-4acc-9a91-a91c87d2aac1" x="70" y="0" width="90" height="30" style="Column header">
 			<text><![CDATA[Nombre]]></text>
-			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="748937b8-064f-4553-8242-11bebd33f35a"/>
 		</element>
-		<element kind="staticText" uuid="bd2a8fe7-5d4f-4dd4-b18e-e8f72043438a" x="190" y="0" width="187" height="30" fontName="Segoe Script" fontSize="16.0" bold="true">
+		<element kind="staticText" uuid="bd2a8fe7-5d4f-4dd4-b18e-e8f72043438a" x="190" y="0" width="187" height="30" style="Column header">
 			<text><![CDATA[Descripción del plato]]></text>
-			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c20e2958-9112-41f5-b8b9-730e831099e8"/>
 		</element>
-		<element kind="staticText" uuid="aeca54a8-0835-4101-9e44-e4f20ee594d5" x="420" y="0" width="60" height="30" fontName="Segoe Script" fontSize="16.0" bold="true">
+		<element kind="staticText" uuid="aeca54a8-0835-4101-9e44-e4f20ee594d5" x="420" y="0" width="60" height="30" style="Column header">
 			<text><![CDATA[Precio]]></text>
-			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a5842944-0704-4b9d-a993-c79d29938a47"/>
 		</element>
 	</columnHeader>
 	<detail>
 		<band height="125">
 			<element kind="textField" uuid="0a42075c-3992-4359-b827-83ebdb66ab5f" x="70" y="3" width="110" height="57" fontName="Segoe Script" fontSize="16.0">
 				<expression><![CDATA[$F{nombre}]]></expression>
-				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="748937b8-064f-4553-8242-11bebd33f35a"/>
 			</element>
 			<element kind="textField" uuid="62713c45-c99a-4f6d-aef2-3bea0a955d56" x="187" y="3" width="190" height="117" fontName="Segoe Script" fontSize="16.0">
 				<expression><![CDATA[$F{descripcion}]]></expression>
-				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c20e2958-9112-41f5-b8b9-730e831099e8"/>
 			</element>
 			<element kind="textField" uuid="1fa21aeb-c8ca-4457-be6f-c210cb8cbce6" x="422" y="3" width="100" height="30" fontName="Segoe Script" fontSize="16.0">
 				<expression><![CDATA[$F{precio}]]></expression>
-				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a5842944-0704-4b9d-a993-c79d29938a47"/>
 			</element>
 		</band>
 	</detail>
